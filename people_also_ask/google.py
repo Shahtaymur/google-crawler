@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from typing import List, Dict, Any, Optional, Generator
 from random import choice
 from contextlib import closing
+import config
 
 from people_also_ask.tools import retryable
 from people_also_ask.parser import (
@@ -57,7 +58,8 @@ def search(keyword: str) -> Optional[BeautifulSoup]:
     try:
         with semaphore:
             time.sleep(0.5)  # be nice with google :)
-            response = SESSION.get(URL, params=params, headers=HEADERS)
+            proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
+            response = SESSION.get(URL, params=params, headers=HEADERS,proxies=proxy)
     except Exception:
         raise GoogleSearchRequestFailedError(URL, keyword)
     if response.status_code != 200:

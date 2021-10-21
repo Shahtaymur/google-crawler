@@ -11,15 +11,16 @@ from flask_restful import Resource, Api, reqparse
 from flask import request
 from random import choice
 from contextlib import closing
+import config
 
-with open('browser_agents.txt', 'r') as file_handle:
-    USER_AGENTS = file_handle.read().splitlines()
+# with open('browser_agents.txt', 'r') as file_handle:
+#     USER_AGENTS = file_handle.read().splitlines()
 
-DEFAULT_HEADERS = [
-            ('User-Agent', choice(USER_AGENTS)),
-            ("Accept-Language", "en-US,en;q=0.5"),
-        ]
-SEARCH_URL = "https://google.com/search"
+# DEFAULT_HEADERS = [
+#             ('User-Agent', choice(USER_AGENTS)),
+#             ("Accept-Language", "en-US,en;q=0.5"),
+#         ]
+# SEARCH_URL = "https://google.com/search"
 class GCrawler(Resource):
 
     # def __init__(self,query) -> None:
@@ -47,15 +48,13 @@ class GCrawler(Resource):
         """
 
         try:
-            # opener = urllib.build_opener()
-            # opener.addheaders = DEFAULT_HEADERS
-            # with closing(opener.open(SEARCH_URL +
-            #                  "?hl=en&q="+ urllib.quote(url))) as response:
-                # soup = BeautifulSoup(response.read(), "lxml")
-                #return response.read()
             session = HTMLSession()
-            time.sleep(2)
-            response = session.get(url)
+            time.sleep(0.5)
+            proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
+            #r = requests.get(url , proxies=proxy)
+            response = session.get(url,proxies=proxy)
+            if response.status_code != 200:
+                exit({"message":"someting wrong pls try again later"})
             session.close()
             return response
 
@@ -102,23 +101,57 @@ class GCrawler(Resource):
         
 
     def parse_results(self,response):
-        #soup = BeautifulSoup(response.text,"html.parser")
+        
         css_identifier_result = ".tF2Cxc"
         css_identifier_title = "h3"
         css_identifier_link = ".yuRUbf a"
         css_identifier_text = ".IsZvec"
         results = response.html.find(css_identifier_result)
-
+        feature_snippet = response.html.find('h2')
+        soup = BeautifulSoup(response.text,"html.parser")
+        #dictionary = soup.find("div", {"role": "heading", "aria-level": "2","class":"gJBeNe vbr5i"})
+        dictionary = soup.find('div',{"class":"obcontainer"})
+        if dictionary:
+            definations = []
+            define = dictionary.find('div',{"class":"jY7QFf"})
+            #def_mod = dictionary.find('div',{"class":"vmod"})
+            def_mod = dictionary.select("ol[class='eQJLDd']")
+            def_type = dictionary.find('div',{"class":"xpdxpnd","jsname":"jUIvqc"})
+            for mod in def_mod:
+                if not def_type == None:
+                    lis = mod.find_all('li')
+                    for li in lis:
+                        print(li.text)
+        
         output = []
-        for result in results:
+        answer = []
+        for snippet in feature_snippet:
+            if snippet.full_text == "Featured snippet from the web":
+                answer.append(people_also_ask.get_related_answer(self.query,True))
+                break
+        # if feature_snippet:
+        #     snippet = people_also_ask.get_related_answer(self.query,True)
+        #     if snippet and not snippet == '':
+        #         answer.append(snippet)
+        
+        if dictionary:
+            answer.append(people_also_ask.get_related_answer(self.query,True))
+                
+        for i,result in enumerate(results):
             print('>> get feature snippet...')
-            item = {
-                'title': result.find(css_identifier_title, first=True).text,
-                'link': result.find(css_identifier_link, first=True).attrs['href'],
-                'text': result.find(css_identifier_text, first=True).text
-            }
+            item = {}
+            item['title'] = result.find(css_identifier_title, first=True).text
+            item['link'] = result.find(css_identifier_link, first=True).attrs['href']
+            if i == 0 and len(answer) > 0 and not answer == '':
+                item['snippet'] = answer[0]
+            else:
+                item['text'] = result.find(css_identifier_text, first=True).text
+            # item = {
+            #     'title': result.find(css_identifier_title, first=True).text,
+            #     'link': result.find(css_identifier_link, first=True).attrs['href'],
+            #     'text': result.find(css_identifier_text, first=True).text
+            # }
             output.append(item)
-            
         return output
 
     #people_alse_ask
@@ -168,13 +201,13 @@ class GCrawler(Resource):
     def google_search(self,query):
         print('>> api calling start...')
         response = self.get_results(query)
-        #soup = BeautifulSoup(response.content, "html.parser")
-        soup = BeautifulSoup(response.content, "lxml")
+        feature_snippet = self.parse_results(response)
         
+        soup = BeautifulSoup(response.content, "lxml")
         faqs = self.extractQuestionData(query)
         information = self.extract_information(soup)
         rel_keywords = self.get_rel_keywords(soup)
-        feature_snippet = self.parse_results(response)
+        
         print('>> api calling end...')
         return {
             "keyword":query,
