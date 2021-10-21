@@ -111,31 +111,52 @@ class GCrawler(Resource):
         soup = BeautifulSoup(response.text,"html.parser")
         #dictionary = soup.find("div", {"role": "heading", "aria-level": "2","class":"gJBeNe vbr5i"})
         dictionary = soup.find('div',{"class":"obcontainer"})
+        dfn = {'dictionary':[]}
         if dictionary:
-            definations = []
-            define = dictionary.find('div',{"class":"jY7QFf"})
+            dfn['word'] = dictionary.find('div',{"class":"jY7QFf"}).text
             #def_mod = dictionary.find('div',{"class":"vmod"})
-            def_mod = dictionary.select("ol[class='eQJLDd']")
-            def_type = dictionary.find('div',{"class":"xpdxpnd","jsname":"jUIvqc"})
-            for mod in def_mod:
-                if not def_type == None:
-                    lis = mod.find_all('li')
+            def_type = dictionary.find_all('div',{"jsname":"r5Nvmf",'class':'vmod'})
+            for type in def_type:
+                dfnlist = {'def_list':[]}
+                dfnlist['type'] = type.find('div',{"jsname":"jUIvqc",'class':'xpdxpnd'}).text
+                def_mod = type.select("ol[class='eQJLDd']")
+                for mod in def_mod:
+                    lis = mod.find_all('li',{"jsname":"gskXhf"})
                     for li in lis:
-                        print(li.text)
-        
+                        try:
+                            item = {
+                                'definition': li.find('div',{'data-dobid':"dfn"}).text,
+                                'example': li.select("div[class='vmod']")[1].text,
+                                'similer':[]
+                            }
+                            simis = li.find_all('div',{"role":'listitem'})                            
+                            for smi in simis:
+                                item['similer'].append(smi.text)
+                                print(smi.text)
+                            dfnlist['def_list'].append(item)
+                        except:
+                            pass
+                dfn['dictionary'].append(dfnlist)
+                
         output = []
         answer = []
         for snippet in feature_snippet:
             if snippet.full_text == "Featured snippet from the web":
                 answer.append(people_also_ask.get_related_answer(self.query,True))
                 break
-        # if feature_snippet:
-        #     snippet = people_also_ask.get_related_answer(self.query,True)
-        #     if snippet and not snippet == '':
-        #         answer.append(snippet)
-        
+
         if dictionary:
-            answer.append(people_also_ask.get_related_answer(self.query,True))
+            output.append(dfn)
+
+        cards = soup.find('g-scrolling-carousel')
+        cards_list = {'cards':[]}
+        if cards:
+            cards = cards.find_all('div',{'class','WGwSK SoZvjb'})
+            for card in cards:
+                cards_list['cards'].append(card.text)
+                
+        if len(cards_list['cards']) > 0:
+            output.append(cards_list)
                 
         for i,result in enumerate(results):
             print('>> get feature snippet...')
@@ -183,13 +204,14 @@ class GCrawler(Resource):
             pass
         return information
 
-    def get_rel_keywords(self,soup:BeautifulSoup):
+    def get_rel_keywords(self,response):
         print('>> get related keyword...')
+        soup = BeautifulSoup(response.text,"html.parser")
         keywords = []
-        keys = soup.find_all("a",attrs={"class":"exp-r"})
+        keys = soup.find_all("a",{"class":"EASEnb PZPZlf Bb1JKe"})
         for key in keys:
             if key.text:
-                keywords.append(key.text)
+                keywords.append(key.title)
                 print('>> get related keyword.."{text}"'.format(text=key.text))
         keys = soup.find_all("div", {"class": "s75CSd OhScic AB4Wff"})
         for key in keys:
@@ -202,11 +224,10 @@ class GCrawler(Resource):
         print('>> api calling start...')
         response = self.get_results(query)
         feature_snippet = self.parse_results(response)
-        
         soup = BeautifulSoup(response.content, "lxml")
         faqs = self.extractQuestionData(query)
         information = self.extract_information(soup)
-        rel_keywords = self.get_rel_keywords(soup)
+        rel_keywords = self.get_rel_keywords(response)
         
         print('>> api calling end...')
         return {
