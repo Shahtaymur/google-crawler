@@ -33,8 +33,8 @@ class GCrawler(Resource):
             return {'message': "invalid request pls add search para and try again.. e.g http://127.0.0.1:5000/search?q=apple"}, 405
         self.query = q_string
         self.result =  self.google_search(self.query)
-        with open(f'{self.query}.json', 'w', encoding ='utf8') as json_file:
-            json.dump(self.result, json_file, ensure_ascii = False)
+        # with open(f'{self.query}.json', 'w', encoding ='utf8') as json_file:
+        #     json.dump(self.result, json_file, ensure_ascii = False)
         return {'data': self.result}, 200
 
     def get_source(self,url):
@@ -99,7 +99,6 @@ class GCrawler(Resource):
         #time.sleep(2)
         return response
         
-
     def parse_results(self,response):
         
         css_identifier_result = ".tF2Cxc"
@@ -108,6 +107,28 @@ class GCrawler(Resource):
         css_identifier_text = ".IsZvec"
         results = response.html.find(css_identifier_result)
         feature_snippet = response.html.find('h2')
+         
+        output = []
+        answer = []
+        for snippet in feature_snippet:
+            if snippet.full_text == "Featured snippet from the web":
+                answer.append(people_also_ask.get_related_answer(self.query,True))
+                break
+
+        for i,result in enumerate(results):
+            print('>> get feature snippet...')
+            item = {}
+            item['title'] = result.find(css_identifier_title, first=True).text
+            item['link'] = result.find(css_identifier_link, first=True).attrs['href']
+            if i == 0 and len(answer) > 0 and not answer == '':
+                item['snippet'] = answer[0]
+            else:
+                item['text'] = result.find(css_identifier_text, first=True).text
+            
+            output.append(item)
+        return output
+
+    def get_dictionary(self,response):
         soup = BeautifulSoup(response.text,"html.parser")
         #dictionary = soup.find("div", {"role": "heading", "aria-level": "2","class":"gJBeNe vbr5i"})
         dictionary = soup.find('div',{"class":"obcontainer"})
@@ -137,43 +158,80 @@ class GCrawler(Resource):
                         except:
                             pass
                 dfn['dictionary'].append(dfnlist)
-                
-        output = []
-        answer = []
-        for snippet in feature_snippet:
-            if snippet.full_text == "Featured snippet from the web":
-                answer.append(people_also_ask.get_related_answer(self.query,True))
-                break
+        return dfn
 
-        if dictionary:
-            output.append(dfn)
-
+    def get_popular_products(self,response):
+        soup = BeautifulSoup(response.text,"html.parser")
         cards = soup.find('g-scrolling-carousel')
-        cards_list = {'cards':[]}
+        cards_list = {'popular_products':[]}
         if cards:
             cards = cards.find_all('div',{'class','WGwSK SoZvjb'})
             for card in cards:
-                cards_list['cards'].append(card.text)
+                cards_list['popular_products'].append(card.text)
                 
-        if len(cards_list['cards']) > 0:
-            output.append(cards_list)
-                
-        for i,result in enumerate(results):
-            print('>> get feature snippet...')
-            item = {}
-            item['title'] = result.find(css_identifier_title, first=True).text
-            item['link'] = result.find(css_identifier_link, first=True).attrs['href']
-            if i == 0 and len(answer) > 0 and not answer == '':
-                item['snippet'] = answer[0]
-            else:
-                item['text'] = result.find(css_identifier_text, first=True).text
-            # item = {
-            #     'title': result.find(css_identifier_title, first=True).text,
-            #     'link': result.find(css_identifier_link, first=True).attrs['href'],
-            #     'text': result.find(css_identifier_text, first=True).text
-            # }
-            output.append(item)
-        return output
+        return cards_list
+
+    def get_top_sights(self,response):
+        soup = BeautifulSoup(response.text,"html.parser")
+        topsight = soup.find('g-scrolling-carousel')
+        top_list = {'data':[]}
+        if topsight:
+            if soup.find('g-tray-header'):
+                top_list['title'] = soup.find('g-tray-header').text
+                topsight = soup.find_all('div',{'class':'rqTuzc'})
+                for list in topsight:
+                    try:
+                        item = {
+                            'item': list.find('span','aVSTQd oz3cqf rOVRL').text,
+                            'value': list.find('span','ZIF80').text,
+                            'link':'https://www.google.com/{}'.format(list.find('a')['href'])
+                        }
+                        top_list['data'].append(item)
+                    except:
+                        pass
+
+        return top_list
+
+    def get_videos(self,response):
+        soup = BeautifulSoup(response.text,"html.parser")
+        videos = soup.find_all('div',{"jsname":"TFTr6"})
+        video_list = {'data':[]}
+        if videos:
+            video_list['type'] = 'videos'
+            for video in videos:
+                try:
+                    item = {
+                        'link' : video.find('a')['href'],
+                        'title' : video.find('div','uOId3b').text,
+                        'date' : video.find('div','hMJ0yc').text,
+                        'raw_data' : video.find('a')['aria-label']
+                    }
+                    video_list['data'].append(item)
+                except:
+                    pass
+
+        return video_list
+
+    def get_oraganic(self,response):
+        soup = BeautifulSoup(response.text,"html.parser")
+        recipes = soup.find_all('g-link')
+        recip_list = {'data':[]}
+        if recipes:
+            recip_list['type'] = 'organic'
+            for recip in recipes:
+                try:
+                    item = {
+                        'title': recip.find('div',{'aria-level':'3','role':'heading'}).text,
+                        'name': recip.find('cite').text,
+                        'duration':recip.find('div',{'class':'L5KuY Eq0J8'}).text,
+                        'description':recip.find('div',{'class':'LDr9cf L5KuY'}).text,
+                        'link':'https://www.google.com/{}'.format(recip.find('a')['href'])
+                    }
+                    recip_list['data'].append(item)
+                except Exception as e:
+                    pass
+
+        return recip_list
 
     #people_alse_ask
     def extractQuestionData(self,keyword):
@@ -208,7 +266,7 @@ class GCrawler(Resource):
         print('>> get related keyword...')
         soup = BeautifulSoup(response.text,"html.parser")
         keywords = []
-        keys = soup.find_all("a",{"class":"EASEnb PZPZlf Bb1JKe"})
+        keys = soup.find_all("div",{"class":"M7lz2c XC18Gb diAzE"})
         for key in keys:
             if key.text:
                 keywords.append(key.title)
@@ -224,18 +282,40 @@ class GCrawler(Resource):
         print('>> api calling start...')
         response = self.get_results(query)
         feature_snippet = self.parse_results(response)
+        dictionary = self.get_dictionary(response)
+        popular_products = self.get_popular_products(response)
+        top_sights = self.get_top_sights(response)
+        videos = self.get_videos(response)
+        oraganic = self.get_oraganic(response)
         soup = BeautifulSoup(response.content, "lxml")
         faqs = self.extractQuestionData(query)
         information = self.extract_information(soup)
         rel_keywords = self.get_rel_keywords(response)
-        
+        direct_ans = {}
+        try:
+            direct = soup.find("div", {"class": "kp-header"})
+            direct_ans = {
+                'bread' : direct.find("span", "GzssTd").text,
+                'crumbs' : direct.find("span", "qLLird").text,
+                'answer' : direct.find('a').text,
+                'link' : 'https://www.google.com{}'.format(direct.find('a')['href'])
+            }
+        except:
+            pass
+
         print('>> api calling end...')
         return {
             "keyword":query,
+            'direct_ans':direct_ans,
             "feature_snippet":feature_snippet,
             "people_also_ask":faqs,
-            "info":information,
-            "related_keywords":rel_keywords
+            "knowledge_panel":information,
+            "related_keywords":rel_keywords,
+            'dictionary':dictionary,
+            'popular_products':popular_products,
+            'top_sights':top_sights,
+            'videos':videos,
+            'oraganic':oraganic
             }
 
     
