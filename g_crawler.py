@@ -200,13 +200,25 @@ class GCrawler(Resource):
             video_list['type'] = 'videos'
             for video in videos:
                 try:
-                    item = {
-                        'link' : video.find('a')['href'],
-                        'title' : video.find('div','uOId3b').text,
-                        'date' : video.find('div','hMJ0yc').text,
-                        'raw_data' : video.find('a')['aria-label']
-                    }
-                    video_list['data'].append(item)
+                    title = None
+                    link = None
+                    date = None
+                    raw_data = None
+                    try:
+                        title = video.find('div','uOId3b').text
+                        link = video.find('a')['href']
+                        date = video.find('div','hMJ0yc').text
+                        raw_data = video.find('a')['aria-label']
+                    except:
+                        pass
+                    if not title == None:
+                        item = {
+                            'link' : link,
+                            'title' : title,
+                            'date' : date,
+                            'raw_data' : raw_data
+                        }
+                        video_list['data'].append(item)
                 except:
                     pass
 
@@ -219,15 +231,29 @@ class GCrawler(Resource):
         if recipes:
             recip_list['type'] = 'organic'
             for recip in recipes:
+                title = None
+                name = None
+                link = None
+                duration = None
+                description = None
                 try:
-                    item = {
-                        'title': recip.find('div',{'aria-level':'3','role':'heading'}).text,
-                        'name': recip.find('cite').text,
-                        'duration':recip.find('div',{'class':'L5KuY Eq0J8'}).text,
-                        'description':recip.find('div',{'class':'LDr9cf L5KuY'}).text,
-                        'link':'https://www.google.com/{}'.format(recip.find('a')['href'])
-                    }
-                    recip_list['data'].append(item)
+                    try:
+                        title = recip.find('div',{'aria-level':'3','role':'heading'}).text
+                        name = recip.find('cite').text
+                        link = 'https://www.google.com/{}'.format(recip.find('a')['href'])
+                        duration = recip.find('div',{'class':'L5KuY Eq0J8'}).text
+                        description = recip.find('div',{'class':'LDr9cf L5KuY'}).text
+                    except:
+                        pass
+                    if not title == None:
+                        item = {
+                            'title': title,
+                            'name': name,
+                            'duration':duration,
+                            'description':description,
+                            'link':link
+                        }
+                        recip_list['data'].append(item)
                 except Exception as e:
                     pass
 
@@ -240,10 +266,10 @@ class GCrawler(Resource):
         rel_questions = people_also_ask.get_related_questions(keyword)
         for question in rel_questions:
             title = question.split('Search for:')[0]
-            time.sleep(0.5)
+            #time.sleep(0.5)
             answer = people_also_ask.get_related_answer(title,True)
             data.append(answer)
-            print('>> get related answer of "{question}" - "{answer}"'.format(question=title,answer=answer))
+            print('>> get related answer of "{question}" - "{answer}"'.format(question=title,answer=answer['snippet_type']))
         return data
 
     def extract_information(self,soup : BeautifulSoup):
