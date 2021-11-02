@@ -116,14 +116,36 @@ class GCrawler(Resource):
                 break
 
         for i,result in enumerate(results):
-            print('>> get feature snippet...')
+            print('>> get meta description...')
             item = {}
             item['title'] = result.find(css_identifier_title, first=True).text
             item['link'] = result.find(css_identifier_link, first=True).attrs['href']
             if i == 0 and len(answer) > 0 and not answer == '':
                 item['snippet'] = answer[0]
             else:
-                item['text'] = result.find(css_identifier_text, first=True).text
+                meta_description = result.find(css_identifier_text, first=True)
+                table  = meta_description.find('table')
+                if table:
+                    try:
+                        soup = BeautifulSoup(result.html,"html.parser")
+                        tr = soup.find_all('tr')
+                        header = []
+                        values = []
+                        for row in tr:
+                            th = row.find_all('th')
+                            if th:
+                                for x in th:
+                                    header.append(x.text)
+                            else:
+                                td = row.find_all('td')
+                                value = []
+                                for x in td:
+                                    value.append(x.text)
+                                values.append(value)
+                        item['meta_data'] = {'columns':header,'values':values}
+                    except:
+                        pass
+                item['text'] = meta_description.text
             
             output.append(item)
         return output
