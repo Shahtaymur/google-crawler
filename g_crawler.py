@@ -372,7 +372,8 @@ class GCrawler(Resource):
         videos = self.get_videos(response)
         oraganic = self.get_oraganic(response)
         soup = BeautifulSoup(response.content, "lxml")
-        faqs = self.extractQuestionData(query)
+        if self.add_faqs == 'yes':
+            faqs = self.extractQuestionData(query)
         information = self.extract_information(soup)
         rel_keywords = self.get_rel_keywords(response)
         direct_ans = {}
