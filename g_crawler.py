@@ -10,7 +10,6 @@ import time
 from flask_restful import Resource, Api, reqparse
 from flask import request
 from random import choice
-from contextlib import closing
 import config
 
 # with open('browser_agents.txt', 'r') as file_handle:
@@ -29,9 +28,11 @@ class GCrawler(Resource):
        
     def get(self):
         q_string = request.args.get('q')
+        add_faqs = request.args.get('faqs')
         if not q_string:
             return {'message': "invalid request pls add search para and try again.. e.g http://127.0.0.1:5000/search?q=apple"}, 405
         self.query = q_string
+        self.add_faqs = add_faqs
         self.result =  self.google_search(self.query)
         # with open(f'{self.query}.json', 'w', encoding ='utf8') as json_file:
         #     json.dump(self.result, json_file, ensure_ascii = False)
@@ -110,11 +111,43 @@ class GCrawler(Resource):
          
         output = []
         answer = []
+        unit_converter = {}
         for snippet in feature_snippet:
             if snippet.full_text == "Featured snippet from the web":
                 answer.append(people_also_ask.get_related_answer(self.query,True))
                 break
-
+            elif snippet.full_text == "Unit converter":
+                soup = BeautifulSoup(response.content,"html.parser")
+                card = soup.find('div',{'data-hveid':'CAIQAQ'})
+                unit_converter['type'] = []
+                if card:
+                    try:
+                        type = card.find('select',{'jsname':'MVliGc'})
+                        for option in type.find_all('option'):
+                            if 'selected' in option.attrs:
+                                unit_converter['type'].append({'value':option.text,'selected':True})
+                            else:
+                                unit_converter['type'].append(option.text)
+                        left = card.find('div',{'id':'HG5Seb'})
+                        unit_converter['l_value'] = left.find('input').attrs['value']
+                        unit_converter['l_type'] = []
+                        for x in left.find_all('option'):
+                            if 'selected' in x.attrs:
+                                unit_converter['l_type'].append({'value':x.text,'selected':True})
+                            else:
+                                unit_converter['l_type'].append(x.text)
+                        right = card.find('div',{'id':'NotFQb'})
+                        unit_converter['r_value'] = right.find('input').attrs['value']
+                        unit_converter['r_type'] = []
+                        for x in right.find_all('option'):
+                            if 'selected' in x.attrs:
+                                unit_converter['r_type'].append({'value':x.text,'selected':True})
+                            else:
+                                unit_converter['r_type'].append(x.text)
+                        unit_converter['formula'] = card.find('div',{'dtp2jf'}).find('table').text
+                    except:
+                        pass
+                
         for i,result in enumerate(results):
             print('>> get meta description...')
             item = {}
@@ -148,7 +181,7 @@ class GCrawler(Resource):
                 item['text'] = meta_description.text
             
             output.append(item)
-        return output
+        return {'output':output,'unit_converter':unit_converter}
 
     def get_dictionary(self,response):
         soup = BeautifulSoup(response.text,"html.parser")
@@ -156,30 +189,33 @@ class GCrawler(Resource):
         dictionary = soup.find('div',{"class":"obcontainer"})
         dfn = {'dictionary':[]}
         if dictionary:
-            dfn['word'] = dictionary.find('div',{"class":"jY7QFf"}).text
-            #def_mod = dictionary.find('div',{"class":"vmod"})
-            def_type = dictionary.find_all('div',{"jsname":"r5Nvmf",'class':'vmod'})
-            for type in def_type:
-                dfnlist = {'def_list':[]}
-                dfnlist['type'] = type.find('div',{"jsname":"jUIvqc",'class':'xpdxpnd'}).text
-                def_mod = type.select("ol[class='eQJLDd']")
-                for mod in def_mod:
-                    lis = mod.find_all('li',{"jsname":"gskXhf"})
-                    for li in lis:
-                        try:
-                            item = {
-                                'definition': li.find('div',{'data-dobid':"dfn"}).text,
-                                'example': li.select("div[class='vmod']")[1].text,
-                                'similer':[]
-                            }
-                            simis = li.find_all('div',{"role":'listitem'})                            
-                            for smi in simis:
-                                item['similer'].append(smi.text)
-                                print(smi.text)
-                            dfnlist['def_list'].append(item)
-                        except:
-                            pass
-                dfn['dictionary'].append(dfnlist)
+            try:
+                dfn['word'] = dictionary.find('div',{"class":"jY7QFf"}).text
+                #def_mod = dictionary.find('div',{"class":"vmod"})
+                def_type = dictionary.find_all('div',{"jsname":"r5Nvmf",'class':'vmod'})
+                for type in def_type:
+                    dfnlist = {'def_list':[]}
+                    dfnlist['type'] = type.find('div',{"jsname":"jUIvqc",'class':'xpdxpnd'}).text
+                    def_mod = type.select("ol[class='eQJLDd']")
+                    for mod in def_mod:
+                        lis = mod.find_all('li',{"jsname":"gskXhf"})
+                        for li in lis:
+                            try:
+                                item = {
+                                    'definition': li.find('div',{'data-dobid':"dfn"}).text,
+                                    'example': li.select("div[class='vmod']")[1].text,
+                                    'similer':[]
+                                }
+                                simis = li.find_all('div',{"role":'listitem'})                            
+                                for smi in simis:
+                                    item['similer'].append(smi.text)
+                                    print(smi.text)
+                                dfnlist['def_list'].append(item)
+                            except:
+                                pass
+                    dfn['dictionary'].append(dfnlist)
+            except:
+                pass
         return dfn
 
     def get_popular_products(self,response):
@@ -355,7 +391,8 @@ class GCrawler(Resource):
         return {
             "keyword":query,
             'direct_ans':direct_ans,
-            "feature_snippet":feature_snippet,
+            'unit_converter':feature_snippet['unit_converter'],
+            "meta_description":feature_snippet['output'],
             "people_also_ask":faqs,
             "knowledge_panel":information,
             "related_keywords":rel_keywords,
