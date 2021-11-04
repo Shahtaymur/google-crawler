@@ -56,6 +56,7 @@ class GCrawler(Resource):
             response = session.get(url,proxies=proxy)
             if response.status_code != 200:
                 exit({"message":"someting wrong pls try again later"})
+                #return {"message":"someting wrong pls try again later"},429
             session.close()
             return response
 
