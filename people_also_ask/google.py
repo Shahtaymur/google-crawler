@@ -9,6 +9,8 @@ from typing import List, Dict, Any, Optional, Generator
 from random import choice
 from contextlib import closing
 import config
+import os
+
 
 from people_also_ask.tools import retryable
 from people_also_ask.parser import (
@@ -30,13 +32,15 @@ HEADERS = {
     "Chrome/84.0.4147.135 Safari/537.36"
     
 }
-# with open('browser_agents.txt', 'r') as file_handle:
-#     USER_AGENTS = file_handle.read().splitlines()
+path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'browser_agents.txt'))
+with open(path, 'r') as file_handle:
+    USER_AGENTS = file_handle.read().splitlines()
 
-# HEADERS = [
-#             ('User-Agent', choice(USER_AGENTS)),
-#             ("Accept-Language", "en-US,en;q=0.5"),
-#         ]
+DEFAULT_HEADERS = {
+    'User-Agent': choice(USER_AGENTS)
+}
+
+
 SESSION = requests.Session()
 NB_TIMES_RETRY = 3
 NB_REQUESTS_LIMIT = os.environ.get(
@@ -57,9 +61,9 @@ def search(keyword: str) -> Optional[BeautifulSoup]:
     params = {"q": keyword}
     try:
         with semaphore:
-            time.sleep(0.5)  # be nice with google :)
+            time.sleep(1)  # be nice with google :)
             proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
-            response = SESSION.get(URL, params=params, headers=HEADERS,proxies=proxy)
+            response = SESSION.get(URL, params=params, headers=DEFAULT_HEADERS,proxies=proxy)
     except Exception:
         raise GoogleSearchRequestFailedError(URL, keyword)
     if response.status_code != 200:

@@ -1,3 +1,4 @@
+import flask
 import people_also_ask
 import json
 import requests
@@ -12,13 +13,15 @@ from flask import request
 from random import choice
 import config
 
-# with open('browser_agents.txt', 'r') as file_handle:
-#     USER_AGENTS = file_handle.read().splitlines()
 
-# DEFAULT_HEADERS = [
-#             ('User-Agent', choice(USER_AGENTS)),
-#             ("Accept-Language", "en-US,en;q=0.5"),
-#         ]
+with open('browser_agents.txt', 'r') as file_handle:
+    USER_AGENTS = file_handle.read().splitlines()
+
+URL = "https://www.google.com/search"
+SESSION = requests.Session()
+DEFAULT_HEADERS = {
+    'User-Agent': choice(USER_AGENTS)
+}
 # SEARCH_URL = "https://google.com/search"
 class GCrawler(Resource):
 
@@ -49,14 +52,31 @@ class GCrawler(Resource):
         """
 
         try:
-            session = HTMLSession()
-            time.sleep(0.5)
+            #session = HTMLSession()
+            time.sleep(1)  # be nice with google :)
+            params = {"q": self.query}
             proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
-            #r = requests.get(url , proxies=proxy)
-            response = session.get(url,proxies=proxy)
+            #response = SESSION.get(URL, params=params, headers=DEFAULT_HEADERS,proxies=proxy)
+            query = urllib.parse.quote_plus(self.query)
+            escaped = 'https://google.com/search?q='+query
+            
+            headers = {
+                'Host': 'google.com',
+                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.5',
+                'Accept-Encoding': 'deflate',
+                'Connection': 'keep-alive',
+                #'Cookie': cookie,
+                'Upgrade-Insecure-Requests': '1',
+                'Cache-Control': 'max-age=0',
+                'TE': 'Trailers'
+                }
+            response = requests.get(url, headers=headers,proxies=proxy)
+            
             if response.status_code != 200:
-                exit({"message":"someting wrong pls try again later"})
-            session.close()
+                print('>> something wrong.{}'.format(response.reason))
+            SESSION.close()
             return response
 
         except requests.exceptions.RequestException as e:
@@ -106,17 +126,18 @@ class GCrawler(Resource):
         css_identifier_title = "h3"
         css_identifier_link = ".yuRUbf a"
         css_identifier_text = ".IsZvec"
-        results = response.html.find(css_identifier_result)
-        feature_snippet = response.html.find('h2')
+        soup = BeautifulSoup(response.content,"html.parser")
+        results = soup.find_all('div','tF2Cxc')
+        feature_snippet = soup.find('h2')
          
         output = []
         answer = []
         unit_converter = {}
         for snippet in feature_snippet:
-            if snippet.full_text == "Featured snippet from the web":
+            if snippet.text == "Featured snippet from the web":
                 answer.append(people_also_ask.get_related_answer(self.query,True))
                 break
-            elif snippet.full_text == "Unit converter":
+            elif snippet.text == "Unit converter":
                 soup = BeautifulSoup(response.content,"html.parser")
                 card = soup.find('div',{'data-hveid':'CAIQAQ'})
                 unit_converter['type'] = []
@@ -151,36 +172,37 @@ class GCrawler(Resource):
         for i,result in enumerate(results):
             print('>> get meta description...')
             item = {}
-            item['title'] = result.find(css_identifier_title, first=True).text
-            item['link'] = result.find(css_identifier_link, first=True).attrs['href']
-            if i == 0 and len(answer) > 0 and not answer == '':
-                item['snippet'] = answer[0]
-            else:
-                meta_description = result.find(css_identifier_text, first=True)
-                table  = meta_description.find('table')
-                if table:
-                    try:
-                        soup = BeautifulSoup(result.html,"html.parser")
-                        tr = soup.find_all('tr')
-                        header = []
-                        values = []
-                        for row in tr:
-                            th = row.find_all('th')
-                            if th:
-                                for x in th:
-                                    header.append(x.text)
-                            else:
-                                td = row.find_all('td')
-                                value = []
-                                for x in td:
-                                    value.append(x.text)
-                                values.append(value)
-                        item['meta_data'] = {'columns':header,'values':values}
-                    except:
-                        pass
-                item['text'] = meta_description.text
-            
-            output.append(item)
+            if result.find('h3'):
+                item['title'] = result.find('h3').text
+                item['link'] = result.find('a').attrs['href']
+                if i == 0 and len(answer) > 0 and not answer == '':
+                    item['snippet'] = answer[0]
+                else:
+                    meta_description = result.find('div','IsZvec')
+                    table  = meta_description.find('table')
+                    if table:
+                        try:
+                            soup = BeautifulSoup(result.html,"html.parser")
+                            tr = soup.find_all('tr')
+                            header = []
+                            values = []
+                            for row in tr:
+                                th = row.find_all('th')
+                                if th:
+                                    for x in th:
+                                        header.append(x.text)
+                                else:
+                                    td = row.find_all('td')
+                                    value = []
+                                    for x in td:
+                                        value.append(x.text)
+                                    values.append(value)
+                            item['meta_data'] = {'columns':header,'values':values}
+                        except:
+                            pass
+                    item['text'] = meta_description.text
+                
+                output.append(item)
         return {'output':output,'unit_converter':unit_converter}
 
     def get_dictionary(self,response):
@@ -326,8 +348,9 @@ class GCrawler(Resource):
             title = question.split('Search for:')[0]
             #time.sleep(0.5)
             answer = people_also_ask.get_related_answer(title,True)
-            data.append(answer)
-            print('>> get related answer of "{question}" - "{answer}"'.format(question=title,answer=answer['snippet_type']))
+            if not answer == '':
+                data.append(answer)
+                print('>> get related answer of "{question}" - "{answer}"'.format(question=title,answer=answer['snippet_type']))
         return data
 
     def extract_information(self,soup : BeautifulSoup):
