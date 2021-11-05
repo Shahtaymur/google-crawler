@@ -12,16 +12,20 @@ from flask_restful import Resource, Api, reqparse
 from flask import request
 from random import choice
 import config
+from fake_useragent import UserAgent
 
 
 with open('browser_agents.txt', 'r') as file_handle:
     USER_AGENTS = file_handle.read().splitlines()
 
 URL = "https://www.google.com/search"
-SESSION = requests.Session()
+#SESSION = requests.Session()
+
+referrer = 'https://www.google.com/'
 DEFAULT_HEADERS = {
     'User-Agent': choice(USER_AGENTS)
 }
+
 # SEARCH_URL = "https://google.com/search"
 class GCrawler(Resource):
 
@@ -56,28 +60,11 @@ class GCrawler(Resource):
             time.sleep(1)  # be nice with google :)
             params = {"q": self.query}
             proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
-            #response = SESSION.get(URL, params=params, headers=DEFAULT_HEADERS,proxies=proxy)
-            query = urllib.parse.quote_plus(self.query)
-            escaped = 'https://google.com/search?q='+query
-            
-            headers = {
-                'Host': 'google.com',
-                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-                'Accept-Language': 'en-US,en;q=0.5',
-                'Accept-Encoding': 'deflate',
-                'Connection': 'keep-alive',
-                #'Cookie': cookie,
-                'Upgrade-Insecure-Requests': '1',
-                'Cache-Control': 'max-age=0',
-                'TE': 'Trailers'
-                }
-            response = requests.get(url, headers=headers,proxies=proxy)
-            
-            if response.status_code != 200:
-                print('>> something wrong.{}'.format(response.reason))
-            SESSION.close()
-            return response
+            req = requests.get(url, proxies=proxy, headers=DEFAULT_HEADERS)
+            if req.status_code != 200:
+                print('>> something wrong.{}'.format(req.reason))
+            #session.close()
+            return req
 
         except requests.exceptions.RequestException as e:
             print(e)
@@ -126,7 +113,7 @@ class GCrawler(Resource):
         css_identifier_title = "h3"
         css_identifier_link = ".yuRUbf a"
         css_identifier_text = ".IsZvec"
-        soup = BeautifulSoup(response.content,"html.parser")
+        soup = BeautifulSoup(response.text,"html.parser")
         results = soup.find_all('div','tF2Cxc')
         feature_snippet = soup.find('h2')
          
@@ -135,6 +122,8 @@ class GCrawler(Resource):
         unit_converter = {}
         for snippet in feature_snippet:
             if snippet.text == "Featured snippet from the web":
+                fea_sni = soup.find('div','V3FYCf')
+                
                 answer.append(people_also_ask.get_related_answer(self.query,True))
                 break
             elif snippet.text == "Unit converter":
@@ -346,7 +335,7 @@ class GCrawler(Resource):
         rel_questions = people_also_ask.get_related_questions(keyword)
         for question in rel_questions:
             title = question.split('Search for:')[0]
-            #time.sleep(0.5)
+            time.sleep(0.5)
             answer = people_also_ask.get_related_answer(title,True)
             if not answer == '':
                 data.append(answer)
