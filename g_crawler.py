@@ -1,5 +1,5 @@
 import flask
-import people_also_ask
+#import people_also_ask
 import json
 import requests
 import urllib
@@ -63,7 +63,7 @@ class GCrawler(Resource):
             req = requests.get(url, proxies=proxy, headers=DEFAULT_HEADERS)
             if req.status_code != 200:
                 print('>> something wrong.{}'.format(req.reason))
-            #session.close()
+            #req.close()
             return req
 
         except requests.exceptions.RequestException as e:
@@ -113,7 +113,7 @@ class GCrawler(Resource):
         css_identifier_title = "h3"
         css_identifier_link = ".yuRUbf a"
         css_identifier_text = ".IsZvec"
-        soup = BeautifulSoup(response.text,"html.parser")
+        soup = BeautifulSoup(response.content,"html.parser")
         results = soup.find_all('div','tF2Cxc')
         feature_snippet = soup.find('h2')
          
@@ -121,10 +121,9 @@ class GCrawler(Resource):
         answer = []
         unit_converter = {}
         for snippet in feature_snippet:
-            if snippet.text == "Featured snippet from the web":
-                fea_sni = soup.find('div','V3FYCf')
-                
-                answer.append(people_also_ask.get_related_answer(self.query,True))
+            if snippet == "Featured snippet from the web":
+                answer.append(self.get_answer(soup))
+                #answer.append(people_also_ask.get_related_answer(self.query,True))
                 break
             elif snippet.text == "Unit converter":
                 soup = BeautifulSoup(response.content,"html.parser")
@@ -172,27 +171,66 @@ class GCrawler(Resource):
                     if table:
                         try:
                             soup = BeautifulSoup(result.html,"html.parser")
-                            tr = soup.find_all('tr')
-                            header = []
-                            values = []
-                            for row in tr:
-                                th = row.find_all('th')
-                                if th:
-                                    for x in th:
-                                        header.append(x.text)
-                                else:
-                                    td = row.find_all('td')
-                                    value = []
-                                    for x in td:
-                                        value.append(x.text)
-                                    values.append(value)
-                            item['meta_data'] = {'columns':header,'values':values}
+                            item['meta_data'] = self.get_table(soup)
                         except:
                             pass
                     item['text'] = meta_description.text
                 
                 output.append(item)
         return {'output':output,'unit_converter':unit_converter}
+
+    def get_answer(self,document):
+        fea_sni = document.find('div','V3FYCf')
+        data = {}
+        data['heading'] = fea_sni.find('div',{'role':'heading'}).text
+        title = fea_sni.find('div','yuRUbf')
+        if title:
+            data['title'] = title.find('h3').text
+            data['link'] = title.find('a').attrs['href']
+        if fea_sni.find('ol'):
+            data['snippet_data'] = self.get_list(fea_sni,'ol')
+            data['snippet_type'] = 'Ordered Featured Snippet'
+            print('>> ordered list found in feature snippet')
+        elif fea_sni.find('ul'):
+            data['snippet_data'] = self.get_list(fea_sni,'ul')
+            data['snippet_type'] = 'Unordered Featured Snippet'
+            print('>> unordered list found in feature snippet')
+        elif fea_sni.find('table'):
+            data['snippet_data'] = self.get_table(fea_sni)
+            data['snippet_type'] = 'Table Featured Snippet'
+            print('>> table found in feature snippet')
+        else:
+            data['snippet_type'] = 'Definition Featured Snippet'
+        return data
+
+    def get_list(self,document,type):
+        ol = document.find(type)
+        data = []
+        try:
+            list = ol.find_all('li')
+            for li in list:
+                data.append(li.text)
+                print(li.text)
+        except:
+            pass
+        return data
+
+    def get_table(self,document):
+        tr = document.find_all('tr')
+        header = []
+        values = []
+        for row in tr:
+            th = row.find_all('th')
+            if th:
+                for x in th:
+                    header.append(x.text)
+            else:
+                td = row.find_all('td')
+                value = []
+                for x in td:
+                    value.append(x.text)
+                values.append(value)
+        return {'columns':header,'values':values}
 
     def get_dictionary(self,response):
         soup = BeautifulSoup(response.text,"html.parser")
@@ -329,14 +367,15 @@ class GCrawler(Resource):
         return recip_list
 
     #people_alse_ask
-    def extractQuestionData(self,keyword):
+    def extractQuestionData(self,document):
         data = []
         print('>> get related questions..')
-        rel_questions = people_also_ask.get_related_questions(keyword)
+        soup = BeautifulSoup(document.content,"html.parser")
+        rel_questions = soup.find_all('div',{'jsname':'Cpkphb'})
         for question in rel_questions:
-            title = question.split('Search for:')[0]
-            time.sleep(0.5)
-            answer = people_also_ask.get_related_answer(title,True)
+            title = question.find('div',{'jsname':'jIA8B'}).text
+            #time.sleep(0.5)
+            answer = self.get_answer(question)
             if not answer == '':
                 data.append(answer)
                 print('>> get related answer of "{question}" - "{answer}"'.format(question=title,answer=answer['snippet_type']))
@@ -386,7 +425,7 @@ class GCrawler(Resource):
         soup = BeautifulSoup(response.content, "lxml")
         faqs = None
         if self.add_faqs == 'yes':
-            faqs = self.extractQuestionData(query)
+            faqs = self.extractQuestionData(response)
         information = self.extract_information(soup)
         rel_keywords = self.get_rel_keywords(response)
         direct_ans = {}
