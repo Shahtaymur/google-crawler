@@ -1,10 +1,7 @@
 import flask
-#import people_also_ask
 import json
 import requests
 import urllib
-import pandas as pd
-from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 import time
 #import urllib.request as urllib
@@ -13,8 +10,9 @@ from flask import request
 from random import choice
 import config
 from fake_useragent import UserAgent
+import logging
 
-
+logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 with open('browser_agents.txt', 'r') as file_handle:
     USER_AGENTS = file_handle.read().splitlines()
 
@@ -54,67 +52,38 @@ class GCrawler(Resource):
         Returns:
             response (object): HTTP response object from requests_html. 
         """
-
         try:
             #session = HTMLSession()
             time.sleep(1)  # be nice with google :)
             params = {"q": self.query}
             proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
+            print('>> trying to get result from "{}"'.format(url))
             req = requests.get(url, proxies=proxy, headers=DEFAULT_HEADERS)
             if req.status_code != 200:
-                print('>> something wrong.{}'.format(req.reason))
+                print('>> error occured.{}'.format(req.reason))
             #req.close()
             return req
-
         except requests.exceptions.RequestException as e:
             print(e)
-
-    def scrape_google(self,query):
-
-        #query = urllib.parse.quote_plus(query)
-        response = self.get_source(query)
-
-        links = list(response.html.absolute_links)
-        google_domains = ('https://www.google.', 
-                        'https://google.', 
-                        'https://webcache.googleusercontent.', 
-                        'http://webcache.googleusercontent.', 
-                        'https://policies.google.',
-                        'https://support.google.',
-                        'https://maps.google.')
-
-        for url in links[:]:
-            if url.startswith(google_domains):
-                links.remove(url)
-
-        return links
+            logging.error('error occured.{}'.format(str(e)))
 
     def get_results(self,query):
-        
+        #create url
         query = urllib.parse.quote_plus(query)
         response = self.get_source('https://www.google.com/search?q='+query)
-        # headers = {
-        #     "User-Agent":
-        #     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3538.102 Safari/537.36 Edge/18.19582"
-        # }
-
-        # params = {
-        #     'q': query,
-        #     'hl': 'en',
-        #     'num': '100'
-        # }
-        # response = requests.get("https://www.google.com/search", headers=headers, params=params)
-        #time.sleep(2)
+        print('>> request on google on "{}"'.format(query))
         return response
         
     def parse_results(self,response):
-        
-        css_identifier_result = ".tF2Cxc"
-        css_identifier_title = "h3"
-        css_identifier_link = ".yuRUbf a"
-        css_identifier_text = ".IsZvec"
+        print('>> trying to get meta description from google')
         soup = BeautifulSoup(response.content,"html.parser")
+
+        #get meta description on web page
         results = soup.find_all('div','tF2Cxc')
+        if len(results) == 0:
+            soup = BeautifulSoup(response.text,"html.parser")
+
+        #check feature snippet on web page
         feature_snippet = soup.find('h2')
          
         output = []
@@ -122,10 +91,12 @@ class GCrawler(Resource):
         unit_converter = {}
         for snippet in feature_snippet:
             if snippet == "Featured snippet from the web":
+                #get feature snippet from page response
                 answer.append(self.get_answer(soup))
-                #answer.append(people_also_ask.get_related_answer(self.query,True))
                 break
-            elif snippet.text == "Unit converter":
+            elif snippet == "Unit converter":
+                #get unit converter from page response
+                print('>> crawl unit converter')
                 soup = BeautifulSoup(response.content,"html.parser")
                 card = soup.find('div',{'data-hveid':'CAIQAQ'})
                 unit_converter['type'] = []
@@ -154,7 +125,8 @@ class GCrawler(Resource):
                             else:
                                 unit_converter['r_type'].append(x.text)
                         unit_converter['formula'] = card.find('div',{'dtp2jf'}).find('table').text
-                    except:
+                    except Exception as e:
+                        logging.error('error occured.{}'.format(str(e)))
                         pass
                 
         for i,result in enumerate(results):
@@ -170,9 +142,9 @@ class GCrawler(Resource):
                     table  = meta_description.find('table')
                     if table:
                         try:
-                            soup = BeautifulSoup(result.html,"html.parser")
-                            item['meta_data'] = self.get_table(soup)
-                        except:
+                            item['meta_data'] = self.get_table(table)
+                        except Exception as e:
+                            logging.error('error occured.{}'.format(str(e)))
                             pass
                     item['text'] = meta_description.text
                 
@@ -180,9 +152,13 @@ class GCrawler(Resource):
         return {'output':output,'unit_converter':unit_converter}
 
     def get_answer(self,document):
+        print('>> trying to scrape feature snipper from page response')
         fea_sni = document.find('div','V3FYCf')
         data = {}
-        data['heading'] = fea_sni.find('div',{'role':'heading'}).text
+        headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+        for i,heading in enumerate(headings):
+            data['heading' if i == 0 else 'heading{}'.format(i+1)] = heading.text
+            
         title = fea_sni.find('div','yuRUbf')
         if title:
             data['title'] = title.find('h3').text
@@ -201,6 +177,12 @@ class GCrawler(Resource):
             print('>> table found in feature snippet')
         else:
             data['snippet_type'] = 'Definition Featured Snippet'
+        try:
+            data['date'] = fea_sni.find('div','xzrguc').text
+        except Exception as e:
+            logging.error('error occured.{}'.format(str(e)))
+            pass
+
         return data
 
     def get_list(self,document,type):
@@ -210,8 +192,9 @@ class GCrawler(Resource):
             list = ol.find_all('li')
             for li in list:
                 data.append(li.text)
-                print(li.text)
-        except:
+                #print(li.text)
+        except Exception as e:
+            logging.error('error occured.{}'.format(str(e)))
             pass
         return data
 
@@ -260,10 +243,12 @@ class GCrawler(Resource):
                                     item['similer'].append(smi.text)
                                     print(smi.text)
                                 dfnlist['def_list'].append(item)
-                            except:
+                            except Exception as e:
+                                logging.error('error occured.{}'.format(str(e)))
                                 pass
                     dfn['dictionary'].append(dfnlist)
-            except:
+            except Exception as e:
+                logging.error('error occured.{}'.format(str(e)))
                 pass
         return dfn
 
@@ -294,7 +279,8 @@ class GCrawler(Resource):
                             'link':'https://www.google.com/{}'.format(list.find('a')['href'])
                         }
                         top_list['data'].append(item)
-                    except:
+                    except Exception as e:
+                        logging.error('error occured.{}'.format(str(e)))
                         pass
 
         return top_list
@@ -316,7 +302,8 @@ class GCrawler(Resource):
                         link = video.find('a')['href']
                         date = video.find('div','hMJ0yc').text
                         raw_data = video.find('a')['aria-label']
-                    except:
+                    except Exception as e:
+                        logging.error('error occured.{}'.format(str(e)))
                         pass
                     if not title == None:
                         item = {
@@ -326,7 +313,8 @@ class GCrawler(Resource):
                             'raw_data' : raw_data
                         }
                         video_list['data'].append(item)
-                except:
+                except Exception as e:
+                    logging.error('error occured.{}'.format(str(e)))
                     pass
 
         return video_list
@@ -350,7 +338,8 @@ class GCrawler(Resource):
                         link = 'https://www.google.com/{}'.format(recip.find('a')['href'])
                         duration = recip.find('div',{'class':'L5KuY Eq0J8'}).text
                         description = recip.find('div',{'class':'LDr9cf L5KuY'}).text
-                    except:
+                    except Exception as e:
+                        logging.error('error occured.{}'.format(str(e)))
                         pass
                     if not title == None:
                         item = {
@@ -362,6 +351,7 @@ class GCrawler(Resource):
                         }
                         recip_list['data'].append(item)
                 except Exception as e:
+                    logging.error('error occured.{}'.format(str(e)))
                     pass
 
         return recip_list
@@ -371,12 +361,17 @@ class GCrawler(Resource):
         data = []
         print('>> get related questions..')
         soup = BeautifulSoup(document.content,"html.parser")
-        rel_questions = soup.find_all('div',{'jsname':'Cpkphb'})
+        rel_questions = soup.find_all('div',{'class':'related-question-pair'})
         for question in rel_questions:
             title = question.find('div',{'jsname':'jIA8B'}).text
-            #time.sleep(0.5)
-            answer = self.get_answer(question)
-            if not answer == '':
+            time.sleep(1)
+            response = self.get_results(title)
+            soup = BeautifulSoup(response.content,"html.parser")
+            results = soup.find_all('div','tF2Cxc')
+            if len(results) == 0:
+                soup = BeautifulSoup(response.text,"html.parser")
+            answer = self.get_answer(soup)
+            if answer:
                 data.append(answer)
                 print('>> get related answer of "{question}" - "{answer}"'.format(question=title,answer=answer['snippet_type']))
         return data
@@ -393,7 +388,8 @@ class GCrawler(Resource):
                 if(attribute.text):
                     info = attribute.text.split(":",1)
                     information['attributes'].append({'key':info[0].lower().replace("\n",""),'value':info[1].lower().replace("\n","")})
-        except:
+        except Exception as e:
+            logging.error('error occured.{}'.format(str(e)))
             pass
         return information
 
@@ -401,7 +397,7 @@ class GCrawler(Resource):
         print('>> get related keyword...')
         soup = BeautifulSoup(response.text,"html.parser")
         keywords = []
-        keys = soup.find_all("div",{"class":"M7lz2c XC18Gb diAzE"})
+        keys = soup.find_all("div",{'class','s2TyX ueVdTc'})
         for key in keys:
             if key.text:
                 keywords.append(key.title)
@@ -437,7 +433,8 @@ class GCrawler(Resource):
                 'answer' : direct.find('a').text,
                 'link' : 'https://www.google.com{}'.format(direct.find('a')['href'])
             }
-        except:
+        except Exception as e:
+            logging.error('error occured.{}'.format(str(e)))
             pass
 
         print('>> api calling end...')
