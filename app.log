@@ -1,1 +1,975 @@
 werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:37:23] "[35m[1mGET /search?q=LED%20Submersible%20Lights&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:37:48] "GET /search?q=Portable%20Projector&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:38:05] "[35m[1mGET /search?q=Bluetooth%20Speaker&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:38:33] "GET /search?q=Smart%20Watch&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:38:57] "GET /search?q=Temporary%20Tattoos&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:39:21] "[35m[1mGET /search?q=Bookends&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:39:43] "GET /search?q=Neck%20Massager&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:40:07] "GET /search?q=Facial%20Cleanser&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:40:33] "GET /search?q=Vegetable%20Chopper&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:40:53] "[35m[1mGET /search?q=Back%20Cushion&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:41:08] "[35m[1mGET /search?q=Portable%20Blender&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:41:40] "GET /search?q=Nail%20Polish&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:41:54] "[35m[1mGET /search?q=Wireless%20Phone%20Chargers&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:42:10] "[35m[1mGET /search?q=Phone%20Lenses&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:42:33] "GET /search?q=Shapewear&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:42:40] "GET /search?q=Strapless%20Backless%20Bra&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:42:47] "GET /search?q=Doormats&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:43:06] "GET /search?q=Car%20Phone%20Holder&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:43:32] "GET /search?q=Home%20Security%20IP%20Camera&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:43:56] "GET /search?q=Wifi%20Repeater&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:44:02] "GET /search?q=Laptop%20Accessories&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:44:24] "GET /search?q=Posture%20Corrector&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:44:48] "[35m[1mGET /search?q=Electric%20Soldering%20Iron%20Gun&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:45:02] "GET /search?q=Manicure%20Milling%20Drill%20Bit&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:45:26] "GET /search?q=Flexible%20Garden%20Hose&faqs=yes HTTP/1.1" 200 -
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:45:37] "[35m[1mGET /search?q=One%20Piece%20Swimsuit&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:45:59] "GET /search?q=Waterproof%20Eyebrow%20Liner&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:46:21] "GET /search?q=Cat%20Massage%20Comb&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:46:27] "GET /search?q=Breathable%20Mesh%20Running%20Shoes%20–%20Summer%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:46:32] "GET /search?q=Portable%20Electric%20Ionic%20Hairbrush%20–%20Summer%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:46:38] "GET /search?q=Beach%20Towels%20–%20Summer%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:46:44] "GET /search?q=Baby%20Kids%20Water%20Play%20Mat%20–%20Summer%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:47:06] "GET /search?q=Plush%20Blankets%20–%20Winter%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:47:12] "GET /search?q=Winter%20Coats%20–%20Winter%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:47:18] "GET /search?q=Shoe%20Dryer%20–%20Winter%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:47:23] "GET /search?q=Touchscreen%20Gloves%20–%20Winter%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:47:29] "GET /search?q=Waterproof%20Pants%20–%20Winter%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:47:34] "GET /search?q=Bear%20Claws%20–%20Spring%20Products&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:47:40] "GET /search?q=Hiking%20Backpacks%20–%20Spring%20Products&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:47:45] "GET /search?q=Minimalist%20Wallets%20–%20Spring%20Products&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:47:52] "GET /search?q=Waterproof%20Shoe%20Cover%20–%20Autumn%20(Fall)%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:47:57] "GET /search?q=Hooded%20Raincoats%20–%20Autumn%20(Fall)%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:48:18] "GET /search?q=Laser%20Hair%20Removal%20Machines&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:48:34] "[35m[1mGET /search?q=Portable%20Car%20Vacuum&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:49:01] "GET /search?q=Baby%20Swings&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:49:29] "GET /search?q=Matcha%20Tea&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:49:54] "GET /search?q=Eyebrow%20Razor&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:50:18] "GET /search?q=Seat%20Cushions&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:50:41] "[35m[1mGET /search?q=Phone%20Tripod&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:51:05] "GET /search?q=Portable%20Solar%20Panels&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:51:14] "GET /search?q=apple&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:51:36] "GET /search?q=samsung&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:51:58] "GET /search?q=motorola&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:52:22] "[35m[1mGET /search?q=sony&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:52:29] "GET /search?q=love&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:52:49] "[35m[1mGET /search?q=imaran%20khan&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:53:26] "GET /search?q=what%20is%20node%20js&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:53:48] "GET /search?q=node%20js&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:54:10] "GET /search?q=how%20to%20run%20python%20code&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:54:31] "GET /search?q=best%20games%20in%202021&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 14:54:37] "GET /search?q=upcoming%20movies&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:04:12] "[35m[1mGET /search?q=Automobiles%20Accessories&faqs=yes HTTP/1.1[0m" 500 -
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:04:23] "[35m[1mGET /search?q=Baby%20Care%20Products&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:04:30] "GET /search?q=Beauty%20&%20Healthcare%20Products&faqs=yes HTTP/1.1" 200 -
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:04:40] "[35m[1mGET /search?q=Computer%20&%20Office%20Products&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:04:48] "GET /search?q=Home%20&%20Gardening&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:04:55] "GET /search?q=Kitchen%20&%20Dining%20Items&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:05:14] "[35m[1mGET /search?q=Mother%20&%20Kids&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:05:37] "GET /search?q=Pet%20Products&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:06:00] "GET /search?q=Wearable%20Devices&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.list index out of range
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:06:24] "GET /search?q=Security%20&%20Protection&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:06:46] "GET /search?q=Hair%20accessories&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:07:04] "GET /search?q=Beauty%20and%20healthcare%20products&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:07:26] "GET /search?q=Pet%20products&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:07:49] "GET /search?q=Hi-tech%20products%20&%20accessories&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:08:13] "GET /search?q=Fashion%20items&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:08:20] "GET /search?q=Sport%20&%20traveling%20products&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:08:27] "GET /search?q=Car%20products&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:08:33] "GET /search?q=Fine%20jewelryHair%20Wig&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:08:55] "GET /search?q=Headscarf&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:09:22] "GET /search?q=Magnetic%20eyelashes&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:09:53] "GET /search?q=Nail%20extensions&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:10:01] "GET /search?q=Green%20Powder&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:10:19] "GET /search?q=Car%20phone%20holder&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:10:46] "GET /search?q=Wireless%20charger&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:10:53] "GET /search?q=Phone%20cases&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:11:16] "GET /search?q=Wearable%20devices&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:11:33] "[35m[1mGET /search?q=Pet%20food&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:11:41] "GET /search?q=Pet%20bathing%20tool&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:11:48] "GET /search?q=Pet%20carrier&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:11:55] "GET /search?q=Neon%20clothes&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:12:19] "[35m[1mGET /search?q=Collared%20clothes&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:12:41] "GET /search?q=Bra-top%20craze&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:13:02] "GET /search?q=Shapewear&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:13:08] "GET /search?q=Sport%20bottle&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:13:31] "GET /search?q=Luggage%20suitcase&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:13:50] "GET /search?q=Mesh%20shoes&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:14:09] "GET /search?q=Rear%20cameras&faqs=yes HTTP/1.1" 200 -
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:14:20] "[35m[1mGET /search?q=Car%20led%20light&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:14:43] "GET /search?q=Car%20covers&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:14:49] "GET /search?q=Second-hand%20jewelry&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:15:06] "[35m[1mGET /search?q=Layering&faqs=yes HTTP/1.1[0m" 500 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python39\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\Python39\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "e:\google-crawler\g_crawler.py", line 41, in get
+    self.result =  self.google_search(self.query)
+  File "e:\google-crawler\g_crawler.py", line 426, in google_search
+    faqs = self.extractQuestionData(response)
+  File "e:\google-crawler\g_crawler.py", line 375, in extractQuestionData
+    answer = self.get_answer(soup)
+  File "e:\google-crawler\g_crawler.py", line 160, in get_answer
+    headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+AttributeError: 'NoneType' object has no attribute 'find_all'
+werkzeug - INFO - 127.0.0.1 - - [08/Nov/2021 15:15:28] "[35m[1mGET /search?q=Stackable%20rings&faqs=yes HTTP/1.1[0m" 500 -

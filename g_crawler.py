@@ -39,8 +39,8 @@ class GCrawler(Resource):
         self.query = q_string
         self.add_faqs = add_faqs
         self.result =  self.google_search(self.query)
-        # with open(f'{self.query}.json', 'w', encoding ='utf8') as json_file:
-        #     json.dump(self.result, json_file, ensure_ascii = False)
+        with open(f'{self.query}.json', 'w', encoding ='utf8') as json_file:
+            json.dump(self.result, json_file, ensure_ascii = False)
         return {'data': self.result}, 200
 
     def get_source(self,url):
@@ -55,13 +55,15 @@ class GCrawler(Resource):
         try:
             #session = HTMLSession()
             time.sleep(1)  # be nice with google :)
-            params = {"q": self.query}
+            #params = {"q": self.query}
+            s = requests.Session()            
             proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
             print('>> trying to get result from "{}"'.format(url))
-            req = requests.get(url, proxies=proxy, headers=DEFAULT_HEADERS)
+            s.proxies = proxy
+            req = s.get(url, proxies=proxy, headers=DEFAULT_HEADERS)
             if req.status_code != 200:
                 print('>> error occured.{}'.format(req.reason))
-            #req.close()
+            s.close()
             return req
         except requests.exceptions.RequestException as e:
             print(e)
