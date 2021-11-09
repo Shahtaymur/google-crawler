@@ -1,5 +1,6 @@
 import requests
 import json
+import pandas as pd
 keyword = [
 'LED Submersible Lights',
 'Portable Projector',
@@ -51,9 +52,8 @@ keyword = [
 'Seat Cushions',
 'Phone Tripod',
 'Portable Solar Panels',
-'apple','samsung','motorola','sony','love','imaran khan','what is node js','node js','how to run python code','best games in 2021','upcoming movies']
-
-keyword = ['Automobiles Accessories',
+'apple','samsung','motorola','sony','love','imaran khan','what is node js','node js','how to run python code','best games in 2021','upcoming movies',
+'Automobiles Accessories',
 'Baby Care Products',
 'Beauty & Healthcare Products',
 'Computer & Office Products',
@@ -97,9 +97,28 @@ keyword = ['Automobiles Accessories',
 'Layering',
 'Stackable rings']
 
-for i in range(0,10):
-    for key in keyword:
-        r = requests.get('http://127.0.0.1:5000/search?q={}&faqs=yes'.format(key))
-        data = json.loads(r.content)
-        print(data)
+
+
+df_list = pd.read_html('list.html')
+
+for i, df in enumerate(df_list):
+    for game in df.Game:
+        keyword.append(game)
+        print(game)
+    for genere in df.Genre:
+        keyword.append(genere)
+        print(genere)
+    for publisher in df.Publisher:
+        keyword.append(publisher)
+        print(publisher)
+
+orignal = []
+for key in keyword:
+    if not key in orignal:
+        orignal.append(key)
+
+for key in orignal:
+    r = requests.get('http://127.0.0.1:5000/search?q={}&faqs=yes'.format(key))
+    data = json.loads(r.content)
+    print(data)
 
