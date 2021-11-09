@@ -121,4 +121,46 @@ for key in orignal:
     r = requests.get('http://127.0.0.1:5000/search?q={}&faqs=yes'.format(key))
     data = json.loads(r.content)
     print(data)
+    print(key)
 
+#Street Fighter IV
+#Gears of War 2
+#Rock Band
+#Halo 3
+#Overwatch
+#The Legend of Zelda: Breath of the Wild
+#Inside
+#Destiny
+#The Last of Us
+#Grand Theft Auto V
+#Dota 2
+#Hotline Miami
+#Journey
+#Dishonored
+#Super Mario Galaxy 2
+#Action
+#Apogee Software
+#Automobiles Accessories
+#Baby Care Products
+#Space Invaders
+#Zork
+#Galaga
+#Tempest
+#Frogger
+#Mike Tyson's Punch-Out!!
+#Double Dragon
+#Mega Man 2
+#Prince of Persia
+#SimCity
+#Wolfenstein 3D
+#Myst
+#NBA Jam
+#SimCity 2000
+#X-COM: UFO Defense
+#Wipeout
+#Tekken 3
+#Star Wars Jedi Knight: Dark Forces II
+#Rock Band
+#Halo 3
+#Gears of War 2
+#Turn-based strategy

@@ -11,6 +11,7 @@ from random import choice
 import config
 from fake_useragent import UserAgent
 import logging
+import random
 
 logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 with open('browser_agents.txt', 'r') as file_handle:
@@ -34,12 +35,22 @@ class GCrawler(Resource):
     def get(self):
         q_string = request.args.get('q')
         add_faqs = request.args.get('faqs')
+        r_cache = request.args.get('r_cache')
         if not q_string:
             return {'message': "invalid request pls add search para and try again.. e.g http://127.0.0.1:5000/search?q=apple"}, 405
         self.query = q_string
         self.add_faqs = add_faqs
-        self.result =  self.google_search(self.query)
-        with open(f'{self.query}.json', 'w', encoding ='utf8') as json_file:
+        if not r_cache == 'yes':
+            try:
+                with open(f'cache/{self.query}.json') as json_file:
+                    self.result = json.load(json_file)
+            except Exception as e:
+                logging.info('>> no cache found {} now get result from google.'.format(str(e)))
+                self.result =  self.google_search(self.query)
+        else:
+            self.result =  self.google_search(self.query)
+        
+        with open(f'cache/{self.query}.json', 'w', encoding ='utf8') as json_file:
             json.dump(self.result, json_file, ensure_ascii = False)
         return {'data': self.result}, 200
 
@@ -54,7 +65,7 @@ class GCrawler(Resource):
         """
         try:
             #session = HTMLSession()
-            time.sleep(1)  # be nice with google :)
+            time.sleep(random.int(1,5))  # be nice with google :)
             #params = {"q": self.query}
             s = requests.Session()            
             proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
@@ -91,45 +102,46 @@ class GCrawler(Resource):
         output = []
         answer = []
         unit_converter = {}
-        for snippet in feature_snippet:
-            if snippet == "Featured snippet from the web":
-                #get feature snippet from page response
-                answer.append(self.get_answer(soup))
-                break
-            elif snippet == "Unit converter":
-                #get unit converter from page response
-                print('>> crawl unit converter')
-                soup = BeautifulSoup(response.content,"html.parser")
-                card = soup.find('div',{'data-hveid':'CAIQAQ'})
-                unit_converter['type'] = []
-                if card:
-                    try:
-                        type = card.find('select',{'jsname':'MVliGc'})
-                        for option in type.find_all('option'):
-                            if 'selected' in option.attrs:
-                                unit_converter['type'].append({'value':option.text,'selected':True})
-                            else:
-                                unit_converter['type'].append(option.text)
-                        left = card.find('div',{'id':'HG5Seb'})
-                        unit_converter['l_value'] = left.find('input').attrs['value']
-                        unit_converter['l_type'] = []
-                        for x in left.find_all('option'):
-                            if 'selected' in x.attrs:
-                                unit_converter['l_type'].append({'value':x.text,'selected':True})
-                            else:
-                                unit_converter['l_type'].append(x.text)
-                        right = card.find('div',{'id':'NotFQb'})
-                        unit_converter['r_value'] = right.find('input').attrs['value']
-                        unit_converter['r_type'] = []
-                        for x in right.find_all('option'):
-                            if 'selected' in x.attrs:
-                                unit_converter['r_type'].append({'value':x.text,'selected':True})
-                            else:
-                                unit_converter['r_type'].append(x.text)
-                        unit_converter['formula'] = card.find('div',{'dtp2jf'}).find('table').text
-                    except Exception as e:
-                        logging.error('error occured.{}'.format(str(e)))
-                        pass
+        if feature_snippet:
+            for snippet in feature_snippet:
+                if snippet == "Featured snippet from the web":
+                    #get feature snippet from page response
+                    answer.append(self.get_answer(soup))
+                    break
+                elif snippet == "Unit converter":
+                    #get unit converter from page response
+                    print('>> crawl unit converter')
+                    soup = BeautifulSoup(response.content,"html.parser")
+                    card = soup.find('div',{'data-hveid':'CAIQAQ'})
+                    unit_converter['type'] = []
+                    if card:
+                        try:
+                            type = card.find('select',{'jsname':'MVliGc'})
+                            for option in type.find_all('option'):
+                                if 'selected' in option.attrs:
+                                    unit_converter['type'].append({'value':option.text,'selected':True})
+                                else:
+                                    unit_converter['type'].append(option.text)
+                            left = card.find('div',{'id':'HG5Seb'})
+                            unit_converter['l_value'] = left.find('input').attrs['value']
+                            unit_converter['l_type'] = []
+                            for x in left.find_all('option'):
+                                if 'selected' in x.attrs:
+                                    unit_converter['l_type'].append({'value':x.text,'selected':True})
+                                else:
+                                    unit_converter['l_type'].append(x.text)
+                            right = card.find('div',{'id':'NotFQb'})
+                            unit_converter['r_value'] = right.find('input').attrs['value']
+                            unit_converter['r_type'] = []
+                            for x in right.find_all('option'):
+                                if 'selected' in x.attrs:
+                                    unit_converter['r_type'].append({'value':x.text,'selected':True})
+                                else:
+                                    unit_converter['r_type'].append(x.text)
+                            unit_converter['formula'] = card.find('div',{'dtp2jf'}).find('table').text
+                        except Exception as e:
+                            logging.error('error occured.{}'.format(str(e)))
+                            pass
                 
         for i,result in enumerate(results):
             print('>> get meta description...')
@@ -366,7 +378,7 @@ class GCrawler(Resource):
         rel_questions = soup.find_all('div',{'class':'related-question-pair'})
         for question in rel_questions:
             title = question.find('div',{'jsname':'jIA8B'}).text
-            time.sleep(1)
+            time.sleep(random.int(1,5)) #be nice with google
             response = self.get_results(title)
             soup = BeautifulSoup(response.content,"html.parser")
             results = soup.find_all('div','tF2Cxc')
