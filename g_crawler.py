@@ -22,8 +22,13 @@ URL = "https://www.google.com/search"
 
 referrer = 'https://www.google.com/'
 DEFAULT_HEADERS = {
+    "Connection": "keep-alive",
+    'authority': 'google.com',
+    'cache-control': 'max-age=0',
+    'upgrade-insecure-requests': '1',
     'User-Agent': choice(USER_AGENTS)
 }
+proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
 
 # SEARCH_URL = "https://google.com/search"
 class GCrawler(Resource):
@@ -65,16 +70,23 @@ class GCrawler(Resource):
         """
         try:
             #session = HTMLSession()
-            time.sleep(random.int(1,5))  # be nice with google :)
+            time.sleep(random.randint(1,5))  # be nice with google :)
             #params = {"q": self.query}
-            s = requests.Session()            
-            proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
+            
             print('>> trying to get result from "{}"'.format(url))
-            s.proxies = proxy
-            req = s.get(url, proxies=proxy, headers=DEFAULT_HEADERS)
+            
+            request_type = ['session','requests'][random.randint(0,1)]
+            if 'session' in request_type:
+                s = requests.Session()            
+                s.proxies = proxy
+                req = s.get(url, headers=DEFAULT_HEADERS)
+                s.close()
+            else:
+                req = requests.get(url,proxies=proxy, headers=DEFAULT_HEADERS)
+
             if req.status_code != 200:
                 print('>> error occured.{}'.format(req.reason))
-            s.close()
+            
             return req
         except requests.exceptions.RequestException as e:
             print(e)
@@ -90,7 +102,7 @@ class GCrawler(Resource):
     def parse_results(self,response):
         print('>> trying to get meta description from google')
         soup = BeautifulSoup(response.content,"html.parser")
-
+        soup = soup.find('body')
         #get meta description on web page
         results = soup.find_all('div','tF2Cxc')
         if len(results) == 0:
@@ -378,7 +390,7 @@ class GCrawler(Resource):
         rel_questions = soup.find_all('div',{'class':'related-question-pair'})
         for question in rel_questions:
             title = question.find('div',{'jsname':'jIA8B'}).text
-            time.sleep(random.int(1,5)) #be nice with google
+            time.sleep(random.randint(1,5)) #be nice with google
             response = self.get_results(title)
             soup = BeautifulSoup(response.content,"html.parser")
             results = soup.find_all('div','tF2Cxc')
