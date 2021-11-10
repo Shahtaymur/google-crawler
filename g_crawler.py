@@ -12,6 +12,7 @@ import config
 from fake_useragent import UserAgent
 import logging
 import random
+import re
 
 logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 with open('browser_agents.txt', 'r') as file_handle:
@@ -45,9 +46,10 @@ class GCrawler(Resource):
             return {'message': "invalid request pls add search para and try again.. e.g http://127.0.0.1:5000/search?q=apple"}, 405
         self.query = q_string
         self.add_faqs = add_faqs
+        filename = re.sub('[^A-Za-z0-9]+', '', self.query)
         if not r_cache == 'yes':
             try:
-                with open(f'cache/{self.query}.json') as json_file:
+                with open(f'cache/{filename}.json') as json_file:
                     self.result = json.load(json_file)
             except Exception as e:
                 logging.info('>> no cache found {} now get result from google.'.format(str(e)))
@@ -55,7 +57,8 @@ class GCrawler(Resource):
         else:
             self.result =  self.google_search(self.query)
         
-        with open(f'cache/{self.query}.json', 'w', encoding ='utf8') as json_file:
+        
+        with open(f'cache/{filename}.json', 'w', encoding ='utf8') as json_file:
             json.dump(self.result, json_file, ensure_ascii = False)
         return {'data': self.result}, 200
 
@@ -177,10 +180,12 @@ class GCrawler(Resource):
                 output.append(item)
         return {'output':output,'unit_converter':unit_converter}
 
-    def get_answer(self,document):
+    def get_answer(self,document,question=None):
         print('>> trying to scrape feature snipper from page response')
         fea_sni = document.find('div','V3FYCf')
         data = {}
+        if not question == None:
+            data = {'question':question}
         headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
         for i,heading in enumerate(headings):
             data['heading' if i == 0 else 'heading{}'.format(i+1)] = heading.text
@@ -393,10 +398,11 @@ class GCrawler(Resource):
             time.sleep(random.randint(1,5)) #be nice with google
             response = self.get_results(title)
             soup = BeautifulSoup(response.content,"html.parser")
+            soup = soup.find('body')
             results = soup.find_all('div','tF2Cxc')
             if len(results) == 0:
                 soup = BeautifulSoup(response.text,"html.parser")
-            answer = self.get_answer(soup)
+            answer = self.get_answer(soup,title)
             if answer:
                 data.append(answer)
                 print('>> get related answer of "{question}" - "{answer}"'.format(question=title,answer=answer['snippet_type']))

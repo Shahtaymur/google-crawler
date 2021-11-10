@@ -1,1 +1,5 @@
 werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [10/Nov/2021 20:33:50] "GET /search?q=Is%20Overwatch%202%20free? HTTP/1.1" 200 -
