@@ -1,5 +1,8 @@
 werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [11/Nov/2021 13:55:45] "GET /search?q=Gears%20of%20War%202&faqs=no&r_cache=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
 root - ERROR - error occured.'NoneType' object has no attribute 'text'
 root - ERROR - error occured.'NoneType' object has no attribute 'text'
 root - ERROR - error occured.'NoneType' object has no attribute 'find'
-werkzeug - INFO - 127.0.0.1 - - [10/Nov/2021 20:33:50] "GET /search?q=Is%20Overwatch%202%20free? HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [11/Nov/2021 13:58:51] "GET /search?q=galaga&faqs=yes&r_cache=yes HTTP/1.1" 200 -

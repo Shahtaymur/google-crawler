@@ -22,13 +22,7 @@ URL = "https://www.google.com/search"
 #SESSION = requests.Session()
 
 referrer = 'https://www.google.com/'
-DEFAULT_HEADERS = {
-    "Connection": "keep-alive",
-    'authority': 'google.com',
-    'cache-control': 'max-age=0',
-    'upgrade-insecure-requests': '1',
-    'User-Agent': choice(USER_AGENTS)
-}
+
 proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
 
 # SEARCH_URL = "https://google.com/search"
@@ -74,6 +68,14 @@ class GCrawler(Resource):
         try:
             #session = HTMLSession()
             time.sleep(random.randint(1,5))  # be nice with google :)
+            ua = UserAgent()
+            DEFAULT_HEADERS = {
+                "Connection": "keep-alive",
+                'authority': 'google.com',
+                'cache-control': 'max-age=0',
+                'upgrade-insecure-requests': '1',
+                'User-Agent': choice(USER_AGENTS)
+            }
             #params = {"q": self.query}
             
             print('>> trying to get result from "{}"'.format(url))
@@ -89,6 +91,8 @@ class GCrawler(Resource):
 
             if req.status_code != 200:
                 print('>> error occured.{}'.format(req.reason))
+                logging.error('error occured.{}'.format(req.reason))
+
             
             return req
         except requests.exceptions.RequestException as e:
@@ -105,11 +109,12 @@ class GCrawler(Resource):
     def parse_results(self,response):
         print('>> trying to get meta description from google')
         soup = BeautifulSoup(response.content,"html.parser")
-        soup = soup.find('body')
+        
         #get meta description on web page
         results = soup.find_all('div','tF2Cxc')
         if len(results) == 0:
-            soup = BeautifulSoup(response.text,"html.parser")
+            soup = soup.find('body')
+            results = soup.find_all('div','tF2Cxc')
 
         #check feature snippet on web page
         feature_snippet = soup.find('h2')
@@ -184,35 +189,36 @@ class GCrawler(Resource):
         print('>> trying to scrape feature snipper from page response')
         fea_sni = document.find('div','V3FYCf')
         data = {}
-        if not question == None:
-            data = {'question':question}
-        headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
-        for i,heading in enumerate(headings):
-            data['heading' if i == 0 else 'heading{}'.format(i+1)] = heading.text
-            
-        title = fea_sni.find('div','yuRUbf')
-        if title:
-            data['title'] = title.find('h3').text
-            data['link'] = title.find('a').attrs['href']
-        if fea_sni.find('ol'):
-            data['snippet_data'] = self.get_list(fea_sni,'ol')
-            data['snippet_type'] = 'Ordered Featured Snippet'
-            print('>> ordered list found in feature snippet')
-        elif fea_sni.find('ul'):
-            data['snippet_data'] = self.get_list(fea_sni,'ul')
-            data['snippet_type'] = 'Unordered Featured Snippet'
-            print('>> unordered list found in feature snippet')
-        elif fea_sni.find('table'):
-            data['snippet_data'] = self.get_table(fea_sni)
-            data['snippet_type'] = 'Table Featured Snippet'
-            print('>> table found in feature snippet')
-        else:
-            data['snippet_type'] = 'Definition Featured Snippet'
-        try:
-            data['date'] = fea_sni.find('div','xzrguc').text
-        except Exception as e:
-            logging.error('error occured.{}'.format(str(e)))
-            pass
+        if fea_sni:
+            if not question == None:
+                data = {'question':question}
+            headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+            for i,heading in enumerate(headings):
+                data['heading' if i == 0 else 'heading{}'.format(i+1)] = heading.text
+                
+            title = fea_sni.find('div','yuRUbf')
+            if title:
+                data['title'] = title.find('h3').text
+                data['link'] = title.find('a').attrs['href']
+            if fea_sni.find('ol'):
+                data['snippet_data'] = self.get_list(fea_sni,'ol')
+                data['snippet_type'] = 'Ordered Featured Snippet'
+                print('>> ordered list found in feature snippet')
+            elif fea_sni.find('ul'):
+                data['snippet_data'] = self.get_list(fea_sni,'ul')
+                data['snippet_type'] = 'Unordered Featured Snippet'
+                print('>> unordered list found in feature snippet')
+            elif fea_sni.find('table'):
+                data['snippet_data'] = self.get_table(fea_sni)
+                data['snippet_type'] = 'Table Featured Snippet'
+                print('>> table found in feature snippet')
+            else:
+                data['snippet_type'] = 'Definition Featured Snippet'
+            try:
+                data['date'] = fea_sni.find('div','xzrguc').text
+            except Exception as e:
+                logging.error('error occured.{}'.format(str(e)))
+                pass
 
         return data
 
@@ -284,6 +290,7 @@ class GCrawler(Resource):
         return dfn
 
     def get_popular_products(self,response):
+        print('>> get popular product list...')
         soup = BeautifulSoup(response.text,"html.parser")
         cards = soup.find('g-scrolling-carousel')
         cards_list = {'popular_products':[]}
@@ -295,6 +302,7 @@ class GCrawler(Resource):
         return cards_list
 
     def get_top_sights(self,response):
+        print('>> get top sights list...')
         soup = BeautifulSoup(response.text,"html.parser")
         topsight = soup.find('g-scrolling-carousel')
         top_list = {'data':[]}
@@ -317,6 +325,7 @@ class GCrawler(Resource):
         return top_list
 
     def get_videos(self,response):
+        print('>> get videos list...')
         soup = BeautifulSoup(response.text,"html.parser")
         videos = soup.find_all('div',{"jsname":"TFTr6"})
         video_list = {'data':[]}
@@ -351,6 +360,7 @@ class GCrawler(Resource):
         return video_list
 
     def get_oraganic(self,response):
+        print('>> get organic list...')
         soup = BeautifulSoup(response.text,"html.parser")
         recipes = soup.find_all('g-link')
         recip_list = {'data':[]}
@@ -398,10 +408,11 @@ class GCrawler(Resource):
             time.sleep(random.randint(1,5)) #be nice with google
             response = self.get_results(title)
             soup = BeautifulSoup(response.content,"html.parser")
-            soup = soup.find('body')
+            
             results = soup.find_all('div','tF2Cxc')
             if len(results) == 0:
                 soup = BeautifulSoup(response.text,"html.parser")
+                soup = soup.find('body')
             answer = self.get_answer(soup,title)
             if answer:
                 data.append(answer)
