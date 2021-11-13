@@ -192,10 +192,17 @@ class GCrawler(Resource):
         if fea_sni:
             if not question == None:
                 data = {'question':question}
-            headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
-            for i,heading in enumerate(headings):
-                data['heading' if i == 0 else 'heading{}'.format(i+1)] = heading.text
-                
+            try:
+                headings = fea_sni.find_all('div',{'role':'heading','aria-level':'3'})
+                for i,heading in enumerate(headings):
+                    data['heading' if i == 0 else 'heading{}'.format(i+1)] = heading.text
+            except Exception as e:
+                try:
+                    headings = fea_sni.find('div',{'role':'heading','aria-level':'3'})
+                    data['heading' if i == 0 else 'heading{}'.format(i+1)] = heading.text
+                except Exception as e:
+                    logging.error('>> not heading found in feature snippet')
+
             title = fea_sni.find('div','yuRUbf')
             if title:
                 data['title'] = title.find('h3').text
