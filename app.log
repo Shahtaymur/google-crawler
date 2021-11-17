@@ -1,8 +1,246 @@
 werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
 root - ERROR - error occured.'NoneType' object has no attribute 'find'
-werkzeug - INFO - 127.0.0.1 - - [11/Nov/2021 13:55:45] "GET /search?q=Gears%20of%20War%202&faqs=no&r_cache=yes HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:45:36] "GET /search?q=LED%20Submersible%20Lights&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
 root - ERROR - error occured.'NoneType' object has no attribute 'text'
 root - ERROR - error occured.'NoneType' object has no attribute 'text'
 root - ERROR - error occured.'NoneType' object has no attribute 'text'
 root - ERROR - error occured.'NoneType' object has no attribute 'find'
-werkzeug - INFO - 127.0.0.1 - - [11/Nov/2021 13:58:51] "GET /search?q=galaga&faqs=yes&r_cache=yes HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:46:31] "GET /search?q=Portable%20Projector&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:47:08] "GET /search?q=Bluetooth%20Speaker&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:47:47] "GET /search?q=Smart%20Watch&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:48:32] "GET /search?q=Temporary%20Tattoos&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:49:08] "GET /search?q=Bookends&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:49:42] "GET /search?q=Neck%20Massager&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:50:18] "GET /search?q=Facial%20Cleanser&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:50:53] "GET /search?q=Vegetable%20Chopper&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:51:38] "GET /search?q=Back%20Cushion&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:52:20] "GET /search?q=Portable%20Blender&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:53:00] "GET /search?q=Nail%20Polish&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:53:48] "GET /search?q=Wireless%20Phone%20Chargers&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:54:23] "GET /search?q=Phone%20Lenses&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:55:14] "GET /search?q=Shapewear&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:55:19] "GET /search?q=Strapless%20Backless%20Bra&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:55:28] "GET /search?q=Doormats&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:56:09] "GET /search?q=Car%20Phone%20Holder&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:56:15] "GET /search?q=Home%20Security%20IP%20Camera&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:56:54] "GET /search?q=Wifi%20Repeater&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:57:00] "GET /search?q=Laptop%20Accessories&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:57:36] "GET /search?q=Posture%20Corrector&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:58:26] "GET /search?q=Electric%20Soldering%20Iron%20Gun&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:58:30] "GET /search?q=Manicure%20Milling%20Drill%20Bit&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:59:15] "GET /search?q=Flexible%20Garden%20Hose&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 21:59:48] "GET /search?q=One%20Piece%20Swimsuit&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:00:29] "GET /search?q=Waterproof%20Eyebrow%20Liner&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:01:13] "GET /search?q=Cat%20Massage%20Comb&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:01:21] "GET /search?q=Breathable%20Mesh%20Running%20Shoes%20–%20Summer%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:01:26] "GET /search?q=Portable%20Electric%20Ionic%20Hairbrush%20–%20Summer%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:01:29] "GET /search?q=Beach%20Towels%20–%20Summer%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:01:36] "GET /search?q=Baby%20Kids%20Water%20Play%20Mat%20–%20Summer%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:02:17] "GET /search?q=Plush%20Blankets%20–%20Winter%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:03:06] "GET /search?q=Winter%20Coats%20–%20Winter%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:03:12] "GET /search?q=Shoe%20Dryer%20–%20Winter%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:03:19] "GET /search?q=Touchscreen%20Gloves%20–%20Winter%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:03:28] "GET /search?q=Waterproof%20Pants%20–%20Winter%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:03:36] "GET /search?q=Bear%20Claws%20–%20Spring%20Products&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:03:44] "GET /search?q=Hiking%20Backpacks%20–%20Spring%20Products&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:03:51] "GET /search?q=Minimalist%20Wallets%20–%20Spring%20Products&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:03:59] "GET /search?q=Waterproof%20Shoe%20Cover%20–%20Autumn%20(Fall)%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.'NoneType' object has no attribute 'text'
+root - ERROR - error occured.'NoneType' object has no attribute 'find'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:04:07] "GET /search?q=Hooded%20Raincoats%20–%20Autumn%20(Fall)%20Product&faqs=yes HTTP/1.1" 200 -
+root - ERROR - error occured.HTTPSConnectionPool(host='www.google.com', port=443): Max retries exceeded with url: /search?q=Which+laser+hair+removal+machine+is+best%3F (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002593571A820>: Failed to establish a new connection: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond'))
+app - ERROR - Exception on /search [GET]
+Traceback (most recent call last):
+  File "c:\Git\google-crawler\g_crawler.py", line 46, in get
+    with open(f'cache/{filename}.json') as json_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'cache/LaserHairRemovalMachines.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\python\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\python\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\python\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\python\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "c:\Git\google-crawler\g_crawler.py", line 50, in get
+    self.result =  self.google_search(self.query)
+  File "c:\Git\google-crawler\g_crawler.py", line 473, in google_search
+    faqs = self.extractQuestionData(response)
+  File "c:\Git\google-crawler\g_crawler.py", line 416, in extractQuestionData
+    soup = BeautifulSoup(response.content,"html.parser")
+AttributeError: 'NoneType' object has no attribute 'content'
+werkzeug - INFO - 127.0.0.1 - - [16/Nov/2021 22:04:40] "[35m[1mGET /search?q=Laser%20Hair%20Removal%20Machines&faqs=yes HTTP/1.1[0m" 500 -

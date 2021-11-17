@@ -51,7 +51,6 @@ class GCrawler(Resource):
         else:
             self.result =  self.google_search(self.query)
         
-        
         with open(f'cache/{filename}.json', 'w', encoding ='utf8') as json_file:
             json.dump(self.result, json_file, ensure_ascii = False)
         return {'data': self.result}, 200
