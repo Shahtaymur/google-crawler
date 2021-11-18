@@ -164,3 +164,5 @@ for key in orignal:
 #Halo 3
 #Gears of War 2
 #Turn-based strategy
+#Civilization
+#NBA Jam
