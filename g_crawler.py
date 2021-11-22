@@ -2,6 +2,8 @@ import flask
 import json
 import requests
 import urllib
+from urllib.request import Request, urlopen
+from urllib.parse import quote_plus, urlparse, parse_qs
 from bs4 import BeautifulSoup
 import time
 #import urllib.request as urllib
@@ -9,23 +11,36 @@ from flask_restful import Resource, Api, reqparse
 from flask import request
 from random import choice
 import config
-from fake_useragent import UserAgent
 import logging
 import random
 import re
+import os
+from http.cookiejar import LWPCookieJar
+import ssl
 
 logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
-with open('browser_agents.txt', 'r') as file_handle:
-    USER_AGENTS = file_handle.read().splitlines()
 
-URL = "https://www.google.com/search"
-#SESSION = requests.Session()
+url_home = "https://www.google.com/"
+url_search = "https://www.google.%(tld)s/search?hl=%(lang)s&q=%(query)s&" \
+             "btnG=Google+Search&tbs=%(tbs)s&safe=%(safe)s&" \
+             "cr=%(country)s"
 
-referrer = 'https://www.google.com/'
+url_parameters = (
+    'hl', 'q', 'num', 'btnG', 'start', 'tbs', 'safe', 'cr')
 
-proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
+# Cookie jar. Stored at the user's home folder.
+# If the cookie jar is inaccessible, the errors are ignored.
+home_folder = os.getenv('HOME')
+if not home_folder:
+    home_folder = os.getenv('USERHOME')
+    if not home_folder:
+        home_folder = '.'   # Use the current folder on error.
+cookie_jar = LWPCookieJar(os.path.join(home_folder, '.google-cookie'))
+try:
+    cookie_jar.load()
+except Exception:
+    pass
 
-# SEARCH_URL = "https://google.com/search"
 class GCrawler(Resource):
 
     # def __init__(self,query) -> None:
@@ -67,31 +82,55 @@ class GCrawler(Resource):
         try:
             #session = HTMLSession()
             time.sleep(random.randint(1,5))  # be nice with google :)
-            ua = UserAgent()
+
             DEFAULT_HEADERS = {
                 "Connection": "keep-alive",
-                'authority': 'google.com',
+                'authority': 'www.google.com',
+                'referer':'https://www.google.com/',
                 'cache-control': 'max-age=0',
-                'upgrade-insecure-requests': '1',
-                'User-Agent': choice(USER_AGENTS)
+                'upgrade-insecure-requests': '1'
             }
-            #params = {"q": self.query}
+            params = {
+                'q':self.query,
+                'pq':self.query,
+                'hl':'en',
+                'authuser':0
+            }
             
             print('>> trying to get result from "{}"'.format(url))
             
-            request_type = ['session','requests'][random.randint(0,1)]
-            if 'session' in request_type:
-                s = requests.Session()            
+            s = requests.Session()            
+            s.params = params 
+            count = 1
+            while True:
+                proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, choice(config.GEONODS))}
+                DEFAULT_HEADERS['user-agent'] = choice(config.USER_AGENTS)
                 s.proxies = proxy
-                req = s.get(url, headers=DEFAULT_HEADERS)
-                s.close()
-            else:
-                req = requests.get(url,proxies=proxy, headers=DEFAULT_HEADERS)
+                s.headers.update(DEFAULT_HEADERS)
+                req = s.get("https://www.google.com/search")
+                
+                
+                # googleTrendsUrl = 'https://google.com'
+                # response = requests.get(googleTrendsUrl)
+                # if response.status_code == 200:
+                #     g_cookies = response.cookies.get_dict()
+                
+                #req = requests.get(url,proxies=proxy, headers=DEFAULT_HEADERS,cookies=g_cookies)
+                print('>> request returned {} total request "{}"'.format(req.status_code,count))
+                count = count + 1
+                if req.status_code == 200:
+                    print(req.text)
+                    #break
+                elif req.status_code == 429:
+                    print(req.headers)
+            s.close()
+            #else:
+                #req = requests.get(url,proxies=proxy, headers=DEFAULT_HEADERS)
 
-            if req.status_code != 200:
-                print('>> error occured.{}'.format(req.reason))
-                logging.error('error occured.{}'.format(req.reason))
-
+            # if req.status_code != 200:
+            #     print('>> error occured.{}'.format(req.reason))
+            #     logging.error('error occured.{}'.format(req.reason))
+            #     return '429 error', 429
             
             return req
         except requests.exceptions.RequestException as e:
@@ -107,13 +146,13 @@ class GCrawler(Resource):
         
     def parse_results(self,response):
         print('>> trying to get meta description from google')
-        soup = BeautifulSoup(response.content,"html.parser")
+        soup = BeautifulSoup(response.text,"html.parser")
         
         #get meta description on web page
         results = soup.find_all('div','tF2Cxc')
         if len(results) == 0:
             soup = soup.find('body')
-            results = soup.find_all('div','tF2Cxc')
+            results = soup.find_all('div','ezO2md')
 
         #check feature snippet on web page
         feature_snippet = soup.find('h2')
@@ -165,13 +204,19 @@ class GCrawler(Resource):
         for i,result in enumerate(results):
             print('>> get meta description...')
             item = {}
-            if result.find('h3'):
-                item['title'] = result.find('h3').text
+            if result.find('h3') or result.find('div','Dks9wf'):
+                try:
+                    item['title'] = result.find('h3').text
+                except:
+                    item['title'] = result.find('a').find('span').text
+
                 item['link'] = result.find('a').attrs['href']
                 if i == 0 and len(answer) > 0 and not answer == '':
                     item['snippet'] = answer[0]
                 else:
                     meta_description = result.find('div','IsZvec')
+                    if meta_description is None:
+                        meta_description = result.find('div','Dks9wf')
                     table  = meta_description.find('table')
                     if table:
                         try:
