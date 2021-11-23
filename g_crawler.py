@@ -103,7 +103,8 @@ class GCrawler(Resource):
             s.params = params 
             count = 1
             while True:
-                proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, choice(config.GEONODS))}
+                #proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, choice(config.GEONODS))}
+                proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, choice(config.GEONODS))}
                 DEFAULT_HEADERS['user-agent'] = choice(config.USER_AGENTS)
                 s.proxies = proxy
                 s.headers.update(DEFAULT_HEADERS)
