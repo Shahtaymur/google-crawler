@@ -84,55 +84,42 @@ class GCrawler(Resource):
             time.sleep(random.randint(1,5))  # be nice with google :)
 
             DEFAULT_HEADERS = {
-                "Connection": "keep-alive",
-                'authority': 'www.google.com',
-                'referer':'https://www.google.com/',
-                'cache-control': 'max-age=0',
-                'upgrade-insecure-requests': '1'
-            }
+                #  'authority': 'www.google.com',
+                #  'method': 'GET',
+                #  'scheme': 'https',
+                #  'accept': "*/*",
+                #  'accept-encoding': 'gzip, deflate, br',
+                 'accept-language': 'en-US,en;q=0.9',
+                'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+                'user-agent':choice(config.USER_AGENTS)
+                }
             params = {
-                'q':self.query,
-                'pq':self.query,
-                'hl':'en',
-                'authuser':0
+                'q': self.query,
+                'oq': self.query,
+                #'aqs': 'chrome.0.69i59j0i512l6j69i60.3509j0j9',
+                'sourceid': 'chrome',
+                'ie': 'UTF-8',
             }
             
             print('>> trying to get result from "{}"'.format(url))
-            
-            s = requests.Session()            
-            s.params = params 
             count = 1
             while True:
-                #proxy = {"http":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, choice(config.GEONODS))}
-                proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, choice(config.GEONODS))}
-                DEFAULT_HEADERS['user-agent'] = choice(config.USER_AGENTS)
-                s.proxies = proxy
-                s.headers.update(DEFAULT_HEADERS)
-                req = s.get("https://www.google.com/search")
-                
-                
-                # googleTrendsUrl = 'https://google.com'
-                # response = requests.get(googleTrendsUrl)
-                # if response.status_code == 200:
-                #     g_cookies = response.cookies.get_dict()
-                
-                #req = requests.get(url,proxies=proxy, headers=DEFAULT_HEADERS,cookies=g_cookies)
+                req = requests.get(
+                    url='https://app.scrapingbee.com/api/v1/',headers=DEFAULT_HEADERS,
+                    params={
+                        'custom_google':'True',
+                        'api_key': 'AT7PQP36E6M6MBGW66V1BQU23PWKIHCC9VX2HHPNEQNZH0N4A97AVCZ25F6SN7JL82L0R8R0MAHSIADC',
+                        'url': 'https://www.google.com/search?q={}&oq={}&sourceid=chrome&ie=UTF-8'.format(self.query,self.query),  
+                    },
+                    
+                )
                 print('>> request returned {} total request "{}"'.format(req.status_code,count))
                 count = count + 1
                 if req.status_code == 200:
-                    print(req.text)
-                    #break
+                    print(req.status_code)
+                    break
                 elif req.status_code == 429:
                     print(req.headers)
-            s.close()
-            #else:
-                #req = requests.get(url,proxies=proxy, headers=DEFAULT_HEADERS)
-
-            # if req.status_code != 200:
-            #     print('>> error occured.{}'.format(req.reason))
-            #     logging.error('error occured.{}'.format(req.reason))
-            #     return '429 error', 429
-            
             return req
         except requests.exceptions.RequestException as e:
             print(e)
@@ -507,6 +494,11 @@ class GCrawler(Resource):
     def google_search(self,query):
         print('>> api calling start...')
         response = self.get_results(query)
+        try:
+            with open(f"html/{re.sub('[^A-Za-z0-9]+', '', query)}.html", "w") as file:
+                file.write(response.text)
+        except:
+            pass
         feature_snippet = self.parse_results(response)
         dictionary = self.get_dictionary(response)
         popular_products = self.get_popular_products(response)
