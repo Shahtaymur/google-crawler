@@ -10,6 +10,8 @@ import time
 from flask_restful import Resource, Api, reqparse
 from flask import request
 from random import choice
+
+from requests.sessions import default_headers
 import config
 import logging
 import random
@@ -103,23 +105,33 @@ class GCrawler(Resource):
             
             print('>> trying to get result from "{}"'.format(url))
             count = 1
+            req = None
             while True:
-                req = requests.get(
-                    url='https://app.scrapingbee.com/api/v1/',headers=DEFAULT_HEADERS,
-                    params={
-                        'custom_google':'True',
-                        'api_key': 'AT7PQP36E6M6MBGW66V1BQU23PWKIHCC9VX2HHPNEQNZH0N4A97AVCZ25F6SN7JL82L0R8R0MAHSIADC',
-                        'url': 'https://www.google.com/search?q={}&oq={}&sourceid=chrome&ie=UTF-8'.format(self.query,self.query),  
-                    },
+                # req = requests.get(
+                #     url='https://app.scrapingbee.com/api/v1/',headers=DEFAULT_HEADERS,
+                #     params={
+                #         'custom_google':'True',
+                #         'api_key': 'AT7PQP36E6M6MBGW66V1BQU23PWKIHCC9VX2HHPNEQNZH0N4A97AVCZ25F6SN7JL82L0R8R0MAHSIADC',
+                #         'url': 'https://www.google.com/search?q={}&oq={}&sourceid=chrome&ie=UTF-8'.format(self.query,self.query),  
+                #     },
                     
-                )
-                print('>> request returned {} total request "{}"'.format(req.status_code,count))
+                # )
+                urlToGet = 'https://www.google.com/search?q={}&oq={}&sourceid=chrome&ie=UTF-8'.format(self.query,self.query)
+                proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
+                try:
+                    req = requests.get('https://www.google.com/search' , proxies=proxy,headers=DEFAULT_HEADERS,params=params)
+                    if req.status_code == 200:
+                        print(req.status_code)
+                        break
+                    elif req.status_code == 429:
+                        print(req.headers)
+
+                    print('>> request returned {} total request "{}"'.format(req.status_code,count))
+                except requests.exceptions.RequestException as e:
+                    print(e.request.headers)
+                    print (e.args[0].reason)
+                    pass
                 count = count + 1
-                if req.status_code == 200:
-                    print(req.status_code)
-                    break
-                elif req.status_code == 429:
-                    print(req.headers)
             return req
         except requests.exceptions.RequestException as e:
             print(e)
