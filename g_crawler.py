@@ -87,7 +87,7 @@ class GCrawler(Resource):
 
             DEFAULT_HEADERS = {
                 #  'authority': 'www.google.com',
-                #  'method': 'GET',
+                'method': 'GET',
                 #  'scheme': 'https',
                 #  'accept': "*/*",
                 #  'accept-encoding': 'gzip, deflate, br',
@@ -119,17 +119,21 @@ class GCrawler(Resource):
                 urlToGet = 'https://www.google.com/search?q={}&oq={}&sourceid=chrome&ie=UTF-8'.format(self.query,self.query)
                 proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
                 try:
-                    req = requests.get('https://www.google.com/search' , proxies=proxy,headers=DEFAULT_HEADERS,params=params)
-                    if req.status_code == 200:
+                    payload = {'api_key': '8b13193d297a251c776b346812d5908f', 'url':urlToGet, 'country_code': 'us'}
+                    req = requests.get('http://api.scraperapi.com', params=payload,headers=DEFAULT_HEADERS)
+                    #req = requests.get('https://www.google.com/search' , proxies=proxy,headers=DEFAULT_HEADERS,params=params)
+                    if req.status_code in [200, 404]:
                         print(req.status_code)
                         break
                     elif req.status_code == 429:
-                        print(req.headers)
+                        logging.error(req.headers)
 
                     print('>> request returned {} total request "{}"'.format(req.status_code,count))
+                except requests.exceptions.ConnectionError:
+                    print('>> proxy not connect')
                 except requests.exceptions.RequestException as e:
-                    print(e.request.headers)
-                    print (e.args[0].reason)
+                    logging.error(e.request.headers)
+                    logging.error(e.args[0].reason)
                     pass
                 count = count + 1
             return req
