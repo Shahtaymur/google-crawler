@@ -22,27 +22,6 @@ import ssl
 
 logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 
-url_home = "https://www.google.com/"
-url_search = "https://www.google.%(tld)s/search?hl=%(lang)s&q=%(query)s&" \
-             "btnG=Google+Search&tbs=%(tbs)s&safe=%(safe)s&" \
-             "cr=%(country)s"
-
-url_parameters = (
-    'hl', 'q', 'num', 'btnG', 'start', 'tbs', 'safe', 'cr')
-
-# Cookie jar. Stored at the user's home folder.
-# If the cookie jar is inaccessible, the errors are ignored.
-home_folder = os.getenv('HOME')
-if not home_folder:
-    home_folder = os.getenv('USERHOME')
-    if not home_folder:
-        home_folder = '.'   # Use the current folder on error.
-cookie_jar = LWPCookieJar(os.path.join(home_folder, '.google-cookie'))
-try:
-    cookie_jar.load()
-except Exception:
-    pass
-
 class GCrawler(Resource):
 
     # def __init__(self,query) -> None:
@@ -85,19 +64,9 @@ class GCrawler(Resource):
             #session = HTMLSession()
             time.sleep(random.randint(1,5))  # be nice with google :)
 
-            DEFAULT_HEADERS = {
-                #  'authority': 'www.google.com',
-                'method': 'GET',
-                #  'scheme': 'https',
-                #  'accept': "*/*",
-                #  'accept-encoding': 'gzip, deflate, br',
-                 'accept-language': 'en-US,en;q=0.9',
-                'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-                'user-agent':choice(config.USER_AGENTS)
-                }
             params = {
                 'q': self.query,
-                'oq': self.query,
+                #'oq': self.query,
                 #'aqs': 'chrome.0.69i59j0i512l6j69i60.3509j0j9',
                 'sourceid': 'chrome',
                 'ie': 'UTF-8',
@@ -106,22 +75,23 @@ class GCrawler(Resource):
             print('>> trying to get result from "{}"'.format(url))
             count = 1
             req = None
+            urlToGet = 'https://www.google.com/search?q={}&oq={}&sourceid=chrome&ie=UTF-8'.format(self.query,self.query)
             while True:
-                # req = requests.get(
-                #     url='https://app.scrapingbee.com/api/v1/',headers=DEFAULT_HEADERS,
-                #     params={
-                #         'custom_google':'True',
-                #         'api_key': 'AT7PQP36E6M6MBGW66V1BQU23PWKIHCC9VX2HHPNEQNZH0N4A97AVCZ25F6SN7JL82L0R8R0MAHSIADC',
-                #         'url': 'https://www.google.com/search?q={}&oq={}&sourceid=chrome&ie=UTF-8'.format(self.query,self.query),  
-                #     },
-                    
-                # )
-                urlToGet = 'https://www.google.com/search?q={}&oq={}&sourceid=chrome&ie=UTF-8'.format(self.query,self.query)
-                proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, config.GEONODE_DNS)}
+                DEFAULT_HEADERS = {
+                #  'authority': 'www.google.com',
+                'method': 'GET',
+                'accept-language': 'en-US,en;q=0.9',
+                #  'scheme': 'https',
+                #  'accept': "*/*",
+                #  'accept-encoding': 'gzip, deflate, br',
+                 #'accept-language': 'en-US',
+                'user-agent':choice(config.USER_AGENTS)
+                }
+                
+                proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, choice(config.GEONODS))}
                 try:
-                    payload = {'api_key': '8b13193d297a251c776b346812d5908f', 'url':urlToGet, 'country_code': 'us'}
-                    req = requests.get('http://api.scraperapi.com', params=payload,headers=DEFAULT_HEADERS)
-                    #req = requests.get('https://www.google.com/search' , proxies=proxy,headers=DEFAULT_HEADERS,params=params)
+                    
+                    req = requests.get('https://www.google.com/search?q=what+is+seo&oq=what+is+seo&aqs=chrome.0.69i59j0i512l4j69i60l3.4272j0j9&sourceid=chrome&ie=UTF-8', proxies=proxy,headers=DEFAULT_HEADERS)
                     if req.status_code in [200, 404]:
                         print(req.status_code)
                         break
