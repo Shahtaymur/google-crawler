@@ -61,37 +61,36 @@ class GCrawler(Resource):
             response (object): HTTP response object from requests_html. 
         """
         try:
-            #session = HTMLSession()
             time.sleep(random.randint(1,5))  # be nice with google :)
-
-            params = {
-                'q': self.query,
-                #'oq': self.query,
-                #'aqs': 'chrome.0.69i59j0i512l6j69i60.3509j0j9',
-                'sourceid': 'chrome',
-                'ie': 'UTF-8',
-            }
-            
             print('>> trying to get result from "{}"'.format(url))
             count = 1
             req = None
-            urlToGet = 'https://www.google.com/search?q={}&oq={}&sourceid=chrome&ie=UTF-8'.format(self.query,self.query)
             while True:
                 DEFAULT_HEADERS = {
                 #  'authority': 'www.google.com',
-                'method': 'GET',
-                'accept-language': 'en-US,en;q=0.9',
+                #'method': 'GET',
+                #'accept-language': 'en-PK',
                 #  'scheme': 'https',
                 #  'accept': "*/*",
                 #  'accept-encoding': 'gzip, deflate, br',
                  #'accept-language': 'en-US',
                 'user-agent':choice(config.USER_AGENTS)
                 }
+                DEFAULT_HEADERS = {
+                    'User-agent':
+                    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'
+                }
+
+                params = {
+                    'q': url,
+                    'gl': 'pk', # country where to search from
+                    'hl': 'en',
+                }
                 
                 proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, choice(config.GEONODS))}
                 try:
                     
-                    req = requests.get('https://www.google.com/search?q=what+is+seo&oq=what+is+seo&aqs=chrome.0.69i59j0i512l4j69i60l3.4272j0j9&sourceid=chrome&ie=UTF-8', proxies=proxy,headers=DEFAULT_HEADERS)
+                    req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params)
                     if req.status_code in [200, 404]:
                         print(req.status_code)
                         break
@@ -114,7 +113,8 @@ class GCrawler(Resource):
     def get_results(self,query):
         #create url
         query = urllib.parse.quote_plus(query)
-        response = self.get_source('https://www.google.com/search?q='+query)
+        #response = self.get_source('https://www.google.co.uk/search?q='+query)
+        response = self.get_source(query)
         print('>> request on google on "{}"'.format(query))
         return response
         
@@ -481,9 +481,10 @@ class GCrawler(Resource):
         print('>> api calling start...')
         response = self.get_results(query)
         try:
-            with open(f"html/{re.sub('[^A-Za-z0-9]+', '', query)}.html", "w") as file:
+            with open(f"html/{re.sub('[^A-Za-z0-9]+', '', query)}.html", "w",encoding="utf-8") as file:
                 file.write(response.text)
-        except:
+        except Exception as e:
+            print(e)
             pass
         feature_snippet = self.parse_results(response)
         dictionary = self.get_dictionary(response)

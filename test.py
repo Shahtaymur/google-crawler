@@ -122,19 +122,47 @@ for key in keyword:
     if not key in orignal:
         orignal.append(key)
 
-for key in orignal:
-    count = 1
-    # try:
-    #     r = requests.get('http://127.0.0.1:5000/search?q=')
-    #     count = count + 1
-    # except requests.exceptions.RequestException as e:
-    #     print (e.args[0].reason)
-    #     print(e.request.headers)
-    r = requests.get('http://127.0.0.1:5000/search?q={}'.format(key))
-    data = json.loads(r.content)
-    data = r.content
-    print(data)
-    print(key)
+# for key in orignal:
+#     count = 1
+#     # try:
+#     #     r = requests.get('http://127.0.0.1:5000/search?q=')
+#     #     count = count + 1
+#     # except requests.exceptions.RequestException as e:
+#     #     print (e.args[0].reason)
+#     #     print(e.request.headers)
+#     r = requests.get('http://127.0.0.1:5000/search?q={}'.format(key))
+#     data = json.loads(r.content)
+#     data = r.content
+#     print(data)
+#     print(key)
+
+from bs4 import BeautifulSoup
+import requests, lxml
+import re
+
+headers = {
+    'User-agent':
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582'
+}
+
+params = {
+  'q': 'how to code',
+  'gl': 'us',
+  'hl': 'en',
+}
+
+html = requests.get('https://www.google.com/search', headers=headers, params=params)
+soup = BeautifulSoup(html.text, 'lxml')
+try:
+    with open(f"html/{re.sub('[^A-Za-z0-9]+', '', params['q'])}.html", "w") as file:
+        file.write(html.text)
+except:
+    pass
+results = soup.find_all('div','tF2Cxc')
+for result in soup.select('.tF2Cxc'):
+  title = result.select_one('.DKV0Md').text
+  link = result.select_one('.yuRUbf a')['href']
+  print(title, link, sep='\n')
 
 #Street Fighter IV
 #Gears of War 2
