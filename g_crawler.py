@@ -19,8 +19,11 @@ import re
 import os
 from http.cookiejar import LWPCookieJar
 import ssl
+USE_PROXY = []
 
-logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+global logger
+logging.basicConfig(format='%(asctime)s %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',datefmt='%d-%m-%Y:%H:%M:%S',level=logging.DEBUG,filename='app.log')
+logger = logging.getLogger('g_crawler.py')
 
 class GCrawler(Resource):
 
@@ -42,7 +45,7 @@ class GCrawler(Resource):
                 with open(f'cache/{filename}.json') as json_file:
                     self.result = json.load(json_file)
             except Exception as e:
-                logging.info('>> no cache found {} now get result from google.'.format(str(e)))
+                logger.info('>> no cache found {} now get result from google.'.format(str(e)))
                 self.result =  self.google_search(self.query)
         else:
             self.result =  self.google_search(self.query)
@@ -61,12 +64,12 @@ class GCrawler(Resource):
             response (object): HTTP response object from requests_html. 
         """
         try:
-            time.sleep(random.randint(1,5))  # be nice with google :)
+            time.sleep(random.randint(2,5))  # be nice with google :)
             print('>> trying to get result from "{}"'.format(url))
             count = 1
             req = None
             while True:
-                DEFAULT_HEADERS = {
+                #DEFAULT_HEADERS = {
                 #  'authority': 'www.google.com',
                 #'method': 'GET',
                 #'accept-language': 'en-PK',
@@ -74,11 +77,13 @@ class GCrawler(Resource):
                 #  'accept': "*/*",
                 #  'accept-encoding': 'gzip, deflate, br',
                  #'accept-language': 'en-US',
-                'user-agent':choice(config.USER_AGENTS)
-                }
+                #'user-agent':choice(config.USER_AGENTS)
+                #}
                 DEFAULT_HEADERS = {
                     'User-agent':
-                    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'
+                    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
+                    'accept-language': 'en-US',
+                    'scheme': 'https'
                 }
 
                 params = {
@@ -86,29 +91,52 @@ class GCrawler(Resource):
                     'gl': 'pk', # country where to search from
                     'hl': 'en',
                 }
-                
-                proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, choice(config.GEONODS))}
+                DNS = choice(config.GEONODS)
+                if len(config.GEONODS) == config.BLOCK_DNS:
+                    return {'status':'failed','req':None}
+                while DNS in USE_PROXY or DNS in config.BLOCK_DNS:
+                    DNS = choice(config.GEONODS)
+                    
+                USE_PROXY.append(DNS)
+
+                proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, DNS)}
                 try:
                     
                     req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params)
                     if req.status_code in [200, 404]:
-                        print(req.status_code)
+                        print('>> request returned {} total request "{}"'.format(req.status_code,count))
                         break
                     elif req.status_code == 429:
-                        logging.error(req.headers)
+                        self.add_block_dns(DNS)
+                        logger.error(req.headers)
 
                     print('>> request returned {} total request "{}"'.format(req.status_code,count))
                 except requests.exceptions.ConnectionError:
                     print('>> proxy not connect')
                 except requests.exceptions.RequestException as e:
-                    logging.error(e.request.headers)
-                    logging.error(e.args[0].reason)
+                    logger.error(e.request.headers)
+                    logger.error(e.args[0].reason)
                     pass
                 count = count + 1
-            return req
+            return {'status':'success','req':req}
         except requests.exceptions.RequestException as e:
             print(e)
-            logging.error('error occured.{}'.format(str(e)))
+            logger.error('error occured.{}'.format(str(e)))
+            return {'status':'failed','req':req}
+
+    def add_block_dns(self,dns):
+        if len(config.GEONODS)-len(config.BLOCK_DNS) < 1000:
+            self.reset_dns(dns)
+        with open('block_dns.txt', 'a') as bd:
+            if len(config.BLOCK_DNS)>0:
+                bd.write(f'\n{dns}')
+            else:
+                bd.write(f'{dns}')
+        config.BLOCK_DNS.append(dns)
+
+    def reset_dns(self,dns):
+        open('block_dns.txt', mode='w').close()
+        config.BLOCK_DNS = []
 
     def get_results(self,query):
         #create url
@@ -172,7 +200,7 @@ class GCrawler(Resource):
                                     unit_converter['r_type'].append(x.text)
                             unit_converter['formula'] = card.find('div',{'dtp2jf'}).find('table').text
                         except Exception as e:
-                            logging.error('error occured.{}'.format(str(e)))
+                            logger.error('error occured.{}'.format(str(e)))
                             pass
                 
         for i,result in enumerate(results):
@@ -196,7 +224,7 @@ class GCrawler(Resource):
                         try:
                             item['meta_data'] = self.get_table(table)
                         except Exception as e:
-                            logging.error('error occured.{}'.format(str(e)))
+                            logger.error('error occured.{}'.format(str(e)))
                             pass
                     item['text'] = meta_description.text
                 
@@ -219,7 +247,7 @@ class GCrawler(Resource):
                     headings = fea_sni.find('div',{'role':'heading','aria-level':'3'})
                     data['heading' if i == 0 else 'heading{}'.format(i+1)] = heading.text
                 except Exception as e:
-                    logging.error('>> not heading found in feature snippet')
+                    logger.error('>> not heading found in feature snippet')
 
             title = fea_sni.find('div','yuRUbf')
             if title:
@@ -242,7 +270,7 @@ class GCrawler(Resource):
             try:
                 data['date'] = fea_sni.find('div','xzrguc').text
             except Exception as e:
-                logging.error('error occured.{}'.format(str(e)))
+                logger.error('error occured.{}'.format(str(e)))
                 pass
 
         return data
@@ -256,7 +284,7 @@ class GCrawler(Resource):
                 data.append(li.text)
                 #print(li.text)
         except Exception as e:
-            logging.error('error occured.{}'.format(str(e)))
+            logger.error('error occured.{}'.format(str(e)))
             pass
         return data
 
@@ -306,11 +334,11 @@ class GCrawler(Resource):
                                     print(smi.text)
                                 dfnlist['def_list'].append(item)
                             except Exception as e:
-                                logging.error('error occured.{}'.format(str(e)))
+                                logger.error('error occured.{}'.format(str(e)))
                                 pass
                     dfn['dictionary'].append(dfnlist)
             except Exception as e:
-                logging.error('error occured.{}'.format(str(e)))
+                logger.error('error occured.{}'.format(str(e)))
                 pass
         return dfn
 
@@ -344,7 +372,7 @@ class GCrawler(Resource):
                         }
                         top_list['data'].append(item)
                     except Exception as e:
-                        logging.error('error occured.{}'.format(str(e)))
+                        logger.error('error occured.{}'.format(str(e)))
                         pass
 
         return top_list
@@ -368,7 +396,7 @@ class GCrawler(Resource):
                         date = video.find('div','hMJ0yc').text
                         raw_data = video.find('a')['aria-label']
                     except Exception as e:
-                        logging.error('error occured.{}'.format(str(e)))
+                        logger.error('error occured.{}'.format(str(e)))
                         pass
                     if not title == None:
                         item = {
@@ -379,7 +407,7 @@ class GCrawler(Resource):
                         }
                         video_list['data'].append(item)
                 except Exception as e:
-                    logging.error('error occured.{}'.format(str(e)))
+                    logger.error('error occured.{}'.format(str(e)))
                     pass
 
         return video_list
@@ -405,7 +433,7 @@ class GCrawler(Resource):
                         duration = recip.find('div',{'class':'L5KuY Eq0J8'}).text
                         description = recip.find('div',{'class':'LDr9cf L5KuY'}).text
                     except Exception as e:
-                        logging.error('error occured.{}'.format(str(e)))
+                        logger.error('error occured.{}'.format(str(e)))
                         pass
                     if not title == None:
                         item = {
@@ -417,7 +445,7 @@ class GCrawler(Resource):
                         }
                         recip_list['data'].append(item)
                 except Exception as e:
-                    logging.error('error occured.{}'.format(str(e)))
+                    logger.error('error occured.{}'.format(str(e)))
                     pass
 
         return recip_list
@@ -430,8 +458,11 @@ class GCrawler(Resource):
         rel_questions = soup.find_all('div',{'class':'related-question-pair'})
         for question in rel_questions:
             title = question.find('div',{'jsname':'jIA8B'}).text
-            time.sleep(random.randint(1,5)) #be nice with google
-            response = self.get_results(title)
+            time.sleep(random.randint(2,5)) #be nice with google
+            req = self.get_results(title)
+            if req['status'] == 'failed':
+                continue
+            response = req['req']
             soup = BeautifulSoup(response.content,"html.parser")
             
             results = soup.find_all('div','tF2Cxc')
@@ -457,7 +488,7 @@ class GCrawler(Resource):
                     info = attribute.text.split(":",1)
                     information['attributes'].append({'key':info[0].lower().replace("\n",""),'value':info[1].lower().replace("\n","")})
         except Exception as e:
-            logging.error('error occured.{}'.format(str(e)))
+            logger.error('error occured.{}'.format(str(e)))
             pass
         return information
 
@@ -479,7 +510,10 @@ class GCrawler(Resource):
 
     def google_search(self,query):
         print('>> api calling start...')
-        response = self.get_results(query)
+        req = self.get_results(query)
+        if req['status'] == 'failed':
+            return{'status':'failed'},400
+        response = req['req']
         try:
             with open(f"html/{re.sub('[^A-Za-z0-9]+', '', query)}.html", "w",encoding="utf-8") as file:
                 file.write(response.text)
@@ -508,7 +542,7 @@ class GCrawler(Resource):
                 'link' : 'https://www.google.com{}'.format(direct.find('a')['href'])
             }
         except Exception as e:
-            logging.error('error occured.{}'.format(str(e)))
+            logger.error('error occured.{}'.format(str(e)))
             pass
 
         print('>> api calling end...')

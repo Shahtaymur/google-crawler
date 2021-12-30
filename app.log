@@ -1,12 +1,823 @@
 werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-root - ERROR - {'Date': 'Wed, 22 Dec 2021 04:04:50 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2903', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
-root - ERROR - {'Date': 'Wed, 22 Dec 2021 04:05:27 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2980', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
-root - ERROR - {'Date': 'Wed, 22 Dec 2021 04:05:39 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2952', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
-root - ERROR - {'Date': 'Wed, 22 Dec 2021 04:05:42 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2979', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
-root - ERROR - error occured.'NoneType' object has no attribute 'find'
-werkzeug - INFO - 127.0.0.1 - - [22/Dec/2021 09:05:45] "GET /search?q=what%20is%20seo&r_cache=yes&faqs=yes HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [22/Dec/2021 09:05:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+root - ERROR - {'Date': 'Wed, 29 Dec 2021 14:52:32 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2904', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
 root - ERROR - error occured.'NoneType' object has no attribute 'text'
 root - ERROR - error occured.'NoneType' object has no attribute 'text'
 root - ERROR - error occured.'NoneType' object has no attribute 'find'
-werkzeug - INFO - 127.0.0.1 - - [22/Dec/2021 09:07:21] "GET /search?q=define%20love HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [29/Dec/2021 19:55:17] "GET /search?q=how%20to%20code&r_cache=yes&faqs=yes HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [29/Dec/2021 19:55:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+29-12-2021:22:13:49 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+29-12-2021:22:14:07 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/applefaqsyes.json' now get result from google.
+29-12-2021:22:14:09 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:14:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=apple%2524faqs%253Dyes&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:14:15 ERROR    [g_crawler.py:479] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:14:15 ERROR    [g_crawler.py:530] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:14:15 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:14:15] "GET /search?q=apple$faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:14:15 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/samsungfaqsyes.json' now get result from google.
+29-12-2021:22:14:20 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:14:24 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=samsung%2524faqs%253Dyes&gl=pk&hl=en HTTP/1.1" 302 386
+29-12-2021:22:14:24 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dsamsung%252524faqs%25253Dyes%26gl%3Dpk%26hl%3Den&hl=en&q=EgR4HVfPGO-uso4GIhBeVnb-lbWI5YGV0PMgLKvFMgFy HTTP/1.1" 429 2931
+29-12-2021:22:14:25 ERROR    [g_crawler.py:109] {'Date': 'Wed, 29 Dec 2021 17:14:24 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2931', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:14:25 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:14:29 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=samsung%2524faqs%253Dyes&gl=pk&hl=en HTTP/1.1" 302 386
+29-12-2021:22:14:29 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dsamsung%252524faqs%25253Dyes%26gl%3Dpk%26hl%3Den&hl=en&q=EgRY85YUGPSuso4GIhCDcWKsMNiQxOF4hWJCgyVtMgFy HTTP/1.1" 429 2931
+29-12-2021:22:14:29 ERROR    [g_crawler.py:109] {'Date': 'Wed, 29 Dec 2021 17:14:29 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2931', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:14:29 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:14:34 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=samsung%2524faqs%253Dyes&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:14:37 ERROR    [g_crawler.py:479] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:14:37 ERROR    [g_crawler.py:530] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:14:37 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:14:37] "GET /search?q=samsung$faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:23:18 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+29-12-2021:22:23:43 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:23:47 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bcode&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] utf-8  confidence = 0.99
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] SHIFT_JIS Japanese confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] EUC-JP Japanese confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] GB2312 Chinese confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] EUC-KR Korean confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] CP949 Korean confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] Big5 Chinese confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] EUC-TW Taiwan confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] windows-1251 Russian confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] KOI8-R Russian confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] ISO-8859-5 Russian confidence = 0.0
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] MacCyrillic Russian confidence = 0.0
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] IBM866 Russian confidence = 0.0
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] IBM855 Russian confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] ISO-8859-7 Greek confidence = 0.0
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] windows-1253 Greek confidence = 0.0
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] ISO-8859-5 Bulgairan confidence = 0.0
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] windows-1251 Bulgarian confidence = 0.0
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] TIS-620 Thai confidence = 0.0
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] ISO-8859-9 Turkish confidence = 0.40254169248824956
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] windows-1255 Hebrew confidence = 0.0
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] windows-1255 Hebrew confidence = 0.0
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] windows-1255 Hebrew confidence = 0.0
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] utf-8  confidence = 0.99
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] SHIFT_JIS Japanese confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] EUC-JP Japanese confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] GB2312 Chinese confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] EUC-KR Korean confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] CP949 Korean confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] Big5 Chinese confidence = 0.01
+29-12-2021:22:24:33 DEBUG    [charsetgroupprober.py:100] EUC-TW Taiwan confidence = 0.01
+29-12-2021:22:24:47 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:25:09 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:25:14 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Bstart%2Blearning%2Bto%2Bcode%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:25:40 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:25:46 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bit%2Bhard%2Bto%2Blearn%2Bto%2Bcode%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:25:53 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:25:54 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:25:54 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:25:54] "GET /search?q=how%20to%20code&r_cache=yes&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:25:54 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:25:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+29-12-2021:22:26:47 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+29-12-2021:22:27:02 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/apple.json' now get result from google.
+29-12-2021:22:27:06 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:27:09 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=apple&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:27:28 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/apple.json' now get result from google.
+29-12-2021:22:27:33 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:27:37 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=apple&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:27:50 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:27:50 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:27:50 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:27:50 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:27:50 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:27:50 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:27:50 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:27:50] "GET /search?q=apple&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:27:50 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/samsung.json' now get result from google.
+29-12-2021:22:27:54 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:27:56 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:27:56 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:27:56 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:27:56 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:27:56 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:27:57 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:27:57 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:27:57] "GET /search?q=apple&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:27:57 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/samsung.json' now get result from google.
+29-12-2021:22:27:59 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:28:00 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=samsung&gl=pk&hl=en HTTP/1.1" 302 365
+29-12-2021:22:28:00 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dsamsung%26gl%3Dpk%26hl%3Den&hl=en&q=EgRnW4FcGJ-1so4GIhD2p0M3anSWtGV83tZ1fZfXMgFy HTTP/1.1" 429 2880
+29-12-2021:22:28:01 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:28:00 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2880', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:28:01 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:28:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=samsung&gl=pk&hl=en HTTP/1.1" 302 365
+29-12-2021:22:28:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dsamsung%26gl%3Dpk%26hl%3Den&hl=en&q=EgR2s3ByGKO1so4GIhDE-yETbnMkTZZ1hJjs5e1nMgFy HTTP/1.1" 429 2882
+29-12-2021:22:28:05 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:28:04 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2882', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:28:05 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:28:06 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=samsung&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:28:09 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=samsung&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:28:21 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:28:21 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:28:21 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:28:26 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:28:29 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:28:29 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:28:29 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:28:32 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Which%2BSamsung%2BSeries%2Bis%2Bbest%2Bin%2BPakistan%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:28:37 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:28:43 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Which%2BSamsung%2BSeries%2Bis%2Bbest%2Bin%2BPakistan%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:28:57 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:29:01 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bis%2Bthe%2Bprice%2Bof%2BSamsung%2Bin%2BPakistan%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:29:01 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:29:03 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:29:07 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:29:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bis%2Bthe%2Bprice%2Bof%2BSamsung%2Bin%2BPakistan%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:29:10 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Which%2Bis%2Bthe%2Bbest%2Bmobile%2Bof%2BSamsung%2Ba%2Bseries%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:29:14 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:29:19 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:29:22 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:29:24 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Which%2Bis%2Bthe%2Bbest%2Bmobile%2Bof%2BSamsung%2Ba%2Bseries%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:29:27 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Which%2Bis%2Bthe%2Bbest%2BSamsung%2Bmobile%2Bin%2Blow%2Bprice%253F&gl=pk&hl=en HTTP/1.1" 302 442
+29-12-2021:22:29:27 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhich%252Bis%252Bthe%252Bbest%252BSamsung%252Bmobile%252Bin%252Blow%252Bprice%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgQpbH1wGPa1so4GIhDMCkvhn0k9RNmzbrTaxKK-MgFy HTTP/1.1" 429 3058
+29-12-2021:22:29:27 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:29:27 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3058', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:29:27 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:29:30 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Which%2Bis%2Bthe%2Bbest%2BSamsung%2Bmobile%2Bin%2Blow%2Bprice%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:29:33 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:29:33 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:29:33 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:29:33] "GET /search?q=samsung&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:29:33 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/motorola.json' now get result from google.
+29-12-2021:22:29:35 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:29:37 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=motorola&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:29:41 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:29:45 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Which%2Bis%2Bthe%2Bbest%2BSamsung%2Bmobile%2Bin%2Blow%2Bprice%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:29:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:29:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:29:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:29:52 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:29:55 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:29:55 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:29:55 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:29:55] "GET /search?q=samsung&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:29:55 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/motorola.json' now get result from google.
+29-12-2021:22:29:56 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2BMotorola%2Bis%2Ba%2BChinese%2Bcompany%253F&gl=pk&hl=en HTTP/1.1" 302 417
+29-12-2021:22:29:58 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:29:58 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DIs%252BMotorola%252Bis%252Ba%252BChinese%252Bcompany%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgSBesZUGJO2so4GIhCBl6NJHlBVWZ1SwXZk90jJMgFy HTTP/1.1" 429 3001
+29-12-2021:22:29:58 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:29:57 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3001', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:29:58 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:30:01 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=motorola&gl=pk&hl=en HTTP/1.1" 302 366
+29-12-2021:22:30:02 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dmotorola%26gl%3Dpk%26hl%3Den&hl=en&q=EgRpZzUxGJi2so4GIhAXreN3pizyDTKFcSMNYdD7MgFy HTTP/1.1" 429 2883
+29-12-2021:22:30:02 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:30:01 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2883', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:30:02 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:30:02 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2BMotorola%2Bis%2Ba%2BChinese%2Bcompany%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:30:05 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=motorola&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:30:14 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:30:18 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:30:18 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:30:18 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:30:18 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bcompany%2Bowns%2BMotorola%253F&gl=pk&hl=en HTTP/1.1" 302 403
+29-12-2021:22:30:20 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bcompany%252Bowns%252BMotorola%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgQpbOcUGKq2so4GIhBCZohFb2vcfViyRSwLkbGKMgFy HTTP/1.1" 429 2970
+29-12-2021:22:30:20 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:30:19 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2970', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:30:20 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:30:23 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bcompany%2Bowns%2BMotorola%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:30:24 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:30:26 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2BMotorola%2Bis%2Ba%2BChinese%2Bcompany%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:30:31 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:30:33 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2BMotorola%2Ba%2Bfailure%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:30:34 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:30:37 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bcompany%2Bowns%2BMotorola%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:30:42 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:30:44 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:30:48 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2BMotorola%2Ba%2Bfailure%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:30:49 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2BMotorola%2Bdead%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:31:02 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:31:02 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:31:02 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:31:02 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:31:02] "GET /search?q=motorola&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:31:02 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/sony.json' now get result from google.
+29-12-2021:22:31:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2BMotorola%2Bdead%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:31:04 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:31:07 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:31:08 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:31:08 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:31:08] "GET /search?q=motorola&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:31:08 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/sony.json' now get result from google.
+29-12-2021:22:31:09 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=sony&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:31:10 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:31:14 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=sony&gl=pk&hl=en HTTP/1.1" 302 362
+29-12-2021:22:31:15 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dsony%26gl%3Dpk%26hl%3Den&hl=en&q=EgTESzgxGOK2so4GIhClAPHuWSZo4QfWr2F1fMTfMgFy HTTP/1.1" 429 2870
+29-12-2021:22:31:15 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:31:14 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2870', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:31:15 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:31:21 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=sony&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:31:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:31:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:31:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:31:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:31:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:31:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:31:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:31:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:31:48 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:31:54 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:31:57 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2BSony%2Bofficially%2Bin%2BPakistan%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:32:14 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:32:22 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2BSony%2Ba%2BChinese%2Bcompany%253F&gl=pk&hl=en HTTP/1.1" 302 406
+29-12-2021:22:32:23 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DIs%252BSony%252Ba%252BChinese%252Bcompany%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRVamETGKW3so4GIhDjvFXdmwRAh1vvBt45xpIQMgFy HTTP/1.1" 429 2972
+29-12-2021:22:32:24 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:32:23 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2972', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:32:24 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:32:29 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2BSony%2Ba%2BChinese%2Bcompany%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:32:40 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:32:47 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Does%2BSony%2Bsell%2Bonline%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:33:00 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:33:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bis%2BSony%2Bfamous%2Bfor%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:33:09 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:33:09 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:33:09] "GET /search?q=sony&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:33:09 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/topsightsinireland.json' now get result from google.
+29-12-2021:22:33:11 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:33:16 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=top%2Bsights%2Bin%2Bireland&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:33:40 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:33:45 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bshould%2Byou%2Bnot%2Bmiss%2Bin%2BIreland%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:33:59 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:34:03 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bis%2Bthe%2Bnumber%2Bone%2Battraction%2Bin%2BIreland%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:34:13 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:34:19 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Where%2Bshould%2BI%2Bgo%2Bin%2BIreland%2Bfor%2Bthe%2Bfirst%2Btime%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:34:36 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:34:40 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Where%2Bare%2Bthe%2Bbest%2Bviews%2Bin%2BIreland%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:34:45 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:34:45 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:34:45 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:34:45] "GET /search?q=top%20sights%20in%20ireland&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:34:45 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/howtocookbuckwheat.json' now get result from google.
+29-12-2021:22:34:49 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:34:54 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bcook%2Bbuckwheat&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:35:05 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:35:05 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:35:05 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:35:12 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:35:17 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Do%2BI%2Bneed%2Bto%2Bsoak%2Bbuckwheat%2Bbefore%2Bcooking%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:42:24 ERROR    [app.py:1457] Exception on /search [GET]
+Traceback (most recent call last):
+  File "c:\Git\google-crawler\g_crawler.py", line 45, in get
+    with open(f'cache/{filename}.json') as json_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'cache/howtocookbuckwheat.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\lib\site-packages\urllib3\response.py", line 438, in _error_catcher
+    yield
+  File "C:\python\lib\site-packages\urllib3\response.py", line 767, in read_chunked
+    chunk = self._handle_chunk(amt)
+  File "C:\python\lib\site-packages\urllib3\response.py", line 711, in _handle_chunk
+    value = self._fp._safe_read(amt)
+  File "C:\python\lib\http\client.py", line 625, in _safe_read
+    chunk = self.fp.read(min(amt, MAXAMOUNT))
+  File "C:\python\lib\socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "C:\python\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\python\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\lib\site-packages\requests\models.py", line 758, in generate
+    for chunk in self.raw.stream(chunk_size, decode_content=True):
+  File "C:\python\lib\site-packages\urllib3\response.py", line 572, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "C:\python\lib\site-packages\urllib3\response.py", line 793, in read_chunked
+    self._original_response.close()
+  File "C:\python\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\python\lib\site-packages\urllib3\response.py", line 455, in _error_catcher
+    raise ProtocolError("Connection broken: %r" % e, e)
+urllib3.exceptions.ProtocolError: ("Connection broken: ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None)", ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Git\google-crawler\g_crawler.py", line 105, in get_source
+    req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params)
+  File "C:\python\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\python\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\python\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\python\lib\site-packages\requests\sessions.py", line 697, in send
+    r.content
+  File "C:\python\lib\site-packages\requests\models.py", line 836, in content
+    self._content = b''.join(self.iter_content(CONTENT_CHUNK_SIZE)) or b''
+  File "C:\python\lib\site-packages\requests\models.py", line 761, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: ("Connection broken: ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None)", ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\python\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\python\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\python\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\python\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "c:\Git\google-crawler\g_crawler.py", line 49, in get
+    self.result =  self.google_search(self.query)
+  File "c:\Git\google-crawler\g_crawler.py", line 526, in google_search
+    faqs = self.extractQuestionData(response)
+  File "c:\Git\google-crawler\g_crawler.py", line 456, in extractQuestionData
+    req = self.get_results(title)
+  File "c:\Git\google-crawler\g_crawler.py", line 139, in get_results
+    response = self.get_source(query)
+  File "c:\Git\google-crawler\g_crawler.py", line 117, in get_source
+    logger.error(e.request.headers)
+AttributeError: 'NoneType' object has no attribute 'headers'
+29-12-2021:22:42:24 ERROR    [app.py:1457] Exception on /search [GET]
+Traceback (most recent call last):
+  File "c:\Git\google-crawler\g_crawler.py", line 45, in get
+    with open(f'cache/{filename}.json') as json_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'cache/sony.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\lib\site-packages\urllib3\response.py", line 438, in _error_catcher
+    yield
+  File "C:\python\lib\site-packages\urllib3\response.py", line 767, in read_chunked
+    chunk = self._handle_chunk(amt)
+  File "C:\python\lib\site-packages\urllib3\response.py", line 720, in _handle_chunk
+    returned_chunk = self._fp._safe_read(self.chunk_left)
+  File "C:\python\lib\http\client.py", line 625, in _safe_read
+    chunk = self.fp.read(min(amt, MAXAMOUNT))
+  File "C:\python\lib\socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "C:\python\lib\ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\python\lib\ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\lib\site-packages\requests\models.py", line 758, in generate
+    for chunk in self.raw.stream(chunk_size, decode_content=True):
+  File "C:\python\lib\site-packages\urllib3\response.py", line 572, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "C:\python\lib\site-packages\urllib3\response.py", line 793, in read_chunked
+    self._original_response.close()
+  File "C:\python\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\python\lib\site-packages\urllib3\response.py", line 455, in _error_catcher
+    raise ProtocolError("Connection broken: %r" % e, e)
+urllib3.exceptions.ProtocolError: ("Connection broken: ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None)", ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Git\google-crawler\g_crawler.py", line 105, in get_source
+    req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params)
+  File "C:\python\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\python\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\python\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\python\lib\site-packages\requests\sessions.py", line 697, in send
+    r.content
+  File "C:\python\lib\site-packages\requests\models.py", line 836, in content
+    self._content = b''.join(self.iter_content(CONTENT_CHUNK_SIZE)) or b''
+  File "C:\python\lib\site-packages\requests\models.py", line 761, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: ("Connection broken: ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None)", ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\python\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\python\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\python\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\python\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "c:\Git\google-crawler\g_crawler.py", line 49, in get
+    self.result =  self.google_search(self.query)
+  File "c:\Git\google-crawler\g_crawler.py", line 507, in google_search
+    req = self.get_results(query)
+  File "c:\Git\google-crawler\g_crawler.py", line 139, in get_results
+    response = self.get_source(query)
+  File "c:\Git\google-crawler\g_crawler.py", line 117, in get_source
+    logger.error(e.request.headers)
+AttributeError: 'NoneType' object has no attribute 'headers'
+29-12-2021:22:42:24 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:42:24] "[35m[1mGET /search?q=how%20to%20cook%20buckwheat&faqs=yes HTTP/1.1[0m" 500 -
+29-12-2021:22:42:24 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:42:24] "[35m[1mGET /search?q=sony&faqs=yes HTTP/1.1[0m" 500 -
+29-12-2021:22:42:24 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:42:24] "GET /search?q=top%20sights%20in%20ireland&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:42:24 INFO     [g_crawler.py:48] >> no cache found 'charmap' codec can't decode byte 0x9d in position 1567: character maps to <undefined> now get result from google.
+29-12-2021:22:42:24 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/howtocookbuckwheat.json' now get result from google.
+29-12-2021:22:42:26 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:42:26 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:42:30 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bcook%2Bbuckwheat&gl=pk&hl=en HTTP/1.1" 302 391
+29-12-2021:22:42:30 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=define%2Blove&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:42:31 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dhow%252Bto%252Bcook%252Bbuckwheat%26gl%3Dpk%26hl%3Den&hl=en&q=EgTVK7JBGIa8so4GIhCLMbVUGJzO9Rw35ZxM-mjcMgFy HTTP/1.1" 429 2940
+29-12-2021:22:42:31 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:42:31 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2940', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:42:31 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:42:33 ERROR    [g_crawler.py:331] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:42:33 ERROR    [g_crawler.py:331] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:42:35 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bcook%2Bbuckwheat&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:42:40 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:42:40 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:42:40 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:42:40 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:42:44 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:43:02 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Do%2BI%2Bneed%2Bto%2Bsoak%2Bbuckwheat%2Bbefore%2Bcooking%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:43:03 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:43:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bis%2Bthe%2Bbest%2Bdefinition%2Bof%2Blove%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:43:11 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:43:23 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:43:27 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bis%2Bthe%2Bratio%2Bof%2Bwater%2Bto%2Bbuckwheat%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:43:31 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bare%2Bthe%2B4%2Btypes%2Bof%2Blove%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:43:36 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:43:45 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:44:51 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:44:51 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:45:54 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:45:54 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:03 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Btrue%2Blove%2Breally%2Bmeans%253F&gl=pk&hl=en HTTP/1.1" 302 408
+29-12-2021:22:46:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Btrue%252Blove%252Breally%252Bmeans%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgTVmfRdGNu9so4GIhAD-6qd3fgmJyUFYYJKdVSDMgFy HTTP/1.1" 429 2980
+29-12-2021:22:46:04 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:46:04 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2980', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:46:04 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:05 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bis%2Bthe%2Bbest%2Bway%2Bto%2Beat%2Bbuckwheat%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:46:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Btrue%2Blove%2Breally%2Bmeans%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:46:14 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:16 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:19 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Why%2Bdoes%2BBuckwheat%2Bneed%2Bto%2Bbe%2Bsoaked%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:46:19 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2527s%2Ba%2Bdeeper%2Bword%2Bfor%2Blove%253F&gl=pk&hl=en HTTP/1.1" 302 420
+29-12-2021:22:46:20 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252527s%252Ba%252Bdeeper%252Bword%252Bfor%252Blove%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgQp8piGGOq9so4GIhCo8EvjYfbk9GOEr2eOpnlPMgFy HTTP/1.1" 429 3004
+29-12-2021:22:46:20 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:46:19 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3004', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:46:20 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:20 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:46:21 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:46:21 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:46:21] "GET /search?q=how%20to%20cook%20buckwheat&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:46:21 INFO     [g_crawler.py:48] >> no cache found 'charmap' codec can't decode byte 0x9d in position 1567: character maps to <undefined> now get result from google.
+29-12-2021:22:46:24 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2527s%2Ba%2Bdeeper%2Bword%2Bfor%2Blove%253F&gl=pk&hl=en HTTP/1.1" 302 436
+29-12-2021:22:46:25 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252527s%252Ba%252Bdeeper%252Bword%252Bfor%252Blove%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EhAgAUSKUOEQdtj8g7N-J2i8GO-9so4GIhCAhZnULc9IQXZ3aYBuiw21MgFy HTTP/1.1" 429 3045
+29-12-2021:22:46:25 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:46:24 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3045', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:46:25 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:26 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:28 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=define%2Blove&gl=pk&hl=en HTTP/1.1" 302 373
+29-12-2021:22:46:29 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Ddefine%252Blove%26gl%3Dpk%26hl%3Den&hl=en&q=EgQt7jVgGPS9so4GIhCtqfcVWzcQGuqLgz_YIG74MgFy HTTP/1.1" 429 2897
+29-12-2021:22:46:29 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:46:29 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2897', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:46:29 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:29 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2527s%2Ba%2Bdeeper%2Bword%2Bfor%2Blove%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:46:31 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:46:31 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:46:31] "GET /search?q=define%20love&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:46:31 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/imarankhan.json' now get result from google.
+29-12-2021:22:46:33 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:35 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=define%2Blove&gl=pk&hl=en HTTP/1.1" 302 373
+29-12-2021:22:46:36 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Ddefine%252Blove%26gl%3Dpk%26hl%3Den&hl=en&q=EgS204XUGPu9so4GIhAnEf5qJSwE_uukiWy_u-4IMgFy HTTP/1.1" 429 2900
+29-12-2021:22:46:36 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:46:36 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2900', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:46:36 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:36 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=imaran%2Bkhan&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:46:40 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:46:40 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:46:40 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:46:40 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:46:40 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:46:40 ERROR    [g_crawler.py:430] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:46:40 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=define%2Blove&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:46:41 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:46:41 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:46:41] "GET /search?q=imaran%20khan&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:46:41 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/whatisnodejs.json' now get result from google.
+29-12-2021:22:46:44 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:45 ERROR    [g_crawler.py:331] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:46:45 ERROR    [g_crawler.py:331] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:46:53 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:46:53 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=what%2Bis%2Bnode%2Bjs&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:46:57 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bis%2Bthe%2Bbest%2Bdefinition%2Bof%2Blove%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:47:05 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:47:06 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:47:09 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bare%2Bthe%2B4%2Btypes%2Bof%2Blove%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:47:09 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bis%2Bnode%2BJS%2Band%2Bwhy%2Buse%2Bit%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:47:17 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:47:19 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:47:20 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2BJS%2Bfrontend%2Bor%2Bbackend%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:47:23 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Btrue%2Blove%2Breally%2Bmeans%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:47:23 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:47:27 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:47:31 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:47:31 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2BJS%2Band%2BJavaScript%2Bsame%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:47:34 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2527s%2Ba%2Bdeeper%2Bword%2Bfor%2Blove%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:47:36 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:47:36 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:47:36] "GET /search?q=define%20love&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:47:36 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:47:36] "GET /search?q=imaran%20khan&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:47:36 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/whatisnodejs.json' now get result from google.
+29-12-2021:22:47:41 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:47:42 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:47:45 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=what%2Bis%2Bnode%2Bjs&gl=pk&hl=en HTTP/1.1" 302 385
+29-12-2021:22:47:46 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dwhat%252Bis%252Bnode%252Bjs%26gl%3Dpk%26hl%3Den&hl=en&q=EgROGvIjGMC-so4GIhC_lif964HVO8Bdo6y7lZU_MgFy HTTP/1.1" 429 2921
+29-12-2021:22:47:46 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:47:45 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2921', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:47:46 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:47:46 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2Bjs%2Ba%2Bprogramming%2Blanguage%253F&gl=pk&hl=en HTTP/1.1" 302 418
+29-12-2021:22:47:46 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DIs%252Bnode%252Bjs%252Ba%252Bprogramming%252Blanguage%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgSX-vctGMG-so4GIhA4FlRa526dDnjqlkqJTPWYMgFy HTTP/1.1" 429 3004
+29-12-2021:22:47:46 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:47:46 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3004', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:47:46 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:47:49 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=what%2Bis%2Bnode%2Bjs&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:47:52 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2Bjs%2Ba%2Bprogramming%2Blanguage%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:47:53 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:47:53 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:47:53] "GET /search?q=what%20is%20node%20js&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:47:53 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/nodejs.json' now get result from google.
+29-12-2021:22:47:55 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:00 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=node%2Bjs&gl=pk&hl=en HTTP/1.1" 302 369
+29-12-2021:22:48:01 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dnode%252Bjs%26gl%3Dpk%26hl%3Den&hl=en&q=EgTKM1lCGM--so4GIhC7qcznyLjt07oP_mI4xGUJMgFy HTTP/1.1" 429 2885
+29-12-2021:22:48:01 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:48:00 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2885', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:48:01 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:01 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bis%2Bnode%2BJS%2Band%2Bwhy%2Buse%2Bit%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:48:05 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=node%2Bjs&gl=pk&hl=en HTTP/1.1" 302 369
+29-12-2021:22:48:06 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dnode%252Bjs%26gl%3Dpk%26hl%3Den&hl=en&q=EgRnpqsGGNW-so4GIhC0kzO0Tz2lqMaNcvIvhQbzMgFy HTTP/1.1" 429 2886
+29-12-2021:22:48:06 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:48:06 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2886', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:48:06 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:13 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=node%2Bjs&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:48:17 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:21 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2BJS%2Bfrontend%2Bor%2Bbackend%253F&gl=pk&hl=en HTTP/1.1" 302 415
+29-12-2021:22:48:22 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DIs%252Bnode%252BJS%252Bfrontend%252Bor%252Bbackend%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRnk6KlGOW-so4GIhCF8Oy2K8P3_PGe8AHIAidwMgFy HTTP/1.1" 429 2996
+29-12-2021:22:48:22 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:48:22 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2996', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:48:22 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:24 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:25 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2BJS%2Bfrontend%2Bor%2Bbackend%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:48:27 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:48:31 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2BJS%2Bfrontend%2Bor%2Bbackend%253F&gl=pk&hl=en HTTP/1.1" 302 415
+29-12-2021:22:48:32 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DIs%252Bnode%252BJS%252Bfrontend%252Bor%252Bbackend%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgSawMuEGO6-so4GIhD4YzfZWrGaerAzl7cQ_m1NMgFy HTTP/1.1" 429 2996
+29-12-2021:22:48:32 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:48:31 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2996', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:48:32 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:33 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:35 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2BJS%2Bfrontend%2Bor%2Bbackend%253F&gl=pk&hl=en HTTP/1.1" 302 415
+29-12-2021:22:48:36 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DIs%252Bnode%252BJS%252Bfrontend%252Bor%252Bbackend%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgSIngvfGPO-so4GIhD9bz5yKlAOWVOONj88rrI6MgFy HTTP/1.1" 429 2995
+29-12-2021:22:48:36 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:48:36 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2995', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:48:36 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:37 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2BJS%2Band%2BJavaScript%2Bsame%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:48:44 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2BJS%2Bfrontend%2Bor%2Bbackend%253F&gl=pk&hl=en HTTP/1.1" 302 415
+29-12-2021:22:48:45 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DIs%252Bnode%252BJS%252Bfrontend%252Bor%252Bbackend%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRfJlUOGPq-so4GIhAuji0hzlBewAcK5WVjlDlRMgFy HTTP/1.1" 429 2992
+29-12-2021:22:48:45 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:48:44 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2992', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:48:45 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:45 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:48 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2BJS%2Bfrontend%2Bor%2Bbackend%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:48:49 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:48:50 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2Bjs%2Ba%2Bprogramming%2Blanguage%253F&gl=pk&hl=en HTTP/1.1" 302 418
+29-12-2021:22:48:51 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DIs%252Bnode%252Bjs%252Ba%252Bprogramming%252Blanguage%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRuStW8GIG_so4GIhBJdewcj0Nj2WYsMDVCdXAaMgFy HTTP/1.1" 429 3004
+29-12-2021:22:48:51 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:48:51 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3004', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:48:51 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:54 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2Bjs%2Ba%2Bprogramming%2Blanguage%253F&gl=pk&hl=en HTTP/1.1" 302 418
+29-12-2021:22:48:55 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DIs%252Bnode%252Bjs%252Ba%252Bprogramming%252Blanguage%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRpZ8cyGIa_so4GIhCQgUevvoZzxlibpRLgxh3IMgFy HTTP/1.1" 429 3004
+29-12-2021:22:48:55 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:48:55 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3004', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:48:55 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:55 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:58 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2Bjs%2Ba%2Bprogramming%2Blanguage%253F&gl=pk&hl=en HTTP/1.1" 302 418
+29-12-2021:22:48:59 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DIs%252Bnode%252Bjs%252Ba%252Bprogramming%252Blanguage%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgTFmV4RGIq_so4GIhB-Z-Hr6oJS0yAoYoWPW144MgFy HTTP/1.1" 429 3003
+29-12-2021:22:48:59 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:48:59 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3003', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:48:59 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:48:59 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2Bjs%2Beasier%2Bthan%2BJava%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:49:01 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2Bjs%2Ba%2Bprogramming%2Blanguage%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:49:03 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:49:03 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:49:03] "GET /search?q=what%20is%20node%20js&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:49:03 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/nodejs.json' now get result from google.
+29-12-2021:22:49:07 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:49:09 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:49:11 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=node%2Bjs&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:49:17 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bdoes%2Bnode%2BJS%2Bactually%2Bdo%253F&gl=pk&hl=en HTTP/1.1" 302 414
+29-12-2021:22:49:17 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bdoes%252Bnode%252BJS%252Bactually%252Bdo%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgQp40TBGJy_so4GIhAFUeHRKSPdR_I1w0RFvO5HMgFy HTTP/1.1" 429 2991
+29-12-2021:22:49:17 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:49:17 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2991', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:49:17 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:49:21 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bdoes%2Bnode%2BJS%2Bactually%2Bdo%253F&gl=pk&hl=en HTTP/1.1" 302 414
+29-12-2021:22:49:22 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bdoes%252Bnode%252BJS%252Bactually%252Bdo%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRpnOmQGKG_so4GIhB7elrTJYkiH4ciVnTtlPP5MgFy HTTP/1.1" 429 2993
+29-12-2021:22:49:22 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:49:22 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2993', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:49:22 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:49:25 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bdoes%2Bnode%2BJS%2Bactually%2Bdo%253F&gl=pk&hl=en HTTP/1.1" 302 414
+29-12-2021:22:49:25 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bdoes%252Bnode%252BJS%252Bactually%252Bdo%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgS-3ZuSGKS_so4GIhAHExa_MIe0kU-HUcuqYSJbMgFy HTTP/1.1" 429 2993
+29-12-2021:22:49:25 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:49:25 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2993', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:49:25 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:49:25 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:49:29 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2BJS%2Bfrontend%2Bor%2Bbackend%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:49:30 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bdoes%2Bnode%2BJS%2Bactually%2Bdo%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:49:32 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:49:39 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:49:40 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:49:42 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2Bjs%2Beasier%2Bthan%2BJava%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:49:48 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2Bjs%2Ba%2Bprogramming%2Blanguage%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:49:52 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:49:52 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:49:52] "GET /search?q=node%20js&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:49:52 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/howtorunpythoncode.json' now get result from google.
+29-12-2021:22:49:52 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:49:55 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:49:57 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bdoes%2Bnode%2BJS%2Bactually%2Bdo%253F&gl=pk&hl=en HTTP/1.1" 302 430
+29-12-2021:22:49:58 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bdoes%252Bnode%252BJS%252Bactually%252Bdo%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EhAkAtAApQBPf8k4lZYaMIgPGMS_so4GIhApniyQQnu36TwiZzwNzX9lMgFy HTTP/1.1" 429 3033
+29-12-2021:22:49:58 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:49:57 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3033', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:49:58 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:50:00 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Brun%2Bpython%2Bcode&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:50:02 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bdoes%2Bnode%2BJS%2Bactually%2Bdo%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:50:03 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:50:11 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:50:12 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:51:09 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Brun%2Ba%2Bpython%2Bprogram%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:51:09 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Bnode%2Bjs%2Ba%2Bprogramming%2Blanguage%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:51:11 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:51:11 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:51:11] "GET /search?q=node%20js&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:51:11 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/howtorunpythoncode.json' now get result from google.
+29-12-2021:22:51:16 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:51:20 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:51:20 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Brun%2Bpython%2Bcode&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:51:22 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:51:26 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Brun%2Bpython%2Bcode%2Bin%2Bterminal%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:51:27 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:51:30 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Brun%2Ba%2Bpython%2Bprogram%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:51:39 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:51:41 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:51:44 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Brun%2Bpython%2Bcode%2Bin%2Bterminal%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:51:49 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Brun%2Bfirst%2Bcode%2Bin%2Bpython%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:51:54 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:51:58 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:52:10 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Brun%2Bfirst%2Bcode%2Bin%2Bpython%253F&gl=pk&hl=en HTTP/1.1" 302 426
+29-12-2021:22:52:11 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Brun%2Ba%2Bpython%2Bscript%2Bin%2BWindows%2B10%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:52:11 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DHow%252Bdo%252BI%252Brun%252Bfirst%252Bcode%252Bin%252Bpython%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRnDYQFGMjAso4GIhDoTc9rWu7SmcYbMUz7zeSVMgFy HTTP/1.1" 429 3014
+29-12-2021:22:52:11 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:52:11 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3014', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:52:11 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:52:12 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:52:13 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:52:13 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:52:13] "GET /search?q=how%20to%20run%20python%20code&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:52:13 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/bestgamesin2021.json' now get result from google.
+29-12-2021:22:52:15 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:52:16 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Brun%2Bfirst%2Bcode%2Bin%2Bpython%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:52:20 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=best%2Bgames%2Bin%2B2021&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:52:25 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:52:29 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Brun%2Ba%2Bpython%2Bprogram%2Bin%2BWindows%2B10%253F&gl=pk&hl=en HTTP/1.1" 302 444
+29-12-2021:22:52:30 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DHow%252Bdo%252BI%252Brun%252Ba%252Bpython%252Bprogram%252Bin%252BWindows%252B10%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRzuqkIGNzAso4GIhDMcyBzzZjNe7upl2xYFYIfMgFy HTTP/1.1" 429 3057
+29-12-2021:22:52:30 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:52:30 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3057', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:52:30 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:52:35 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Brun%2Ba%2Bpython%2Bprogram%2Bin%2BWindows%2B10%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:52:36 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:52:37 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:52:37 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:52:37] "GET /search?q=how%20to%20run%20python%20code&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:52:37 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/bestgamesin2021.json' now get result from google.
+29-12-2021:22:52:41 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:52:44 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=best%2Bgames%2Bin%2B2021&gl=pk&hl=en HTTP/1.1" 302 388
+29-12-2021:22:52:45 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dbest%252Bgames%252Bin%252B2021%26gl%3Dpk%26hl%3Den&hl=en&q=EgQf32qOGOvAso4GIhCZcqW72qmkBqk8VFd9bLBCMgFy HTTP/1.1" 429 2932
+29-12-2021:22:52:45 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:52:45 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2932', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:52:45 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:52:55 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=best%2Bgames%2Bin%2B2021&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:53:00 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:53:01 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:53:01 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:53:01] "GET /search?q=best%20games%20in%202021&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:53:01 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/upcomingmovies.json' now get result from google.
+29-12-2021:22:53:01 ERROR    [app.py:1457] Exception on /search [GET]
+Traceback (most recent call last):
+  File "c:\Git\google-crawler\g_crawler.py", line 45, in get
+    with open(f'cache/{filename}.json') as json_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'cache/bestgamesin2021.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\lib\site-packages\urllib3\response.py", line 438, in _error_catcher
+    yield
+  File "C:\python\lib\site-packages\urllib3\response.py", line 767, in read_chunked
+    chunk = self._handle_chunk(amt)
+  File "C:\python\lib\site-packages\urllib3\response.py", line 720, in _handle_chunk
+    returned_chunk = self._fp._safe_read(self.chunk_left)
+  File "C:\python\lib\http\client.py", line 627, in _safe_read
+    raise IncompleteRead(b''.join(s), amt)
+http.client.IncompleteRead: IncompleteRead(2949 bytes read, 3182 more expected)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\lib\site-packages\requests\models.py", line 758, in generate
+    for chunk in self.raw.stream(chunk_size, decode_content=True):
+  File "C:\python\lib\site-packages\urllib3\response.py", line 572, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "C:\python\lib\site-packages\urllib3\response.py", line 793, in read_chunked
+    self._original_response.close()
+  File "C:\python\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\python\lib\site-packages\urllib3\response.py", line 455, in _error_catcher
+    raise ProtocolError("Connection broken: %r" % e, e)
+urllib3.exceptions.ProtocolError: ('Connection broken: IncompleteRead(2949 bytes read, 3182 more expected)', IncompleteRead(2949 bytes read, 3182 more expected))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Git\google-crawler\g_crawler.py", line 105, in get_source
+    req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params)
+  File "C:\python\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\python\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\python\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\python\lib\site-packages\requests\sessions.py", line 697, in send
+    r.content
+  File "C:\python\lib\site-packages\requests\models.py", line 836, in content
+    self._content = b''.join(self.iter_content(CONTENT_CHUNK_SIZE)) or b''
+  File "C:\python\lib\site-packages\requests\models.py", line 761, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: ('Connection broken: IncompleteRead(2949 bytes read, 3182 more expected)', IncompleteRead(2949 bytes read, 3182 more expected))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\python\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\python\lib\site-packages\flask_restful\__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\python\lib\site-packages\flask\views.py", line 84, in view
+    return current_app.ensure_sync(self.dispatch_request)(*args, **kwargs)
+  File "C:\python\lib\site-packages\flask_restful\__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "c:\Git\google-crawler\g_crawler.py", line 49, in get
+    self.result =  self.google_search(self.query)
+  File "c:\Git\google-crawler\g_crawler.py", line 507, in google_search
+    req = self.get_results(query)
+  File "c:\Git\google-crawler\g_crawler.py", line 139, in get_results
+    response = self.get_source(query)
+  File "c:\Git\google-crawler\g_crawler.py", line 117, in get_source
+    logger.error(e.request.headers)
+AttributeError: 'NoneType' object has no attribute 'headers'
+29-12-2021:22:53:01 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:53:01] "[35m[1mGET /search?q=best%20games%20in%202021&faqs=yes HTTP/1.1[0m" 500 -
+29-12-2021:22:53:01 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/upcomingmovies.json' now get result from google.
+29-12-2021:22:53:03 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:53:05 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:53:07 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=upcoming%2Bmovies&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:53:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=upcoming%2Bmovies&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:53:11 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:53:11 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:53:11 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:53:11] "GET /search?q=upcoming%20movies&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:53:11 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/howmanyouncesinagallon.json' now get result from google.
+29-12-2021:22:53:13 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:53:14 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:53:14 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:53:14 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:53:14] "GET /search?q=upcoming%20movies&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:53:14 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/howmanyouncesinagallon.json' now get result from google.
+29-12-2021:22:53:17 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:53:18 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bmany%2Bounces%2Bin%2Ba%2Bgallon&gl=pk&hl=en HTTP/1.1" 302 405
+29-12-2021:22:53:19 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dhow%252Bmany%252Bounces%252Bin%252Ba%252Bgallon%26gl%3Dpk%26hl%3Den&hl=en&q=EgQpUy0XGI3Bso4GIhAw4HK_fcmFVijLNXN2FBP8MgFy HTTP/1.1" 429 2968
+29-12-2021:22:53:19 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:53:19 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2968', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:53:19 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:53:20 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bmany%2Bounces%2Bin%2Ba%2Bgallon&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:53:22 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:53:22 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:53:22 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:53:22] "GET /search?q=how%20many%20ounces%20in%20a%20gallon&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:53:22 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/LEDSubmersibleLights.json' now get result from google.
+29-12-2021:22:53:25 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bmany%2Bounces%2Bin%2Ba%2Bgallon&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:53:26 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:53:26 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:53:26 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:53:26] "GET /search?q=how%20many%20ounces%20in%20a%20gallon&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:53:27 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/LEDSubmersibleLights.json' now get result from google.
+29-12-2021:22:53:27 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:53:31 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:53:32 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=LED%2BSubmersible%2BLights&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:53:34 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=LED%2BSubmersible%2BLights&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:53:43 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:53:44 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:53:50 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2BLED%2Blight%2Bgo%2Bunder%2Bwater%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:53:51 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2BLED%2Blight%2Bgo%2Bunder%2Bwater%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:53:59 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:54:01 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:54:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bdoes%2Bsubmersible%2BLED%2Blight%2Bmean%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:54:05 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bdoes%2Bsubmersible%2BLED%2Blight%2Bmean%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:54:06 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:54:06 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:54:06 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:54:06] "GET /search?q=LED%20Submersible%20Lights&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:54:06 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/PortableProjector.json' now get result from google.
+29-12-2021:22:54:08 ERROR    [g_crawler.py:485] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:54:08 ERROR    [g_crawler.py:539] error occured.'NoneType' object has no attribute 'find'
+29-12-2021:22:54:08 INFO     [_internal.py:225] 127.0.0.1 - - [29/Dec/2021 22:54:08] "GET /search?q=LED%20Submersible%20Lights&faqs=yes HTTP/1.1" 200 -
+29-12-2021:22:54:08 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/PortableProjector.json' now get result from google.
+29-12-2021:22:54:08 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:54:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Portable%2BProjector&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:54:13 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:54:16 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Portable%2BProjector&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:54:24 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:54:27 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Which%2Bis%2Bthe%2Bbest%2Bportable%2Bprojector%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:54:29 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:54:30 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:54:35 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Which%2Bis%2Bthe%2Bbest%2Bportable%2Bprojector%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:54:37 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:54:37 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:54:42 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Ba%2Bportable%2Bprojector%2Bworth%2Bit%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:54:46 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:54:49 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:54:53 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bplay%2BNetflix%2Bthrough%2Ba%2Bprojector%253F&gl=pk&hl=en HTTP/1.1" 302 429
+29-12-2021:22:54:54 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bplay%252BNetflix%252Bthrough%252Ba%252Bprojector%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgTFzsWoGOzBso4GIhBD9yGP_F9xA7sIWWBXdqOcMgFy HTTP/1.1" 429 3032
+29-12-2021:22:54:54 ERROR    [g_crawler.py:111] {'Date': 'Wed, 29 Dec 2021 17:54:53 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3032', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+29-12-2021:22:54:54 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:54:54 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Is%2Ba%2Bportable%2Bprojector%2Bworth%2Bit%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:54:59 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bplay%2BNetflix%2Bthrough%2Ba%2Bprojector%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:55:01 ERROR    [g_crawler.py:267] error occured.'NoneType' object has no attribute 'text'
+29-12-2021:22:55:07 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:55:09 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+29-12-2021:22:55:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bplay%2BNetflix%2Bthrough%2Ba%2Bprojector%253F&gl=pk&hl=en HTTP/1.1" 200 None
+29-12-2021:22:55:13 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bis%2Bthe%2Bprice%2Bof%2Ba%2Bprojector%2Bin%2BPakistan%253F&gl=pk&hl=en HTTP/1.1" 200 None
+30-12-2021:09:39:54 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+30-12-2021:09:40:13 INFO     [g_crawler.py:48] >> no cache found 'charmap' codec can't decode byte 0x9d in position 257: character maps to <undefined> now get result from google.
+30-12-2021:09:40:16 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+30-12-2021:09:40:21 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=what%2Bis%2Bseo&gl=pk&hl=en HTTP/1.1" 302 377
+30-12-2021:09:40:21 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dwhat%252Bis%252Bseo%26gl%3Dpk%26hl%3Den&hl=en&q=EgRneixGGLXwtI4GIhDHXVC4-hHg00OINr_cPP6WMgFy HTTP/1.1" 429 2904
+30-12-2021:09:40:57 ERROR    [g_crawler.py:111] {'Date': 'Thu, 30 Dec 2021 04:40:22 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2904', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+30-12-2021:09:40:59 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+30-12-2021:09:41:02 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=what%2Bis%2Bseo&gl=pk&hl=en HTTP/1.1" 302 377
+30-12-2021:09:41:03 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dwhat%252Bis%252Bseo%26gl%3Dpk%26hl%3Den&hl=en&q=EgRnk6POGN7wtI4GIhA0iGbOcMJECXb4TgRq4QkgMgFy HTTP/1.1" 429 2906
