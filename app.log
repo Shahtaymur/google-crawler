@@ -821,3 +821,572 @@ AttributeError: 'NoneType' object has no attribute 'headers'
 30-12-2021:09:40:59 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
 30-12-2021:09:41:02 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=what%2Bis%2Bseo&gl=pk&hl=en HTTP/1.1" 302 377
 30-12-2021:09:41:03 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dwhat%252Bis%252Bseo%26gl%3Dpk%26hl%3Den&hl=en&q=EgRnk6POGN7wtI4GIhA0iGbOcMJECXb4TgRq4QkgMgFy HTTP/1.1" 429 2906
+05-01-2022:19:07:13 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+05-01-2022:19:07:16 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/whatisgame.json' now get result from google.
+05-01-2022:19:07:18 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:07:25 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=what%2Bis%2Bgame&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:19:07:42 ERROR    [g_crawler.py:337] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:07:42 ERROR    [g_crawler.py:337] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:07:42 ERROR    [g_crawler.py:337] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:07:42 ERROR    [g_crawler.py:337] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:07:47 ERROR    [g_crawler.py:545] error occured.'NoneType' object has no attribute 'find'
+05-01-2022:19:07:47 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 19:07:47] "GET /search?q=what%20is%20game HTTP/1.1" 200 -
+05-01-2022:19:07:48 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 19:07:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+05-01-2022:19:08:31 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:08:39 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=apple&gl=pk&hl=en HTTP/1.1" 302 363
+05-01-2022:19:08:40 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dapple%26gl%3Dpk%26hl%3Den&hl=en&q=EgRN3pbKGOfM1o4GIhAVoTJ8-aeiLRzPc-ax-cJ7MgFy HTTP/1.1" 429 2875
+05-01-2022:19:08:40 ERROR    [g_crawler.py:111] {'Date': 'Wed, 05 Jan 2022 14:08:41 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2875', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+05-01-2022:19:08:40 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:08:44 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=apple&gl=pk&hl=en HTTP/1.1" 302 363
+05-01-2022:19:08:45 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dapple%26gl%3Dpk%26hl%3Den&hl=en&q=EgRwyIDNGO3M1o4GIhC-L3xvw0ogTdwuwMR0IZTBMgFy HTTP/1.1" 429 2876
+05-01-2022:19:08:45 ERROR    [g_crawler.py:111] {'Date': 'Wed, 05 Jan 2022 14:08:46 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2876', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+05-01-2022:19:08:45 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:08:49 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=apple&gl=pk&hl=en HTTP/1.1" 302 363
+05-01-2022:19:08:49 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dapple%26gl%3Dpk%26hl%3Den&hl=en&q=EgQpDQcmGPHM1o4GIhB3IHqvv1p-dO3THCu7LkT1MgFy HTTP/1.1" 429 2871
+05-01-2022:19:08:50 ERROR    [g_crawler.py:111] {'Date': 'Wed, 05 Jan 2022 14:08:51 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2871', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+05-01-2022:19:08:50 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:08:57 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=apple&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:19:09:21 ERROR    [g_crawler.py:436] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:09:21 ERROR    [g_crawler.py:436] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:09:21 ERROR    [g_crawler.py:436] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:09:21 ERROR    [g_crawler.py:436] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:09:21 ERROR    [g_crawler.py:436] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:09:22 ERROR    [g_crawler.py:545] error occured.'NoneType' object has no attribute 'find'
+05-01-2022:19:09:22 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 19:09:22] "GET /search?q=apple&r_cache=yes HTTP/1.1" 200 -
+05-01-2022:19:11:12 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+05-01-2022:19:11:18 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:11:21 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=apple&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:19:11:42 ERROR    [g_crawler.py:437] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:11:42 ERROR    [g_crawler.py:437] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:11:42 ERROR    [g_crawler.py:437] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:11:42 ERROR    [g_crawler.py:437] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:11:42 ERROR    [g_crawler.py:437] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:11:44 ERROR    [g_crawler.py:546] error occured.'NoneType' object has no attribute 'find'
+05-01-2022:19:11:44 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 19:11:44] "GET /search?q=apple&r_cache=yes HTTP/1.1" 200 -
+05-01-2022:19:13:25 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:13:34 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=apple&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:19:14:05 ERROR    [g_crawler.py:437] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:14:05 ERROR    [g_crawler.py:437] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:14:05 ERROR    [g_crawler.py:437] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:14:05 ERROR    [g_crawler.py:437] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:14:05 ERROR    [g_crawler.py:437] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:19:14:06 ERROR    [g_crawler.py:546] error occured.'NoneType' object has no attribute 'find'
+05-01-2022:19:14:06 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 19:14:06] "GET /search?q=apple&r_cache=yes HTTP/1.1" 200 -
+05-01-2022:19:14:35 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:14:37 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=what%2Bis%2Bsep&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:19:14:48 ERROR    [g_crawler.py:546] error occured.'NoneType' object has no attribute 'find'
+05-01-2022:19:14:48 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 19:14:48] "GET /search?q=what%20is%20sep&r_cache=yes HTTP/1.1" 200 -
+05-01-2022:19:15:24 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:15:27 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=what%2Bis%2Bsep&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:19:15:42 ERROR    [g_crawler.py:546] error occured.'NoneType' object has no attribute 'find'
+05-01-2022:19:15:42 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 19:15:42] "GET /search?q=what%20is%20sep&r_cache=yes HTTP/1.1" 200 -
+05-01-2022:19:16:02 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:16:03 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:16:03 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:16:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bcook%2Bbuckwheat&gl=pk&hl=en HTTP/1.1" 302 391
+05-01-2022:19:16:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dhow%252Bto%252Bcook%252Bbuckwheat%26gl%3Dpk%26hl%3Den&hl=en&q=EgTFzUMvGKnQ1o4GIhDHeV9E2XXlMyp8K8a3fAQfMgFy HTTP/1.1" 429 2940
+05-01-2022:19:16:08 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:12373"
+05-01-2022:19:16:08 ERROR    [g_crawler.py:111] {'Date': 'Wed, 05 Jan 2022 14:16:10 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2940', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+05-01-2022:19:16:08 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:19:16:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bcook%2Bbuckwheat&gl=pk&hl=en HTTP/1.1" 302 391
+05-01-2022:19:16:13 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dhow%252Bto%252Bcook%252Bbuckwheat%26gl%3Dpk%26hl%3Den&hl=en&q=EgTLZbvbGK3Q1o4GIhCS8FjkEeKdWVcBR99SuDB0MgFy HTTP/1.1" 429 2942
+05-01-2022:19:16:14 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:10380"
+05-01-2022:19:16:14 ERROR    [g_crawler.py:111] {'Date': 'Wed, 05 Jan 2022 14:16:15 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2942', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+05-01-2022:19:16:14 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:30:46 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+05-01-2022:22:30:54 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/canyouconnectaniphonetoaminiprojector.json' now get result from google.
+05-01-2022:22:30:59 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:31:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=can%2Byou%2Bconnect%2Ban%2Biphone%2Bto%2Ba%2Bmini%2Bprojector&gl=pk&hl=en HTTP/1.1" 302 435
+05-01-2022:22:31:05 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dcan%252Byou%252Bconnect%252Ban%252Biphone%252Bto%252Ba%252Bmini%252Bprojector%26gl%3Dpk%26hl%3Den&hl=en&q=EgRn_wQpGNmr144GIhCHKPnbYoP1UqWZZxtalaWJMgFy HTTP/1.1" 429 3041
+05-01-2022:22:31:05 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:11238"
+05-01-2022:22:31:05 ERROR    [g_crawler.py:111] {'Date': 'Wed, 05 Jan 2022 17:31:07 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3041', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+05-01-2022:22:31:05 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:31:10 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=can%2Byou%2Bconnect%2Ban%2Biphone%2Bto%2Ba%2Bmini%2Bprojector&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:22:33:07 ERROR    [g_crawler.py:274] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:22:33:10 ERROR    [g_crawler.py:492] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:22:33:10 ERROR    [g_crawler.py:546] error occured.'NoneType' object has no attribute 'find'
+05-01-2022:22:33:10 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 22:33:10] "GET /search?q=can%20you%20connect%20an%20iphone%20to%20a%20mini%20projector HTTP/1.1" 200 -
+05-01-2022:22:33:11 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 22:33:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+05-01-2022:22:38:48 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/toconnectyouriphonetoaminiprojectorwithairplayyoullneedtoconnect.json' now get result from google.
+05-01-2022:22:38:53 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:38:59 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=to%2Bconnect%2Byour%2Biphone%2Bto%2Ba%2Bmini%2Bprojector%2Bwith%2Bairplay%252C%2Byou%2527ll%2Bneed%2Bto%2Bconnect&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:22:39:11 ERROR    [g_crawler.py:492] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:22:39:12 ERROR    [g_crawler.py:546] error occured.'NoneType' object has no attribute 'find'
+05-01-2022:22:39:12 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 22:39:12] "GET /search?q=to%20connect%20your%20iphone%20to%20a%20mini%20projector%20with%20airplay,%20you%27ll%20need%20to%20connect HTTP/1.1" 200 -
+05-01-2022:22:43:29 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/howtoconnectiphonewithminiprojector.json' now get result from google.
+05-01-2022:22:43:32 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:43:38 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bconnect%2Biphone%2Bwith%2Bmini%2Bprojector&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:22:44:02 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/howtoconnectiphonewithminiprojector.json' now get result from google.
+05-01-2022:22:44:05 ERROR    [g_crawler.py:274] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:22:44:05 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:44:06 ERROR    [g_crawler.py:492] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:22:44:07 ERROR    [g_crawler.py:546] error occured.'NoneType' object has no attribute 'find'
+05-01-2022:22:44:07 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 22:44:07] "GET /search?q=how%20to%20connect%20iphone%20with%20mini%20projector&faqs=true HTTP/1.1" 200 -
+05-01-2022:22:44:10 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bconnect%2Biphone%2Bwith%2Bmini%2Bprojector&gl=pk&hl=en HTTP/1.1" 302 423
+05-01-2022:22:44:11 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dhow%252Bto%252Bconnect%252Biphone%252Bwith%252Bmini%252Bprojector%26gl%3Dpk%26hl%3Den&hl=en&q=EgRpbkisGOux144GIhBsXCS1aPaQaN7KKGz3XqREMgFy HTTP/1.1" 429 3019
+05-01-2022:22:44:11 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:11676"
+05-01-2022:22:44:11 ERROR    [g_crawler.py:111] {'Date': 'Wed, 05 Jan 2022 17:44:12 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3019', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+05-01-2022:22:44:11 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:44:37 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bconnect%2Biphone%2Bwith%2Bmini%2Bprojector&gl=pk&hl=en HTTP/1.1" 302 423
+05-01-2022:22:44:37 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dhow%252Bto%252Bconnect%252Biphone%252Bwith%252Bmini%252Bprojector%26gl%3Dpk%26hl%3Den&hl=en&q=EgRdUc9wGIay144GIhDQ9UPSU96WoRgdCxjZnJcdMgFy HTTP/1.1" 429 3018
+05-01-2022:22:44:37 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14192"
+05-01-2022:22:44:37 ERROR    [g_crawler.py:111] {'Date': 'Wed, 05 Jan 2022 17:44:39 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3018', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+05-01-2022:22:44:37 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:44:44 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bconnect%2Biphone%2Bwith%2Bmini%2Bprojector&gl=pk&hl=en HTTP/1.1" 302 423
+05-01-2022:22:44:45 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dhow%252Bto%252Bconnect%252Biphone%252Bwith%252Bmini%252Bprojector%26gl%3Dpk%26hl%3Den&hl=en&q=EgR0OknyGI2y144GIhDtPrfdRVLltzN5_f5_g-BLMgFy HTTP/1.1" 429 3018
+05-01-2022:22:44:48 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:11005"
+05-01-2022:22:44:48 ERROR    [g_crawler.py:111] {'Date': 'Wed, 05 Jan 2022 17:44:47 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3018', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+05-01-2022:22:44:48 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:44:58 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bconnect%2Biphone%2Bwith%2Bmini%2Bprojector&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:22:46:09 ERROR    [g_crawler.py:274] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:22:46:20 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:46:26 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Bconnect%2Bmy%2Bphone%2Bto%2Bmy%2Bmini%2Bprojector%253F&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:22:47:02 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:47:06 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Bconnect%2Bmy%2BiPhone%2Bto%2Ba%2Bmini%2Bprojector%2Bwith%2BUSB%253F&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:22:47:31 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+05-01-2022:22:47:36 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Bmirror%2Bmy%2BiPhone%2Bto%2Bmy%2Bprojector%253F&gl=pk&hl=en HTTP/1.1" 200 None
+05-01-2022:22:47:50 ERROR    [g_crawler.py:492] error occured.'NoneType' object has no attribute 'text'
+05-01-2022:22:47:51 ERROR    [g_crawler.py:546] error occured.'NoneType' object has no attribute 'find'
+05-01-2022:22:47:51 INFO     [_internal.py:225] 127.0.0.1 - - [05/Jan/2022 22:47:51] "GET /search?q=how%20to%20connect%20iphone%20with%20mini%20projector&faqs=yes HTTP/1.1" 200 -
+06-01-2022:08:41:21 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+06-01-2022:08:41:46 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/projectorthatconnectstoiphone.json' now get result from google.
+06-01-2022:08:41:51 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:41:54 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:42:05 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:42:07 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:42:30 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:42:55 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Bmirror%2Bmy%2BiPhone%2Bto%2Bmy%2Bprojector%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:43:16 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:43:20 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Do%2Bmini%2Bprojectors%2Bwork%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 420
+06-01-2022:08:43:21 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DDo%252Bmini%252Bprojectors%252Bwork%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgQxkcT4GNrK2Y4GIhAfAKx3xOtV48LtQFfvL9mnMgFy HTTP/1.1" 429 3010
+06-01-2022:08:43:21 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13953"
+06-01-2022:08:43:21 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:43:23 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3010', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:43:21 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:43:24 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Do%2Bmini%2Bprojectors%2Bwork%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:43:39 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:43:42 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BApple%253F&gl=pk&hl=en HTTP/1.1" 302 421
+06-01-2022:08:43:43 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BApple%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRtu7NxGPDK2Y4GIhBMhBwLoRuTMqPuSPGGqv0BMgFy HTTP/1.1" 429 3014
+06-01-2022:08:43:43 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:10234"
+06-01-2022:08:43:43 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:43:45 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3014', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:43:43 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:43:46 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BApple%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:43:51 ERROR    [g_crawler.py:492] error occured.'NoneType' object has no attribute 'text'
+06-01-2022:08:43:52 ERROR    [g_crawler.py:546] error occured.'NoneType' object has no attribute 'find'
+06-01-2022:08:43:52 INFO     [_internal.py:225] 127.0.0.1 - - [06/Jan/2022 08:43:52] "GET /search?q=projector%20that%20connects%20to%20iphone&faqs=yes HTTP/1.1" 200 -
+06-01-2022:08:43:52 INFO     [_internal.py:225] 127.0.0.1 - - [06/Jan/2022 08:43:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+06-01-2022:08:46:00 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:46:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 302 407
+06-01-2022:08:46:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dprojector%252Bthat%252Bconnects%252Bto%252Biphone%26gl%3Dpk%26hl%3Den&hl=en&q=EgRvd7sQGP3L2Y4GIhDchJ3OQmTz3FtQ0jykYm4AMgFy HTTP/1.1" 429 2983
+06-01-2022:08:46:04 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13407"
+06-01-2022:08:46:04 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:46:06 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2983', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:46:05 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:46:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 302 407
+06-01-2022:08:46:09 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dprojector%252Bthat%252Bconnects%252Bto%252Biphone%26gl%3Dpk%26hl%3Den&hl=en&q=EgS09IaCGILM2Y4GIhBVfVMZkfPoRbRs_qj3Xvj6MgFy HTTP/1.1" 429 2984
+06-01-2022:08:46:09 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:10378"
+06-01-2022:08:46:09 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:46:11 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2984', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:46:09 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:46:11 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 302 407
+06-01-2022:08:46:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dprojector%252Bthat%252Bconnects%252Bto%252Biphone%26gl%3Dpk%26hl%3Den&hl=en&q=EgQxnC5VGIXM2Y4GIhAbjVmEXmPofFO-GEzbJdBwMgFy HTTP/1.1" 429 2981
+06-01-2022:08:46:12 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:11383"
+06-01-2022:08:46:12 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:46:14 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2981', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:46:12 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:46:15 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:46:26 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:46:29 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 449
+06-01-2022:08:46:30 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ban%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EhAgAURVAb4xAOTyuiDN1wWOGJfM2Y4GIhCENTSiPDy7KMZSJdbQdPPDMgFy HTTP/1.1" 429 3076
+06-01-2022:08:46:30 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13107"
+06-01-2022:08:46:30 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:46:32 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3076', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:46:30 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:46:33 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 433
+06-01-2022:08:46:33 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ban%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgS21DGtGJrM2Y4GIhC28bN41X2obNZGUWHz6rliMgFy HTTP/1.1" 429 3037
+06-01-2022:08:46:33 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14929"
+06-01-2022:08:46:33 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:46:35 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3037', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:46:33 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:46:35 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:47:51 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+06-01-2022:08:47:54 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:47:57 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 302 407
+06-01-2022:08:47:57 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dprojector%252Bthat%252Bconnects%252Bto%252Biphone%26gl%3Dpk%26hl%3Den&hl=en&q=EgSvZFOnGO7M2Y4GIhAyWS74qssFJ9fC1QX_RyGxMgFy HTTP/1.1" 429 2983
+06-01-2022:08:47:57 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:12867"
+06-01-2022:08:47:57 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:47:59 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2983', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:47:57 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:48:01 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 302 407
+06-01-2022:08:48:01 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dprojector%252Bthat%252Bconnects%252Bto%252Biphone%26gl%3Dpk%26hl%3Den&hl=en&q=EgTLvXbEGPLM2Y4GIhDGGY-9abCXYO2a7F0gHoy-MgFy HTTP/1.1" 429 2984
+06-01-2022:08:48:01 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14825"
+06-01-2022:08:48:01 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:48:03 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2984', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:48:01 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:48:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:48:15 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:48:18 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:49:35 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+06-01-2022:08:49:41 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:49:43 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:49:56 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:49:59 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 433
+06-01-2022:08:50:00 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ban%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgSInguXGOnN2Y4GIhBMU1u0QMTtFc_WOus4jFJBMgFy HTTP/1.1" 429 3037
+06-01-2022:08:50:00 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:12780"
+06-01-2022:08:50:00 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:50:02 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3037', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:50:00 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:50:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:51:10 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:51:14 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Do%2Bmini%2Bprojectors%2Bwork%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 420
+06-01-2022:08:51:14 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DDo%252Bmini%252Bprojectors%252Bwork%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRp64tfGLPO2Y4GIhCwEOZIfeXjvcGuEoaMhmvDMgFy HTTP/1.1" 429 3010
+06-01-2022:08:51:14 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14644"
+06-01-2022:08:51:14 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:51:16 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3010', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:51:14 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:51:18 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Do%2Bmini%2Bprojectors%2Bwork%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 420
+06-01-2022:08:51:18 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DDo%252Bmini%252Bprojectors%252Bwork%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRe5W6EGLfO2Y4GIhAnnbrNlOuEpI0eJPM34Q_2MgFy HTTP/1.1" 429 3010
+06-01-2022:08:51:18 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14392"
+06-01-2022:08:51:18 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:51:20 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3010', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:51:18 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:51:21 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Do%2Bmini%2Bprojectors%2Bwork%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 420
+06-01-2022:08:51:21 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DDo%252Bmini%252Bprojectors%252Bwork%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgTFnEBTGLrO2Y4GIhCSgAtSfo7HhQjxPVUwV6ekMgFy HTTP/1.1" 429 3009
+06-01-2022:08:51:21 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14115"
+06-01-2022:08:51:21 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:51:23 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3009', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:51:21 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:51:25 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Do%2Bmini%2Bprojectors%2Bwork%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 420
+06-01-2022:08:51:25 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DDo%252Bmini%252Bprojectors%252Bwork%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgSwIUWEGL_O2Y4GIhBZNpTzmwqTl2obAevvbUF4MgFy HTTP/1.1" 429 3009
+06-01-2022:08:51:25 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:10235"
+06-01-2022:08:51:25 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:51:27 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3009', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:51:25 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:51:30 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Do%2Bmini%2Bprojectors%2Bwork%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:53:02 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+06-01-2022:08:53:12 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:53:18 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:53:30 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:53:35 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:54:42 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+06-01-2022:08:54:50 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:54:54 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 302 407
+06-01-2022:08:54:54 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dprojector%252Bthat%252Bconnects%252Bto%252Biphone%26gl%3Dpk%26hl%3Den&hl=en&q=EgRvWrG0GI_Q2Y4GIhDtWT6IJdPXs3ZGy5VvjivlMgFy HTTP/1.1" 429 2983
+06-01-2022:08:54:54 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:12398"
+06-01-2022:08:54:54 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:54:56 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2983', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:54:54 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:54:58 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:55:10 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:55:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 433
+06-01-2022:08:55:13 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ban%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgQkS0JMGKLQ2Y4GIhDOiAEmKEgWUu-I3IhCcnczMgFy HTTP/1.1" 429 3034
+06-01-2022:08:55:13 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13643"
+06-01-2022:08:55:13 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:55:15 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3034', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:55:13 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:55:15 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 433
+06-01-2022:08:55:15 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ban%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgSczPx6GKXQ2Y4GIhBA2fpMEyRf4MmEnRtbWVY2MgFy HTTP/1.1" 429 3038
+06-01-2022:08:55:15 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13561"
+06-01-2022:08:55:15 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:55:17 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3038', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:55:15 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:55:19 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 433
+06-01-2022:08:55:20 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ban%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgQkJbiQGKnQ2Y4GIhCj1c_Rg2ltxI6ldACTRib6MgFy HTTP/1.1" 429 3036
+06-01-2022:08:55:20 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:12371"
+06-01-2022:08:55:20 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:55:22 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3036', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:55:20 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:55:24 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 433
+06-01-2022:08:55:25 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ban%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRndkwqGK7Q2Y4GIhDND_uFCyQrEiPZxZC7MKsMMgFy HTTP/1.1" 429 3036
+06-01-2022:08:55:25 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14362"
+06-01-2022:08:55:25 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:55:27 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3036', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:55:25 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:55:28 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 433
+06-01-2022:08:55:28 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ban%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgQ6YeVTGLHQ2Y4GIhDXzPopCGe8rmWQd_UH83ZaMgFy HTTP/1.1" 429 3035
+06-01-2022:08:55:28 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13199"
+06-01-2022:08:55:28 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:55:30 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3035', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:55:28 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:55:32 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 433
+06-01-2022:08:55:33 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ban%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgQ6YdqVGLXQ2Y4GIhDExLVifKPYDp4795_zv9XkMgFy HTTP/1.1" 429 3036
+06-01-2022:08:55:33 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14696"
+06-01-2022:08:55:33 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:55:35 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3036', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:55:33 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:55:37 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 433
+06-01-2022:08:55:38 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ban%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgTF3fseGLvQ2Y4GIhBMrsnIv0725gLN3nyFcxKIMgFy HTTP/1.1" 429 3037
+06-01-2022:08:55:38 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:12506"
+06-01-2022:08:55:38 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:55:40 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3037', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:55:38 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:55:45 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ban%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:56:28 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+06-01-2022:08:56:37 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:56:41 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 302 407
+06-01-2022:08:56:42 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dprojector%252Bthat%252Bconnects%252Bto%252Biphone%26gl%3Dpk%26hl%3Den&hl=en&q=EgRjmfdpGPvQ2Y4GIhDk4BqLCfDlkmdWzcfNfILeMgFy HTTP/1.1" 429 2983
+06-01-2022:08:56:43 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:10008"
+06-01-2022:08:56:43 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:56:44 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2983', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:56:43 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:56:47 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 302 407
+06-01-2022:08:56:48 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dprojector%252Bthat%252Bconnects%252Bto%252Biphone%26gl%3Dpk%26hl%3Den&hl=en&q=EgTcmHOdGIDR2Y4GIhBDAD0x4mCALCcZh8d6RuzLMgFy HTTP/1.1" 429 2984
+06-01-2022:08:56:48 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:10922"
+06-01-2022:08:56:48 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:56:50 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2984', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:56:48 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:56:50 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 302 407
+06-01-2022:08:56:51 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dprojector%252Bthat%252Bconnects%252Bto%252Biphone%26gl%3Dpk%26hl%3Den&hl=en&q=EgRZbTH8GITR2Y4GIhCygr3Go9L5E08UeP7bcrDHMgFy HTTP/1.1" 429 2982
+06-01-2022:08:56:51 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14053"
+06-01-2022:08:56:51 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 03:56:53 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2982', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:08:56:51 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:56:54 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=projector%2Bthat%2Bconnects%2Bto%2Biphone&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:57:04 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:57:06 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2BiPhones%2Bconnect%2Bto%2Bprojectors%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:57:58 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:58:01 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=How%2Bdo%2BI%2Bmirror%2Bmy%2BiPhone%2Bto%2Bmy%2Bprojector%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:58:23 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:58:27 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Do%2Bmini%2Bprojectors%2Bwork%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:59:09 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:08:59:13 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BApple%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] utf-8  confidence = 0.99
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] SHIFT_JIS Japanese confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] EUC-JP Japanese confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] GB2312 Chinese confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] EUC-KR Korean confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] CP949 Korean confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] Big5 Chinese confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] EUC-TW Taiwan confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] windows-1251 Russian confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] KOI8-R Russian confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] ISO-8859-5 Russian confidence = 0.0
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] MacCyrillic Russian confidence = 0.0
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] IBM866 Russian confidence = 0.0
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] IBM855 Russian confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] ISO-8859-7 Greek confidence = 0.0
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] windows-1253 Greek confidence = 0.0
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] ISO-8859-5 Bulgairan confidence = 0.0
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] windows-1251 Bulgarian confidence = 0.0
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] TIS-620 Thai confidence = 0.0
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] ISO-8859-9 Turkish confidence = 0.43521550655824687
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] windows-1255 Hebrew confidence = 0.0
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] windows-1255 Hebrew confidence = 0.0
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] windows-1255 Hebrew confidence = 0.0
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] utf-8  confidence = 0.99
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] SHIFT_JIS Japanese confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] EUC-JP Japanese confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] GB2312 Chinese confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] EUC-KR Korean confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] CP949 Korean confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] Big5 Chinese confidence = 0.01
+06-01-2022:08:59:20 DEBUG    [charsetgroupprober.py:100] EUC-TW Taiwan confidence = 0.01
+06-01-2022:08:59:48 ERROR    [g_crawler.py:500] error occured.'NoneType' object has no attribute 'text'
+06-01-2022:08:59:48 ERROR    [g_crawler.py:554] error occured.'NoneType' object has no attribute 'find'
+06-01-2022:08:59:48 INFO     [_internal.py:225] 127.0.0.1 - - [06/Jan/2022 08:59:48] "GET /search?q=projector%20that%20connects%20to%20iphone&faqs=yes&r_cache=yes HTTP/1.1" 200 -
+06-01-2022:09:00:04 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:00:07 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BApple&gl=pk&hl=en HTTP/1.1" 302 414
+06-01-2022:09:00:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BApple%26gl%3Dpk%26hl%3Den&hl=en&q=EgRvd7K2GMnS2Y4GIhDd1XTkzgMy7GCH2GjXuawEMgFy HTTP/1.1" 429 2999
+06-01-2022:09:00:08 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:11815"
+06-01-2022:09:00:08 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:00:10 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2999', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:00:08 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:00:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BApple&gl=pk&hl=en HTTP/1.1" 302 414
+06-01-2022:09:00:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BApple%26gl%3Dpk%26hl%3Den&hl=en&q=EgTFmXa2GM3S2Y4GIhDuAMbXYVoGc-s1Gc65RLnmMgFy HTTP/1.1" 429 2999
+06-01-2022:09:00:12 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:11960"
+06-01-2022:09:00:12 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:00:14 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2999', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:00:12 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:00:14 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BApple&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:09:00:53 ERROR    [g_crawler.py:276] error occured.'NoneType' object has no attribute 'text'
+06-01-2022:09:01:07 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:01:09 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:03:42 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:03:50 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+06-01-2022:09:03:55 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:03:58 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BApple&gl=pk&hl=en HTTP/1.1" 302 414
+06-01-2022:09:03:59 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BApple%26gl%3Dpk%26hl%3Den&hl=en&q=EgTUnIeSGLDU2Y4GIhBoLLo34FaJJIaUs6RFjYRNMgFy HTTP/1.1" 429 2999
+06-01-2022:09:03:59 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13714"
+06-01-2022:09:03:59 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:04:01 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2999', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:03:59 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:04:00 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BApple&gl=pk&hl=en HTTP/1.1" 302 414
+06-01-2022:09:04:01 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BApple%26gl%3Dpk%26hl%3Den&hl=en&q=EgRSzJAWGLLU2Y4GIhB4HTmJHYIlMq4EJUdExVp4MgFy HTTP/1.1" 429 2997
+06-01-2022:09:04:01 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13671"
+06-01-2022:09:04:01 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:04:03 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2997', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:04:01 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:04:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BApple&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:09:04:10 ERROR    [g_crawler.py:276] error occured.'NoneType' object has no attribute 'text'
+06-01-2022:09:04:20 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:04:23 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bwith%2BApple%253F&gl=pk&hl=en HTTP/1.1" 302 412
+06-01-2022:09:04:23 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bwith%252BApple%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRXZ8VjGMnU2Y4GIhCBGD0nIzoAxnonIe3iD3e_MgFy HTTP/1.1" 429 2991
+06-01-2022:09:04:23 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14116"
+06-01-2022:09:04:23 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:04:25 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2991', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:04:23 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:04:26 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bwith%2BApple%253F&gl=pk&hl=en HTTP/1.1" 302 412
+06-01-2022:09:04:27 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bwith%252BApple%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgQkS0t4GMzU2Y4GIhAxgQsZGwQpiYUmhzh-1iSQMgFy HTTP/1.1" 429 2990
+06-01-2022:09:04:27 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:10559"
+06-01-2022:09:04:27 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:04:29 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2990', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:04:27 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:04:29 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bwith%2BApple%253F&gl=pk&hl=en HTTP/1.1" 302 412
+06-01-2022:09:04:30 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bwith%252BApple%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRnmkH9GM_U2Y4GIhDl3bNeR-TdEylW1LVualjnMgFy HTTP/1.1" 429 2992
+06-01-2022:09:04:30 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14183"
+06-01-2022:09:04:30 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:04:32 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2992', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:04:30 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:04:33 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bwith%2BApple%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:09:04:47 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:04:50 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 422
+06-01-2022:09:04:50 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgS0_PdBGOPU2Y4GIhDKL3rMLtXXRuryD1SSBZ1GMgFy HTTP/1.1" 429 3016
+06-01-2022:09:04:50 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:11083"
+06-01-2022:09:04:50 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:04:52 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3016', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:04:50 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:04:53 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 422
+06-01-2022:09:04:55 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgTS39pOGOfU2Y4GIhCMHg-0pFT1hjWh1yZMZC2OMgFy HTTP/1.1" 429 3016
+06-01-2022:09:04:55 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13070"
+06-01-2022:09:04:55 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:04:56 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3016', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:04:55 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:04:59 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 422
+06-01-2022:09:05:00 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRndkydGOzU2Y4GIhDfyTRFDDdp1zaDKfP-VX1PMgFy HTTP/1.1" 429 3016
+06-01-2022:09:05:00 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13550"
+06-01-2022:09:05:00 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:05:02 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3016', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:05:00 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:05:03 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 422
+06-01-2022:09:05:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgQlPJcoGPHU2Y4GIhCYsDaQumnqW8N_muTBDKn4MgFy HTTP/1.1" 429 3014
+06-01-2022:09:05:04 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13674"
+06-01-2022:09:05:04 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:05:06 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3014', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:05:04 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:05:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 438
+06-01-2022:09:05:09 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EhAoAAgQBIiCouxAdUpaJjNCGPXU2Y4GIhAZFZoyinbIRNkQImuoHyEAMgFy HTTP/1.1" 429 3055
+06-01-2022:09:05:09 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13772"
+06-01-2022:09:05:09 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:05:10 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3055', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:05:09 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:05:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:09:05:40 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+06-01-2022:09:05:44 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:05:47 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BApple&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:09:06:31 ERROR    [g_crawler.py:276] error occured.'NoneType' object has no attribute 'text'
+06-01-2022:09:06:38 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:06:41 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojectors%2Bare%2Bcompatible%2Bwith%2BApple%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:09:06:58 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:07:01 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 438
+06-01-2022:09:07:01 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EhAoA3OAk-0AAHm0XKnkGGu_GOfV2Y4GIhC5LbHVckmMbynJcx03FB0NMgFy HTTP/1.1" 429 3054
+06-01-2022:09:07:01 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:11978"
+06-01-2022:09:07:01 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:07:03 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3054', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:07:01 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:07:06 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 302 422
+06-01-2022:09:07:07 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DWhat%252Bprojector%252Bworks%252Bbest%252Bwith%252BiPhone%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgSkoJENGOvV2Y4GIhCPJoi761e5p1IKcOlLhSW7MgFy HTTP/1.1" 429 3016
+06-01-2022:09:07:07 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:10272"
+06-01-2022:09:07:07 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:07:09 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3016', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:07:07 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:07:10 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=What%2Bprojector%2Bworks%2Bbest%2Bwith%2BiPhone%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:09:07:27 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:07:30 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Buse%2Ba%2Bprojector%2Bwith%2BApple%2BTV%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:09:07:52 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:07:55 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ba%2BMac%253F&gl=pk&hl=en HTTP/1.1" 302 429
+06-01-2022:09:07:56 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:08:58 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:09:03 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ba%2BMac%253F&gl=pk&hl=en HTTP/1.1" 302 429
+06-01-2022:09:09:04 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ba%252BMac%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgR91J_-GODW2Y4GIhAMSP9goUz6VKvVU1GgrjdyMgFy HTTP/1.1" 429 3026
+06-01-2022:09:09:04 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14898"
+06-01-2022:09:09:04 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:09:06 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3026', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:09:04 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:09:07 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ba%2BMac%253F&gl=pk&hl=en HTTP/1.1" 302 429
+06-01-2022:09:09:07 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ba%252BMac%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRCtaEaGOXW2Y4GIhC6fEqpUHwbkrrDvrebxIs3MgFy HTTP/1.1" 429 3024
+06-01-2022:09:09:07 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:12577"
+06-01-2022:09:09:07 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:09:09 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3024', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:09:07 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:09:11 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ba%2BMac%253F&gl=pk&hl=en HTTP/1.1" 302 429
+06-01-2022:09:09:11 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3DCan%252Byou%252Bconnect%252Ba%252Bprojector%252Bto%252Ba%252BMac%25253F%26gl%3Dpk%26hl%3Den&hl=en&q=EgRUNnotGOjW2Y4GIhAnq3VsoEVa5ToNUOwM3kpFMgFy HTTP/1.1" 429 3023
+06-01-2022:09:09:11 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:14084"
+06-01-2022:09:09:11 ERROR    [g_crawler.py:111] {'Date': 'Thu, 06 Jan 2022 04:09:13 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3023', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+06-01-2022:09:09:11 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+06-01-2022:09:09:15 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=Can%2Byou%2Bconnect%2Ba%2Bprojector%2Bto%2Ba%2BMac%253F&gl=pk&hl=en HTTP/1.1" 200 None
+06-01-2022:09:09:26 ERROR    [g_crawler.py:500] error occured.'NoneType' object has no attribute 'text'
+06-01-2022:09:09:26 ERROR    [g_crawler.py:554] error occured.'NoneType' object has no attribute 'find'
+06-01-2022:09:09:26 INFO     [_internal.py:225] 127.0.0.1 - - [06/Jan/2022 09:09:26] "GET /search?q=What+projector+works+best+with+Apple&faqs=yes&r_cache=yes HTTP/1.1" 200 -
+08-01-2022:10:53:39 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+08-01-2022:10:53:55 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/turntablestylusreplacement.json' now get result from google.
+08-01-2022:10:54:00 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:10:54:06 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 200 None
+08-01-2022:10:54:14 ERROR    [g_crawler.py:281] error occured.'NoneType' object has no attribute 'text'
+08-01-2022:10:55:51 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+08-01-2022:10:55:51 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/turntablestylusreplacement.json' now get result from google.
+08-01-2022:10:55:55 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:10:55:59 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 200 None
+08-01-2022:10:56:00 ERROR    [g_crawler.py:281] error occured.'NoneType' object has no attribute 'text'
+08-01-2022:11:03:27 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+08-01-2022:11:03:32 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/turntablestylusreplacement.json' now get result from google.
+08-01-2022:11:03:37 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:03:44 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 200 None
+08-01-2022:11:03:48 ERROR    [g_crawler.py:286] error occured.'NoneType' object has no attribute 'text'
+08-01-2022:11:07:59 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+08-01-2022:11:08:01 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/turntablestylusreplacement.json' now get result from google.
+08-01-2022:11:08:04 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:08:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 302 394
+08-01-2022:11:08:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dturntable%252Bstylus%252Breplacement%26gl%3Dpk%26hl%3Den&hl=en&q=EgQFtBNGGMjU5I4GIhBgfGIEWctTx3BU8VZqkPtyMgFy HTTP/1.1" 429 2953
+08-01-2022:11:08:08 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13452"
+08-01-2022:11:08:08 ERROR    [g_crawler.py:111] {'Date': 'Sat, 08 Jan 2022 06:08:09 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2953', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+08-01-2022:11:08:08 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:08:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 302 394
+08-01-2022:11:08:13 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dturntable%252Bstylus%252Breplacement%26gl%3Dpk%26hl%3Den&hl=en&q=EgSV_94rGM3U5I4GIhAc-nEfPFK7qQV1yEoQbWSgMgFy HTTP/1.1" 429 2956
+08-01-2022:11:08:13 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13208"
+08-01-2022:11:08:13 ERROR    [g_crawler.py:111] {'Date': 'Sat, 08 Jan 2022 06:08:14 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2956', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+08-01-2022:11:08:13 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:08:18 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 302 394
+08-01-2022:11:08:19 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dturntable%252Bstylus%252Breplacement%26gl%3Dpk%26hl%3Den&hl=en&q=EgRnNiftGNPU5I4GIhDHUUIX5VLYU3eXOIZHjTe8MgFy HTTP/1.1" 429 2955
+08-01-2022:11:08:19 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:10130"
+08-01-2022:11:08:19 ERROR    [g_crawler.py:111] {'Date': 'Sat, 08 Jan 2022 06:08:20 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2955', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+08-01-2022:11:08:19 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:08:24 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 302 394
+08-01-2022:11:08:24 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dturntable%252Bstylus%252Breplacement%26gl%3Dpk%26hl%3Den&hl=en&q=EgRn4V7mGNjU5I4GIhCEIUOvjAdOLpYv36uxO33hMgFy HTTP/1.1" 429 2956
+08-01-2022:11:08:24 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:11148"
+08-01-2022:11:08:24 ERROR    [g_crawler.py:111] {'Date': 'Sat, 08 Jan 2022 06:08:25 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2956', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+08-01-2022:11:08:24 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:08:28 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 302 394
+08-01-2022:11:08:29 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dturntable%252Bstylus%252Breplacement%26gl%3Dpk%26hl%3Den&hl=en&q=EgRnb-P-GN3U5I4GIhDnuQBquJJ6U-P0FXM0mRP5MgFy HTTP/1.1" 429 2957
+08-01-2022:11:08:29 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13685"
+08-01-2022:11:08:29 ERROR    [g_crawler.py:111] {'Date': 'Sat, 08 Jan 2022 06:08:30 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2957', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+08-01-2022:11:08:29 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:08:32 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 200 None
+08-01-2022:11:08:36 ERROR    [g_crawler.py:286] error occured.'NoneType' object has no attribute 'text'
+08-01-2022:11:10:25 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+08-01-2022:11:10:48 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/turntablestylusreplacement.json' now get result from google.
+08-01-2022:11:10:52 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:11:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 302 394
+08-01-2022:11:11:08 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dturntable%252Bstylus%252Breplacement%26gl%3Dpk%26hl%3Den&hl=en&q=EgRn1srjGPvV5I4GIhB14EmMD5bkW6bcRLUkOu4MMgFy HTTP/1.1" 429 2957
+08-01-2022:11:11:08 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:10149"
+08-01-2022:11:11:08 ERROR    [g_crawler.py:111] {'Date': 'Sat, 08 Jan 2022 06:11:09 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2957', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+08-01-2022:11:11:08 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:11:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 302 394
+08-01-2022:11:11:13 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dturntable%252Bstylus%252Breplacement%26gl%3Dpk%26hl%3Den&hl=en&q=EgRuStvSGIDW5I4GIhCzq3mhuZTMgsUzVPHjgtG_MgFy HTTP/1.1" 429 2956
+08-01-2022:11:11:13 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:13144"
+08-01-2022:11:11:13 ERROR    [g_crawler.py:111] {'Date': 'Sat, 08 Jan 2022 06:11:14 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2956', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+08-01-2022:11:11:13 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:11:17 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 200 None
+08-01-2022:11:11:25 ERROR    [g_crawler.py:286] error occured.'NoneType' object has no attribute 'text'
+08-01-2022:11:14:15 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+08-01-2022:11:14:18 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/turntablestylusreplacement.json' now get result from google.
+08-01-2022:11:14:22 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:14:38 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:14:51 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=turntable%2Bstylus%2Breplacement&gl=pk&hl=en HTTP/1.1" 200 None
+08-01-2022:11:14:52 ERROR    [g_crawler.py:288] error occured.'NoneType' object has no attribute 'text'
+08-01-2022:11:15:53 ERROR    [g_crawler.py:512] error occured.'NoneType' object has no attribute 'text'
+08-01-2022:11:15:53 ERROR    [g_crawler.py:566] error occured.'NoneType' object has no attribute 'find'
+08-01-2022:11:15:53 INFO     [_internal.py:225] 127.0.0.1 - - [08/Jan/2022 11:15:53] "GET /search?q=turntable%20stylus%20replacement HTTP/1.1" 200 -
+08-01-2022:11:15:53 INFO     [_internal.py:225] 127.0.0.1 - - [08/Jan/2022 11:15:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+08-01-2022:11:21:46 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+08-01-2022:11:22:00 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/howdoyoumeasurethesizeofatvscreen.json' now get result from google.
+08-01-2022:11:22:05 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:22:19 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bdo%2Byou%2Bmeasure%2Bthe%2Bsize%2Bof%2Ba%2Btv%2Bscreen&gl=pk&hl=en HTTP/1.1" 200 None
+08-01-2022:11:26:23 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+08-01-2022:11:26:26 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/howdoyoumeasurethesizeofatvscreen.json' now get result from google.
+08-01-2022:11:26:30 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:26:35 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bdo%2Byou%2Bmeasure%2Bthe%2Bsize%2Bof%2Ba%2Btv%2Bscreen&gl=pk&hl=en HTTP/1.1" 302 436
+08-01-2022:11:26:36 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dhow%252Bdo%252Byou%252Bmeasure%252Bthe%252Bsize%252Bof%252Ba%252Btv%252Bscreen%26gl%3Dpk%26hl%3Den&hl=en&q=EgSlEBsGGJrd5I4GIhD59p96gw39ozi5rq6p0zYXMgFy HTTP/1.1" 429 3037
+08-01-2022:11:26:36 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:11979"
+08-01-2022:11:26:36 ERROR    [g_crawler.py:111] {'Date': 'Sat, 08 Jan 2022 06:26:37 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '3037', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+08-01-2022:11:26:36 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+08-01-2022:11:26:41 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bdo%2Byou%2Bmeasure%2Bthe%2Bsize%2Bof%2Ba%2Btv%2Bscreen&gl=pk&hl=en HTTP/1.1" 200 None
+08-01-2022:11:27:49 ERROR    [g_crawler.py:517] error occured.'NoneType' object has no attribute 'text'
+08-01-2022:11:27:49 ERROR    [g_crawler.py:571] error occured.'NoneType' object has no attribute 'find'
+08-01-2022:11:27:49 INFO     [_internal.py:225] 127.0.0.1 - - [08/Jan/2022 11:27:49] "GET /search?q=how%20do%20you%20measure%20the%20size%20of%20a%20tv%20screen HTTP/1.1" 200 -
+10-01-2022:22:25:50 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+10-01-2022:22:26:10 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+10-01-2022:22:26:15 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=error%2B0x80070570&gl=pk&hl=en HTTP/1.1" 302 378
+10-01-2022:22:26:16 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Derror%252B0x80070570%26gl%3Dpk%26hl%3Den&hl=en&q=EgRnScUaGLbY8Y4GIhCAacv4G9Hf2LC5zkirRyq6MgFy HTTP/1.1" 429 2913
+10-01-2022:22:26:17 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:10062"
+10-01-2022:22:26:17 ERROR    [g_crawler.py:111] {'Date': 'Mon, 10 Jan 2022 17:26:16 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2913', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+10-01-2022:22:26:17 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+10-01-2022:22:26:21 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=error%2B0x80070570&gl=pk&hl=en HTTP/1.1" 200 None
+10-01-2022:22:28:23 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+10-01-2022:22:28:25 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+10-01-2022:22:28:30 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=error%2B0x80070570&gl=pk&hl=en HTTP/1.1" 200 None
+10-01-2022:22:29:43 ERROR    [g_crawler.py:519] error occured.'NoneType' object has no attribute 'text'
+10-01-2022:22:29:44 ERROR    [g_crawler.py:573] error occured.'NoneType' object has no attribute 'find'
+10-01-2022:22:29:44 INFO     [_internal.py:225] 127.0.0.1 - - [10/Jan/2022 22:29:44] "GET /search?q=error%200x80070570&r_cache=yes HTTP/1.1" 200 -
+10-01-2022:22:29:44 INFO     [_internal.py:225] 127.0.0.1 - - [10/Jan/2022 22:29:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10-01-2022:22:30:45 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/whatisseoindigitalmarketing.json' now get result from google.
+10-01-2022:22:30:50 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+10-01-2022:22:30:57 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=what%2Bis%2Bseo%2Bin%2Bdigital%2Bmarketing&gl=pk&hl=en HTTP/1.1" 302 410
+10-01-2022:22:30:58 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /sorry/index?continue=https://www.google.com/search%3Fq%3Dwhat%252Bis%252Bseo%252Bin%252Bdigital%252Bmarketing%26gl%3Dpk%26hl%3Den&hl=en&q=EgSlWmlWGNHa8Y4GIhCDfmyufbI19IiLWaYxlw1iMgFy HTTP/1.1" 429 2985
+10-01-2022:22:30:58 DEBUG    [g_crawler.py:135] blocked dns : "premium-residential.geonode.com:11886"
+10-01-2022:22:30:58 ERROR    [g_crawler.py:111] {'Date': 'Mon, 10 Jan 2022 17:30:58 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Content-Type': 'text/html', 'Server': 'HTTP server (unknown)', 'Content-Length': '2985', 'X-XSS-Protection': '0', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'}
+10-01-2022:22:30:58 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+10-01-2022:22:31:02 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=what%2Bis%2Bseo%2Bin%2Bdigital%2Bmarketing&gl=pk&hl=en HTTP/1.1" 200 None
+10-01-2022:22:31:46 ERROR    [g_crawler.py:291] error occured.'NoneType' object has no attribute 'text'
+10-01-2022:22:32:03 ERROR    [g_crawler.py:519] error occured.'NoneType' object has no attribute 'text'
+10-01-2022:22:32:03 ERROR    [g_crawler.py:573] error occured.'NoneType' object has no attribute 'find'
+10-01-2022:22:32:03 INFO     [_internal.py:225] 127.0.0.1 - - [10/Jan/2022 22:32:03] "GET /search?q=what%20is%20seo%20in%20digital%20marketing HTTP/1.1" 200 -

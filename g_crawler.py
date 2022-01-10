@@ -102,7 +102,7 @@ class GCrawler(Resource):
                 proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, DNS)}
                 try:
                     
-                    req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params)
+                    req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params,timeout=60)
                     if req.status_code in [200, 404]:
                         print('>> request returned {} total request "{}"'.format(req.status_code,count))
                         break
@@ -132,6 +132,7 @@ class GCrawler(Resource):
                 bd.write(f'\n{dns}')
             else:
                 bd.write(f'{dns}')
+            logger.debug('blocked dns : "{}"'.format(dns))
         config.BLOCK_DNS.append(dns)
 
     def reset_dns(self,dns):
@@ -226,7 +227,20 @@ class GCrawler(Resource):
                         except Exception as e:
                             logger.error('error occured.{}'.format(str(e)))
                             pass
-                    item['text'] = meta_description.text
+
+                    item['text'] = ""
+                    desc_span = meta_description.find_all('span',{'class':None})
+                    for desc in desc_span:
+                        try:
+                            if desc.parent.name != 'span':
+                                item['text'] = desc.text
+                            else:
+                                item['text_prefix'] = desc.text
+                        except:
+                            pass
+                    
+                    if item['text'] == "":
+                        item['text'] = meta_description.text
                 
                 output.append(item)
         return {'output':output,'unit_converter':unit_converter}
@@ -234,6 +248,8 @@ class GCrawler(Resource):
     def get_answer(self,document,question=None):
         print('>> trying to scrape feature snipper from page response')
         fea_sni = document.find('div','V3FYCf')
+        if not fea_sni:
+            fea_sni = document.find('div',{'class':'V3FYCf'})
         data = {}
         if fea_sni:
             if not question == None:
@@ -266,14 +282,20 @@ class GCrawler(Resource):
                 data['snippet_type'] = 'Table Featured Snippet'
                 print('>> table found in feature snippet')
             else:
+                data['heading'] = fea_sni.find('span',{'class':'ILfuVd'}).text
                 data['snippet_type'] = 'Definition Featured Snippet'
             try:
-                data['date'] = fea_sni.find('div','xzrguc').text
+                data['date'] = (fea_sni.find('div','xzrguc') or fea_sni.find('span',{'class':'kX21rb ZYHQ7e'})).text
+                data['heading'] = self.replace_last(data['heading'],data['date'],'')
             except Exception as e:
                 logger.error('error occured.{}'.format(str(e)))
                 pass
 
         return data
+
+    def replace_last(self,source_string, replace_what, replace_with):
+        head, _sep, tail = source_string.rpartition(replace_what)
+        return head + replace_with + tail
 
     def get_list(self,document,type):
         ol = document.find(type)
@@ -463,6 +485,12 @@ class GCrawler(Resource):
             if req['status'] == 'failed':
                 continue
             response = req['req']
+            try:
+                with open(f"html/{re.sub('[^A-Za-z0-9]+', '', title)}.html", "w",encoding="utf-8") as file:
+                    file.write(response.text)
+            except Exception as e:
+                print(e)
+                pass
             soup = BeautifulSoup(response.content,"html.parser")
             
             results = soup.find_all('div','tF2Cxc')
@@ -482,11 +510,11 @@ class GCrawler(Resource):
             description = str(soup.select_one(".kno-rdesc").text)[11:]
             attributes = soup.find_all("div", {"class": "Z1hOCe"})
             #soup.find_elements_by_class_name("Z1hOCe")
-            information['description'] = description.lower().replace("\n","")
+            information['description'] = description.replace("\n","")
             for attribute in attributes:
                 if(attribute.text):
                     info = attribute.text.split(":",1)
-                    information['attributes'].append({'key':info[0].lower().replace("\n",""),'value':info[1].lower().replace("\n","")})
+                    information['attributes'].append({'key':info[0].replace("\n",""),'value':info[1].replace("\n","")})
         except Exception as e:
             logger.error('error occured.{}'.format(str(e)))
             pass
