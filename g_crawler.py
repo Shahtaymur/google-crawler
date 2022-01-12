@@ -207,6 +207,8 @@ class GCrawler(Resource):
         for i,result in enumerate(results):
             print('>> get meta description...')
             item = {}
+            item['text'] = None
+            item['text_prefix'] = None
             if result.find('h3') or result.find('div','Dks9wf'):
                 try:
                     item['title'] = result.find('h3').text
@@ -228,19 +230,14 @@ class GCrawler(Resource):
                             logger.error('error occured.{}'.format(str(e)))
                             pass
 
-                    item['text'] = ""
-                    desc_span = meta_description.find_all('span',{'class':None})
-                    for desc in desc_span:
-                        try:
-                            if desc.parent.name != 'span':
-                                item['text'] = desc.text
-                            else:
-                                item['text_prefix'] = desc.text
-                        except:
-                            pass
+                    try:
+                        item['text_prefix'] = meta_description.find('span',{'class':'MUxGbd wuQ4Ob WZ8Tjf'}).text
+                    except Exception as e:
+                        logger.debug('>> no key found{}'.format(str(e)))
                     
-                    if item['text'] == "":
-                        item['text'] = meta_description.text
+                    item['text'] = meta_description.text
+                    if not item['text_prefix'] is None:
+                        item['text'] = item['text'].replace(item['text_prefix'],'').replace(' — ','')
                 
                 output.append(item)
         return {'output':output,'unit_converter':unit_converter}
@@ -282,7 +279,10 @@ class GCrawler(Resource):
                 data['snippet_type'] = 'Table Featured Snippet'
                 print('>> table found in feature snippet')
             else:
-                data['heading'] = fea_sni.find('span',{'class':'ILfuVd'}).text
+                try:
+                    data['heading'] = fea_sni.find('span',{'class':'ILfuVd'}).text
+                except Exception as e:
+                    logger.error('>> not heading found in feature snippet "{}"'.format(str(e)))
                 data['snippet_type'] = 'Definition Featured Snippet'
             try:
                 data['date'] = (fea_sni.find('div','xzrguc') or fea_sni.find('span',{'class':'kX21rb ZYHQ7e'})).text
