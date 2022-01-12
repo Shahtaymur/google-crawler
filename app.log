@@ -1624,3 +1624,34 @@ AttributeError: 'NoneType' object has no attribute 'headers'
 12-01-2022:09:01:15 ERROR    [g_crawler.py:519] error occured.'NoneType' object has no attribute 'text'
 12-01-2022:09:01:15 ERROR    [g_crawler.py:573] error occured.'NoneType' object has no attribute 'find'
 12-01-2022:09:01:15 INFO     [_internal.py:225] 127.0.0.1 - - [12/Jan/2022 09:01:15] "GET /search?q=turntable%20stylus%20replacement&r_cache=yes HTTP/1.1" 200 -
+12-01-2022:21:35:22 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+12-01-2022:21:35:32 INFO     [g_crawler.py:48] >> no cache found [Errno 2] No such file or directory: 'cache/howtoswim.json' now get result from google.
+12-01-2022:21:35:37 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+12-01-2022:21:35:42 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bswim&gl=pk&hl=en HTTP/1.1" 200 None
+12-01-2022:21:37:05 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+12-01-2022:21:37:11 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bswim&gl=pk&hl=en HTTP/1.1" 200 None
+12-01-2022:21:37:25 ERROR    [g_crawler.py:291] >> not heading found in feature snippet "'NoneType' object has no attribute 'text'"
+12-01-2022:21:37:25 ERROR    [g_crawler.py:297] error occured.'NoneType' object has no attribute 'text'
+12-01-2022:21:37:25 DEBUG    [g_crawler.py:236] >> no key found'NoneType' object has no attribute 'text'
+12-01-2022:21:37:25 DEBUG    [g_crawler.py:236] >> no key found'NoneType' object has no attribute 'text'
+12-01-2022:21:37:25 DEBUG    [g_crawler.py:236] >> no key found'NoneType' object has no attribute 'text'
+12-01-2022:21:37:25 DEBUG    [g_crawler.py:236] >> no key found'NoneType' object has no attribute 'text'
+12-01-2022:21:37:25 DEBUG    [g_crawler.py:236] >> no key found'NoneType' object has no attribute 'text'
+12-01-2022:21:37:27 ERROR    [g_crawler.py:525] error occured.'NoneType' object has no attribute 'text'
+12-01-2022:21:37:27 ERROR    [g_crawler.py:579] error occured.'NoneType' object has no attribute 'find'
+12-01-2022:21:37:27 INFO     [_internal.py:225] 127.0.0.1 - - [12/Jan/2022 21:37:27] "GET /search?q=how%20to%20swim HTTP/1.1" 200 -
+12-01-2022:21:37:28 INFO     [_internal.py:225] 127.0.0.1 - - [12/Jan/2022 21:37:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+12-01-2022:21:38:57 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+12-01-2022:21:39:05 INFO     [g_crawler.py:48] >> no cache found 'charmap' codec can't decode byte 0x8d in position 1797: character maps to <undefined> now get result from google.
+12-01-2022:21:39:07 DEBUG    [connectionpool.py:971] Starting new HTTPS connection (1): www.google.com:443
+12-01-2022:21:39:12 DEBUG    [connectionpool.py:452] https://www.google.com:443 "GET /search?q=how%2Bto%2Bswim&gl=pk&hl=en HTTP/1.1" 200 None
+12-01-2022:21:39:21 ERROR    [g_crawler.py:291] >> not heading found in feature snippet "'NoneType' object has no attribute 'text'"
+12-01-2022:21:39:21 ERROR    [g_crawler.py:297] error occured.'NoneType' object has no attribute 'text'
+12-01-2022:21:39:21 DEBUG    [g_crawler.py:236] >> no key found'NoneType' object has no attribute 'text'
+12-01-2022:21:39:21 DEBUG    [g_crawler.py:236] >> no key found'NoneType' object has no attribute 'text'
+12-01-2022:21:39:21 DEBUG    [g_crawler.py:236] >> no key found'NoneType' object has no attribute 'text'
+12-01-2022:21:39:21 DEBUG    [g_crawler.py:236] >> no key found'NoneType' object has no attribute 'text'
+12-01-2022:21:39:21 DEBUG    [g_crawler.py:236] >> no key found'NoneType' object has no attribute 'text'
+12-01-2022:21:39:23 ERROR    [g_crawler.py:525] error occured.'NoneType' object has no attribute 'text'
+12-01-2022:21:39:23 ERROR    [g_crawler.py:579] error occured.'NoneType' object has no attribute 'find'
+12-01-2022:21:39:23 INFO     [_internal.py:225] 127.0.0.1 - - [12/Jan/2022 21:39:23] "GET /search?q=how%20to%20swim HTTP/1.1" 200 -

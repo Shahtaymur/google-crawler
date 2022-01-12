@@ -236,6 +236,12 @@ class GCrawler(Resource):
                         logger.debug('>> no key found{}'.format(str(e)))
                     
                     item['text'] = meta_description.text
+
+                    try:
+                        item['text'] = meta_description.find('div',{'class':'VwiC3b yXK7lf MUxGbd yDYNvb lyLwlc lEBKkf'}).text
+                    except Exception as e:
+                        logger.debug('>> text not found{}'.format(str(e)))
+
                     if not item['text_prefix'] is None:
                         item['text'] = item['text'].replace(item['text_prefix'],'').replace(' — ','')
                 
