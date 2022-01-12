@@ -95,3 +95,7 @@ premium-residential.geonode.com:13468
 premium-residential.geonode.com:12330
 premium-residential.geonode.com:10498
 premium-residential.geonode.com:14383
+premium-residential.geonode.com:12363
+premium-residential.geonode.com:12453
+premium-residential.geonode.com:12594
+premium-residential.geonode.com:10567

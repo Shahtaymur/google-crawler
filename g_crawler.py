@@ -244,6 +244,9 @@ class GCrawler(Resource):
 
                     if not item['text_prefix'] is None:
                         item['text'] = item['text'].replace(item['text_prefix'],'').replace(' — ','')
+                    
+                    if item['text'] is None or item['text'] == "":
+                        item['text'] = meta_description.text
                 
                 output.append(item)
         return {'output':output,'unit_converter':unit_converter}
