@@ -1,3 +1,4 @@
+from socket import timeout
 import flask
 import json
 import requests
@@ -10,7 +11,7 @@ import time
 from flask_restful import Resource, Api, reqparse
 from flask import request
 from random import choice
-
+import urllib.request
 from requests.sessions import default_headers
 import config
 import logging
@@ -65,7 +66,7 @@ class GCrawler(Resource):
         """
         try:
             time.sleep(random.randint(2,5))  # be nice with google :)
-            print('>> trying to get result from "{}"'.format(url))
+            print('>>trying to get result from "{}" on "{}"'.format(url,time.time()))
             count = 1
             req = None
             while True:
@@ -100,23 +101,38 @@ class GCrawler(Resource):
                 USE_PROXY.append(DNS)
 
                 proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, DNS)}
+                proxy = urllib.request.ProxyHandler(proxy)
+                opener = urllib.request.build_opener(proxy)
+                urllib.request.install_opener(opener)
                 try:
-                    
-                    req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params,timeout=60)
+                    urllib.request.urlretrieve('http://www.google.com')
+                    req = urllib.request.Request(
+                        'https://www.google.com/search', 
+                        data=None, 
+                        headers=DEFAULT_HEADERS,
+                        timeout=10,
+                        params=params
+                    )
+                    r = urllib.request.urlopen(req)
+                    req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params,timeout=10)
                     if req.status_code in [200, 404]:
                         print('>> request returned {} total request "{}"'.format(req.status_code,count))
                         break
                     elif req.status_code == 429:
                         self.add_block_dns(DNS)
                         logger.error(req.headers)
-
                     print('>> request returned {} total request "{}"'.format(req.status_code,count))
                 except requests.exceptions.ConnectionError:
-                    print('>> proxy not connect')
+                    print('>>proxy not connect')
+                except requests.exceptions.Timeout as err:
+                    logger.error(err)
+                    print('>>request timeout.....')
+                    return {'status':'failed','req':req}
                 except requests.exceptions.RequestException as e:
                     logger.error(e.request.headers)
                     logger.error(e.args[0].reason)
-                    pass
+                except Exception as e:
+                    logger.error(e)
                 count = count + 1
             return {'status':'success','req':req}
         except requests.exceptions.RequestException as e:
@@ -221,34 +237,35 @@ class GCrawler(Resource):
                 else:
                     meta_description = result.find('div','IsZvec')
                     if meta_description is None:
-                        meta_description = result.find('div','Dks9wf')
-                    table  = meta_description.find('table')
-                    if table:
+                        meta_description = result.find('div',{'class':'NJo7tc Z26q7c uUuwM','data-content-feature':1})
+                    if not meta_description is None:
+                        table  = meta_description.find('table')
+                        if table:
+                            try:
+                                item['meta_data'] = self.get_table(table)
+                            except Exception as e:
+                                logger.error('error occured.{}'.format(str(e)))
+                                pass
+
                         try:
-                            item['meta_data'] = self.get_table(table)
+                            item['text_prefix'] = meta_description.find('span',{'class':'MUxGbd wuQ4Ob WZ8Tjf'}).text
                         except Exception as e:
-                            logger.error('error occured.{}'.format(str(e)))
-                            pass
-
-                    try:
-                        item['text_prefix'] = meta_description.find('span',{'class':'MUxGbd wuQ4Ob WZ8Tjf'}).text
-                    except Exception as e:
-                        logger.debug('>> no key found{}'.format(str(e)))
-                    
-                    item['text'] = meta_description.text
-
-                    try:
-                        item['text'] = meta_description.find('div',{'class':'VwiC3b yXK7lf MUxGbd yDYNvb lyLwlc lEBKkf'}).text
-                    except Exception as e:
-                        logger.debug('>> text not found{}'.format(str(e)))
-
-                    if not item['text_prefix'] is None:
-                        item['text'] = item['text'].replace(item['text_prefix'],'').replace(' — ','')
-                    
-                    if item['text'] is None or item['text'] == "":
+                            logger.debug('>> no key found{}'.format(str(e)))
+                        
                         item['text'] = meta_description.text
-                
-                output.append(item)
+
+                        try:
+                            item['text'] = meta_description.find('div',{'class':'VwiC3b yXK7lf MUxGbd yDYNvb lyLwlc lEBKkf'}).text
+                        except Exception as e:
+                            logger.debug('>> text not found{}'.format(str(e)))
+
+                        if not item['text_prefix'] is None:
+                            item['text'] = item['text'].replace(item['text_prefix'],'').replace(' — ','')
+                        
+                        if item['text'] is None or item['text'] == "":
+                            item['text'] = meta_description.text
+                    
+                    output.append(item)
         return {'output':output,'unit_converter':unit_converter}
 
     def get_answer(self,document,question=None):
@@ -597,7 +614,3 @@ class GCrawler(Resource):
             'videos':videos,
             'oraganic':oraganic
             }
-
-    
-
-

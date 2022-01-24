@@ -10,4 +10,4 @@ api = Api(app)
 api.add_resource(GCrawler, '/search') 
 
 if __name__ == '__main__':
-    app.run()  # run our Flask app
+    app.run(threaded=True,debug=True)  # run our Flask app
