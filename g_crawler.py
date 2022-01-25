@@ -1,4 +1,3 @@
-from socket import timeout
 import flask
 import json
 import requests
@@ -11,17 +10,26 @@ import time
 from flask_restful import Resource, Api, reqparse
 from flask import request
 from random import choice
-import urllib.request
 from requests.sessions import default_headers
 import config
 import logging
 import random
 import re
-import os
-from http.cookiejar import LWPCookieJar
-import ssl
-USE_PROXY = []
+from requests.adapters import TimeoutSauce
 
+class MyTimeout(TimeoutSauce):
+    def __init__(self, *args, **kwargs):
+        if kwargs['connect'] is None:
+            kwargs['connect'] = 5
+        if kwargs['read'] is None:
+            kwargs['read'] = 5
+        super(MyTimeout, self).__init__(*args, **kwargs)
+requests.adapters.TimeoutSauce = MyTimeout
+
+USE_PROXY = []
+conn_timeout = 2.000
+read_timeout = 50.000
+timeouts = (conn_timeout, read_timeout)
 global logger
 logging.basicConfig(format='%(asctime)s %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',datefmt='%d-%m-%Y:%H:%M:%S',level=logging.DEBUG,filename='app.log')
 logger = logging.getLogger('g_crawler.py')
@@ -56,30 +64,13 @@ class GCrawler(Resource):
         return {'data': self.result}, 200
 
     def get_source(self,url):
-        """Return the source code for the provided URL. 
-
-        Args: 
-            url (string): URL of the page to scrape.
-
-        Returns:
-            response (object): HTTP response object from requests_html. 
-        """
         try:
-            time.sleep(random.randint(2,5))  # be nice with google :)
-            print('>>trying to get result from "{}" on "{}"'.format(url,time.time()))
+            print('>>trying to get result from "{}" on "{}"'.format(url,time.ctime(time.time())))
             count = 1
             req = None
             while True:
-                #DEFAULT_HEADERS = {
-                #  'authority': 'www.google.com',
-                #'method': 'GET',
-                #'accept-language': 'en-PK',
-                #  'scheme': 'https',
-                #  'accept': "*/*",
-                #  'accept-encoding': 'gzip, deflate, br',
-                 #'accept-language': 'en-US',
-                #'user-agent':choice(config.USER_AGENTS)
-                #}
+                if count > 9:
+                    return {'status':'failed','req':None}
                 DEFAULT_HEADERS = {
                     'User-agent':
                     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
@@ -101,26 +92,17 @@ class GCrawler(Resource):
                 USE_PROXY.append(DNS)
 
                 proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, DNS)}
-                proxy = urllib.request.ProxyHandler(proxy)
-                opener = urllib.request.build_opener(proxy)
-                urllib.request.install_opener(opener)
                 try:
-                    urllib.request.urlretrieve('http://www.google.com')
-                    req = urllib.request.Request(
-                        'https://www.google.com/search', 
-                        data=None, 
-                        headers=DEFAULT_HEADERS,
-                        timeout=10,
-                        params=params
-                    )
-                    r = urllib.request.urlopen(req)
-                    req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params,timeout=10)
+                    print('>>get request from google now "{}" wait 3 to 5 seconds...'.format(time.ctime(time.time())))
+                    time.sleep(random.randint(3,5))  # be nice with google :)
+                    req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params,allow_redirects=False)
                     if req.status_code in [200, 404]:
                         print('>> request returned {} total request "{}"'.format(req.status_code,count))
+                        req.close()
                         break
                     elif req.status_code == 429:
                         self.add_block_dns(DNS)
-                        logger.error(req.headers)
+                        logger.error('>>proxy returend 429..')
                     print('>> request returned {} total request "{}"'.format(req.status_code,count))
                 except requests.exceptions.ConnectionError:
                     print('>>proxy not connect')

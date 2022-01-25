@@ -1655,3 +1655,59 @@ AttributeError: 'NoneType' object has no attribute 'headers'
 12-01-2022:21:39:23 ERROR    [g_crawler.py:525] error occured.'NoneType' object has no attribute 'text'
 12-01-2022:21:39:23 ERROR    [g_crawler.py:579] error occured.'NoneType' object has no attribute 'find'
 12-01-2022:21:39:23 INFO     [_internal.py:225] 127.0.0.1 - - [12/Jan/2022 21:39:23] "GET /search?q=how%20to%20swim HTTP/1.1" 200 -
+24-01-2022:21:38:46 INFO     [_internal.py:225]  * Restarting with stat
+24-01-2022:21:38:49 WARNING  [_internal.py:225]  * Debugger is active!
+24-01-2022:21:38:49 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+24-01-2022:21:38:49 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+24-01-2022:21:41:11 INFO     [_internal.py:225]  * Restarting with stat
+24-01-2022:21:41:14 WARNING  [_internal.py:225]  * Debugger is active!
+24-01-2022:21:41:14 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+24-01-2022:21:41:14 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+24-01-2022:22:11:15 INFO     [_internal.py:225]  * Restarting with stat
+24-01-2022:22:11:18 WARNING  [_internal.py:225]  * Debugger is active!
+24-01-2022:22:11:18 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+24-01-2022:22:11:18 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+25-01-2022:10:24:28 INFO     [_internal.py:225]  * Restarting with stat
+25-01-2022:10:24:32 WARNING  [_internal.py:225]  * Debugger is active!
+25-01-2022:10:24:32 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+25-01-2022:10:24:32 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+25-01-2022:10:26:04 INFO     [_internal.py:225]  * Detected change in 'C:\\Git\\google-crawler\\g_crawler.py', reloading
+25-01-2022:10:27:19 INFO     [_internal.py:225]  * Restarting with stat
+25-01-2022:10:27:22 WARNING  [_internal.py:225]  * Debugger is active!
+25-01-2022:10:27:22 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+25-01-2022:10:27:22 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+25-01-2022:10:30:27 INFO     [_internal.py:225]  * Restarting with stat
+25-01-2022:10:30:30 WARNING  [_internal.py:225]  * Debugger is active!
+25-01-2022:10:30:30 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+25-01-2022:10:30:30 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+25-01-2022:10:32:32 INFO     [_internal.py:225]  * Restarting with stat
+25-01-2022:10:32:36 WARNING  [_internal.py:225]  * Debugger is active!
+25-01-2022:10:32:36 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+25-01-2022:10:32:36 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+25-01-2022:10:36:20 INFO     [_internal.py:225]  * Restarting with stat
+25-01-2022:10:36:23 WARNING  [_internal.py:225]  * Debugger is active!
+25-01-2022:10:36:23 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+25-01-2022:10:36:23 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+25-01-2022:10:38:42 INFO     [_internal.py:225]  * Detected change in 'C:\\Git\\google-crawler\\g_crawler.py', reloading
+25-01-2022:10:39:03 INFO     [_internal.py:225]  * Restarting with stat
+25-01-2022:10:39:06 WARNING  [_internal.py:225]  * Debugger is active!
+25-01-2022:10:39:06 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+25-01-2022:10:39:06 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+25-01-2022:10:39:12 INFO     [_internal.py:225]  * Restarting with stat
+25-01-2022:10:39:15 WARNING  [_internal.py:225]  * Debugger is active!
+25-01-2022:10:39:15 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+25-01-2022:10:39:15 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+25-01-2022:10:39:21 ERROR    [g_crawler.py:122] 'NoneType' object has no attribute 'write'
+25-01-2022:10:40:35 INFO     [_internal.py:225]  * Restarting with stat
+25-01-2022:10:40:38 WARNING  [_internal.py:225]  * Debugger is active!
+25-01-2022:10:40:38 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+25-01-2022:10:40:38 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+25-01-2022:10:42:25 INFO     [_internal.py:225]  * Restarting with stat
+25-01-2022:10:42:28 WARNING  [_internal.py:225]  * Debugger is active!
+25-01-2022:10:42:28 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+25-01-2022:10:42:28 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
+25-01-2022:10:43:19 INFO     [_internal.py:225]  * Detected change in 'C:\\Git\\google-crawler\\g_crawler.py', reloading
+25-01-2022:10:43:24 INFO     [_internal.py:225]  * Restarting with stat
+25-01-2022:10:43:27 WARNING  [_internal.py:225]  * Debugger is active!
+25-01-2022:10:43:27 INFO     [_internal.py:225]  * Debugger PIN: 124-590-243
+25-01-2022:10:43:27 INFO     [_internal.py:225]  * Running on http://127.0.0.1:5002/ (Press CTRL+C to quit)
