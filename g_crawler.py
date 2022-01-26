@@ -2,30 +2,30 @@ import flask
 import json
 import requests
 import urllib
-from urllib.request import Request, urlopen
-from urllib.parse import quote_plus, urlparse, parse_qs
+from urllib3 import ProxyManager, make_headers, Retry
 from bs4 import BeautifulSoup
 import time
-#import urllib.request as urllib
-from flask_restful import Resource, Api, reqparse
+from flask_restful import Resource
 from flask import request
 from random import choice
-from requests.sessions import default_headers
 import config
 import logging
 import random
 import re
-from requests.adapters import TimeoutSauce
 
-class MyTimeout(TimeoutSauce):
-    def __init__(self, *args, **kwargs):
-        if kwargs['connect'] is None:
-            kwargs['connect'] = 5
-        if kwargs['read'] is None:
-            kwargs['read'] = 5
-        super(MyTimeout, self).__init__(*args, **kwargs)
-requests.adapters.TimeoutSauce = MyTimeout
-
+DEFAULT_HEADERS = {
+                    'User-agent':
+                    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
+                    'accept-language': 'en-US',
+                    'scheme': 'https'
+                }
+params = {
+    'q': '',
+    'gl': 'pk', # country where to search from
+    'hl': 'en',
+}
+default_headers = make_headers(proxy_basic_auth='geonode_uMZlIrin1i:b35b456b-90f7-4d88-88c4-b1bae00143a6')
+retries = Retry(connect=5, read=2, redirect=3)
 USE_PROXY = []
 conn_timeout = 2.000
 read_timeout = 50.000
@@ -71,18 +71,6 @@ class GCrawler(Resource):
             while True:
                 if count > 9:
                     return {'status':'failed','req':None}
-                DEFAULT_HEADERS = {
-                    'User-agent':
-                    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
-                    'accept-language': 'en-US',
-                    'scheme': 'https'
-                }
-
-                params = {
-                    'q': url,
-                    'gl': 'pk', # country where to search from
-                    'hl': 'en',
-                }
                 DNS = choice(config.GEONODS)
                 if len(config.GEONODS) == config.BLOCK_DNS:
                     return {'status':'failed','req':None}
@@ -91,30 +79,35 @@ class GCrawler(Resource):
                     
                 USE_PROXY.append(DNS)
 
-                proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, DNS)}
+                # proxy = {"https":"http://{}:{}@{}".format(config.PROXY_USER, config.PROXY_PASS, DNS)}
+                #req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params,allow_redirects=False)
                 try:
                     print('>>get request from google now "{}" wait 3 to 5 seconds...'.format(time.ctime(time.time())))
                     time.sleep(random.randint(3,5))  # be nice with google :)
-                    req = requests.get('https://www.google.com/search', proxies=proxy,headers=DEFAULT_HEADERS,params=params,allow_redirects=False)
-                    if req.status_code in [200, 404]:
-                        print('>> request returned {} total request "{}"'.format(req.status_code,count))
-                        req.close()
+                    http = ProxyManager("http://{}/".format(DNS), proxy_headers=default_headers,headers=DEFAULT_HEADERS)
+                    r = http.request('GET', 'https://www.google.com/search?q={}&gl=pk&hl=en'.format(url),retries=Retry(connect=5, read=2, redirect=5))
+                    req = r.data
+                    if r.status in [200, 404]:
+                        print('>> request returned {} total request "{}"'.format(r.status,count))
+                        r.close()
                         break
-                    elif req.status_code == 429:
+                    elif r.status == 429:
                         self.add_block_dns(DNS)
                         logger.error('>>proxy returend 429..')
-                    print('>> request returned {} total request "{}"'.format(req.status_code,count))
+                    print('>> request returned {} total request "{}"'.format(r.status,count))
                 except requests.exceptions.ConnectionError:
                     print('>>proxy not connect')
                 except requests.exceptions.Timeout as err:
                     logger.error(err)
                     print('>>request timeout.....')
+                    r.close()
                     return {'status':'failed','req':req}
                 except requests.exceptions.RequestException as e:
-                    logger.error(e.request.headers)
-                    logger.error(e.args[0].reason)
+                    logger.error(e)
                 except Exception as e:
                     logger.error(e)
+                    r.close()
+                    return {'status':'failed','req':req}
                 count = count + 1
             return {'status':'success','req':req}
         except requests.exceptions.RequestException as e:
@@ -140,14 +133,13 @@ class GCrawler(Resource):
     def get_results(self,query):
         #create url
         query = urllib.parse.quote_plus(query)
-        #response = self.get_source('https://www.google.co.uk/search?q='+query)
         response = self.get_source(query)
         print('>> request on google on "{}"'.format(query))
         return response
         
     def parse_results(self,response):
         print('>> trying to get meta description from google')
-        soup = BeautifulSoup(response.text,"html.parser")
+        soup = BeautifulSoup(response,"html.parser")
         
         #get meta description on web page
         results = soup.find_all('div','tF2Cxc')
@@ -170,7 +162,7 @@ class GCrawler(Resource):
                 elif snippet == "Unit converter":
                     #get unit converter from page response
                     print('>> crawl unit converter')
-                    soup = BeautifulSoup(response.content,"html.parser")
+                    soup = BeautifulSoup(response,"html.parser")
                     card = soup.find('div',{'data-hveid':'CAIQAQ'})
                     unit_converter['type'] = []
                     if card:
@@ -336,7 +328,7 @@ class GCrawler(Resource):
         return {'columns':header,'values':values}
 
     def get_dictionary(self,response):
-        soup = BeautifulSoup(response.text,"html.parser")
+        soup = BeautifulSoup(response,"html.parser")
         #dictionary = soup.find("div", {"role": "heading", "aria-level": "2","class":"gJBeNe vbr5i"})
         dictionary = soup.find('div',{"class":"obcontainer"})
         dfn = {'dictionary':[]}
@@ -374,7 +366,7 @@ class GCrawler(Resource):
 
     def get_popular_products(self,response):
         print('>> get popular product list...')
-        soup = BeautifulSoup(response.text,"html.parser")
+        soup = BeautifulSoup(response,"html.parser")
         cards = soup.find('g-scrolling-carousel')
         cards_list = {'popular_products':[]}
         if cards:
@@ -386,7 +378,7 @@ class GCrawler(Resource):
 
     def get_top_sights(self,response):
         print('>> get top sights list...')
-        soup = BeautifulSoup(response.text,"html.parser")
+        soup = BeautifulSoup(response,"html.parser")
         topsight = soup.find('g-scrolling-carousel')
         top_list = {'data':[]}
         if topsight:
@@ -409,7 +401,7 @@ class GCrawler(Resource):
 
     def get_videos(self,response):
         print('>> get videos list...')
-        soup = BeautifulSoup(response.text,"html.parser")
+        soup = BeautifulSoup(response,"html.parser")
         videos = soup.find_all('div',{"jsname":"TFTr6"})
         video_list = {'data':[]}
         if videos:
@@ -444,7 +436,7 @@ class GCrawler(Resource):
 
     def get_oraganic(self,response):
         print('>> get organic list...')
-        soup = BeautifulSoup(response.text,"html.parser")
+        soup = BeautifulSoup(response,"html.parser")
         recipes = soup.find_all('g-link')
         recip_list = {'data':[]}
         if recipes:
@@ -484,7 +476,7 @@ class GCrawler(Resource):
     def extractQuestionData(self,document):
         data = []
         print('>> get related questions..')
-        soup = BeautifulSoup(document.content,"html.parser")
+        soup = BeautifulSoup(document,"html.parser")
         rel_questions = soup.find_all('div',{'class':'related-question-pair'})
         for question in rel_questions:
             title = question.find('div',{'jsname':'jIA8B'}).text
@@ -495,15 +487,15 @@ class GCrawler(Resource):
             response = req['req']
             try:
                 with open(f"html/{re.sub('[^A-Za-z0-9]+', '', title)}.html", "w",encoding="utf-8") as file:
-                    file.write(response.text)
+                    file.write(response.decode("utf-8"))
             except Exception as e:
                 print(e)
                 pass
-            soup = BeautifulSoup(response.content,"html.parser")
+            soup = BeautifulSoup(response,"html.parser")
             
             results = soup.find_all('div','tF2Cxc')
             if len(results) == 0:
-                soup = BeautifulSoup(response.text,"html.parser")
+                soup = BeautifulSoup(response,"html.parser")
                 soup = soup.find('body')
             answer = self.get_answer(soup,title)
             if answer:
@@ -530,7 +522,7 @@ class GCrawler(Resource):
 
     def get_rel_keywords(self,response):
         print('>> get related keyword...')
-        soup = BeautifulSoup(response.text,"html.parser")
+        soup = BeautifulSoup(response,"html.parser")
         keywords = []
         keys = soup.find_all("div",{'class','s2TyX ueVdTc'})
         for key in keys:
@@ -552,7 +544,7 @@ class GCrawler(Resource):
         response = req['req']
         try:
             with open(f"html/{re.sub('[^A-Za-z0-9]+', '', query)}.html", "w",encoding="utf-8") as file:
-                file.write(response.text)
+                file.write(response.decode("utf-8"))
         except Exception as e:
             print(e)
             pass
@@ -562,7 +554,7 @@ class GCrawler(Resource):
         top_sights = self.get_top_sights(response)
         videos = self.get_videos(response)
         oraganic = self.get_oraganic(response)
-        soup = BeautifulSoup(response.content, "lxml")
+        soup = BeautifulSoup(response, "lxml")
         faqs = None
         if self.add_faqs == 'yes':
             faqs = self.extractQuestionData(response)

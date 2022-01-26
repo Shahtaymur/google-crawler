@@ -1,3 +1,5 @@
+from email import header
+from wsgiref import headers
 import requests
 import json
 import pandas as pd
@@ -122,19 +124,39 @@ for key in keyword:
     if not key in orignal:
         orignal.append(key)
 
-for key in orignal:
-    count = 1
-    # try:
-    #     r = requests.get('http://127.0.0.1:5000/search?q=')
-    #     count = count + 1
-    # except requests.exceptions.RequestException as e:
-    #     print (e.args[0].reason)
-    #     print(e.request.headers)
-    r = requests.get('http://127.0.0.1:5000/search?q={}&faqs=yes'.format(key))
-    data = json.loads(r.content)
-    data = r.content
-    print(data)
-    print(key)
+# for key in orignal:
+#     count = 1
+#     # try:
+#     #     r = requests.get('http://127.0.0.1:5000/search?q=')
+#     #     count = count + 1
+#     # except requests.exceptions.RequestException as e:
+#     #     print (e.args[0].reason)
+#     #     print(e.request.headers)
+#     r = requests.get('http://127.0.0.1:5000/search?q={}&faqs=yes'.format(key))
+#     data = json.loads(r.content)
+#     data = r.content
+#     print(data)
+#     print(key)
+from urllib3 import ProxyManager, make_headers, Retry
+import config
+PROXY_USER = "geonode_uMZlIrin1i"
+PROXY_PASS = "b35b456b-90f7-4d88-88c4-b1bae00143a6"
+default_headers = make_headers(proxy_basic_auth='geonode_uMZlIrin1i:b35b456b-90f7-4d88-88c4-b1bae00143a6')
+DEFAULT_HEADERS = {
+                    'User-agent':
+                    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
+                    'accept-language': 'en-US',
+                    'scheme': 'https'
+                }
+retries = Retry(connect=5, read=2, redirect=5)
+while True:
+    DNS = choice(config.GEONODS)
+    http = ProxyManager("http://{}/".format(DNS), proxy_headers=default_headers,headers=DEFAULT_HEADERS)
+    # Now you can use `http` as you would a normal PoolManager
+    r = http.request('GET', 'https://www.google.com/search?q=get+response+object+scrapy',retries=Retry(connect=5, read=2, redirect=5))
+    data = r.data
+    #values = json.loads(data)
+    print(r.headers)
 
 
 
