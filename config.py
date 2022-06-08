@@ -11,7 +11,7 @@ with open('browser_agents.txt', 'r') as file_handle:
 with open('block_dns.txt', 'r') as file_handle:
     BLOCK_DNS = file_handle.read().splitlines()
 
-PROXY_USER = "geonode_uMZlIrin1i"
-PROXY_PASS = "b35b456b-90f7-4d88-88c4-b1bae00143a6"
+PROXY_USER = ""
+PROXY_PASS = ""
 GEONODE_DNS = choice(GEONODS)
 USER_AGENT = choice(USER_AGENTS)
